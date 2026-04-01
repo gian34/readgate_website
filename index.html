@@ -40,7 +40,8 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo { font-size: 18px; font-weight: 700; color: var(--label); text-decoration: none; }
+    .nav-logo { font-size: 18px; font-weight: 700; color: var(--label); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-logo img { width: 28px; height: 28px; border-radius: 7px; }
     .nav-links { display: flex; gap: 24px; align-items: center; }
     .nav-links a { font-size: 14px; color: var(--secondary); text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: var(--label); }
@@ -170,33 +171,34 @@
     .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
     .feature-card p { font-size: 14px; color: var(--secondary); line-height: 1.6; }
 
-    /* ── Comparison ── */
-    .comparison {
+    /* ── Screenshots ── */
+    .screenshots-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .screenshot-frame {
+      width: 220px;
+      height: 476px;
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 36px;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
     }
-    .comparison table { width: 100%; border-collapse: collapse; }
-    .comparison th {
-      padding: 16px 24px;
-      font-size: 13px; font-weight: 600;
-      text-align: left;
-      background: var(--bg3);
-      border-bottom: 1px solid var(--border);
-      color: var(--secondary);
+    .screenshot-frame img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 36px;
     }
-    .comparison th.highlight { color: var(--blue); }
-    .comparison td {
-      padding: 14px 24px;
-      font-size: 14px;
-      border-bottom: 1px solid var(--border);
+    .screenshot-placeholder {
+      font-size: 13px;
+      color: var(--tertiary);
+      letter-spacing: 0.05em;
     }
-    .comparison tr:last-child td { border-bottom: none; }
-    .comparison td:not(:first-child) { text-align: center; }
-    .comparison td.highlight { color: var(--label); font-weight: 500; }
-    .check { color: var(--green); }
-    .cross { color: var(--tertiary); }
 
     /* ── CTA ── */
     .cta-section {
@@ -236,7 +238,7 @@
 
   <!-- Nav -->
   <nav>
-    <a class="nav-logo" href="/">Readgate</a>
+    <a class="nav-logo" href="/"><img src="/icon.png" alt="Readgate" />Readgate</a>
     <div class="nav-links">
       <a class="nav-hide" href="#how">How it works</a>
       <a class="nav-hide" href="#why">Why Readgate</a>
@@ -246,6 +248,7 @@
 
   <!-- Hero -->
   <section class="hero">
+    <img src="/icon.png" alt="Readgate icon" style="width:72px;height:72px;border-radius:18px;margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,0.5);" />
     <div class="hero-badge">
       <span>✦</span> The smarter way to reduce screen time
     </div>
@@ -326,61 +329,21 @@
     </div>
   </section>
 
-  <!-- Comparison -->
-  <section class="section">
-    <p class="section-label">Comparison</p>
-    <h2 class="section-title">How Readgate stacks up</h2>
-    <p class="section-sub">The only app blocker that makes you smarter while slowing you down.</p>
-
-    <div class="comparison">
-      <table>
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th class="highlight">Readgate</th>
-            <th>One Sec</th>
-            <th>Opal</th>
-            <th>Freedom</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Blocks apps via Screen Time</td>
-            <td class="highlight check">✓</td>
-            <td class="cross">—</td>
-            <td class="check">✓</td>
-            <td class="cross">—</td>
-          </tr>
-          <tr>
-            <td>Learn something every unlock</td>
-            <td class="highlight check">✓</td>
-            <td class="cross">—</td>
-            <td class="cross">—</td>
-            <td class="cross">—</td>
-          </tr>
-          <tr>
-            <td>No account required</td>
-            <td class="highlight check">✓</td>
-            <td class="cross">—</td>
-            <td class="cross">—</td>
-            <td class="cross">—</td>
-          </tr>
-          <tr>
-            <td>Free tier available</td>
-            <td class="highlight check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>iOS only</td>
-            <td class="highlight check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="cross">—</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Screenshots -->
+  <section class="section" id="screenshots" style="text-align:center;">
+    <p class="section-label">Screenshots</p>
+    <h2 class="section-title">See it in action</h2>
+    <p class="section-sub" style="margin:0 auto 60px;">A clean, focused experience designed for iOS.</p>
+    <div class="screenshots-row">
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">Home</div>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">Challenge</div>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">Unlock</div>
+      </div>
     </div>
   </section>
 
