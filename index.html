@@ -4,27 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Readgate — Read to Unlock</title>
-  <meta name="description" content="Readgate blocks your most distracting apps and unlocks them only after you read a short article. Reduce screen time and get smarter at the same time." />
+  <meta name="description" content="Readgate blocks your most distracting apps and unlocks them only after you read a short article. Reduce screen time. Get smarter every day." />
+  <link rel="icon" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #060608;
-      --bg2: #0e0e12;
-      --bg3: #16161c;
-      --border: #1e1e26;
-      --label: #f0f0f5;
-      --secondary: #7a7a8c;
-      --tertiary: #3a3a4a;
-      --blue: #4f8ef7;
-      --blue-glow: rgba(79,142,247,0.15);
-      --green: #22c55e;
+      --bg:      #08080a;
+      --bg2:     #111114;
+      --bg3:     #18181c;
+      --bg4:     #222228;
+      --border:  rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.12);
+      --label:   #f2f2f7;
+      --secondary: #8e8e9a;
+      --tertiary:  #48484e;
+      --blue:    #4f8ef7;
+      --blue2:   #2563eb;
+      --green:   #22c55e;
+      --indigo:  #6366f1;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--label);
       line-height: 1.6;
@@ -32,742 +39,767 @@
       overflow-x: hidden;
     }
 
-    /* ── Noise texture overlay ── */
-    body::before {
+    /* ─── NOISE TEXTURE ─────────────────────────────── */
+    body::after {
       content: '';
-      position: fixed; inset: 0; z-index: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      opacity: 0.4;
+      position: fixed; inset: 0; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; opacity: 0.5;
     }
 
-    /* ── Ambient glow ── */
-    .glow-orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(120px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .glow-orb-1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(79,142,247,0.08) 0%, transparent 70%);
-      top: -200px; left: 50%;
-      transform: translateX(-50%);
-    }
-    .glow-orb-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 70%);
-      bottom: 20%; right: -100px;
-    }
-
-    /* ── Nav ── */
+    /* ─── NAV ────────────────────────────────────────── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 32px;
-      background: rgba(6,6,8,0.7);
-      backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 60px;
+      background: rgba(8,8,10,0.75);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
     }
     .nav-logo {
-      font-size: 17px; font-weight: 700; color: var(--label);
-      text-decoration: none; display: flex; align-items: center; gap: 9px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 16px; font-weight: 700; color: var(--label); text-decoration: none;
       letter-spacing: -0.01em;
     }
-    .nav-logo img { width: 26px; height: 26px; border-radius: 7px; }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a { font-size: 14px; color: var(--secondary); text-decoration: none; transition: color .2s; }
+    .nav-logo img {
+      width: 28px; height: 28px; border-radius: 7px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--secondary); text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: var(--label); }
     .nav-cta {
-      background: var(--blue); color: #fff !important;
-      padding: 7px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
-      transition: opacity .2s, transform .1s;
+      background: var(--label); color: #08080a !important;
+      padding: 8px 18px; border-radius: 9px; font-size: 13px; font-weight: 700 !important;
+      transition: opacity .2s, transform .15s;
     }
-    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+    .nav-cta:hover { opacity: 0.88 !important; transform: translateY(-1px); }
+    @media(max-width:640px){
+      nav { padding: 0 20px; }
+      .nav-hide { display: none; }
+    }
 
-    /* ── Hero ── */
+    /* ─── HERO ───────────────────────────────────────── */
     .hero {
-      position: relative; z-index: 1;
-      min-height: 100vh;
+      position: relative;
+      min-height: 100svh;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       text-align: center;
-      padding: 140px 24px 100px;
+      padding: 100px 24px 80px;
+      overflow: hidden;
     }
+
+    /* Big radial glow behind hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 700px;
+      background: radial-gradient(ellipse at center, rgba(79,142,247,0.11) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 12px; font-weight: 600; color: var(--blue);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
     .hero-icon-wrap {
-      position: relative;
-      margin-bottom: 28px;
-      display: inline-block;
+      position: relative; display: inline-block; margin-bottom: 36px;
     }
-    .hero-icon-wrap::before {
+    .hero-icon-ring {
+      position: absolute; inset: -16px;
+      border: 1px solid rgba(79,142,247,0.18); border-radius: 50%;
+      animation: spin-slow 20s linear infinite;
+    }
+    .hero-icon-ring::before {
       content: '';
-      position: absolute; inset: -20px;
-      background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: pulse 3s ease-in-out infinite;
+      position: absolute; top: -3px; left: 50%; transform: translateX(-50%);
+      width: 6px; height: 6px; background: var(--blue); border-radius: 50%;
+      box-shadow: 0 0 12px var(--blue);
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.08); }
-    }
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
     .hero-icon {
-      width: 80px; height: 80px;
-      border-radius: 20px;
-      position: relative; z-index: 1;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
-    }
-
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: rgba(79,142,247,0.08);
-      border: 1px solid rgba(79,142,247,0.2);
-      border-radius: 100px; padding: 5px 14px;
-      font-size: 12px; font-weight: 500; color: var(--blue);
-      margin-bottom: 28px;
-      letter-spacing: 0.01em;
+      width: 96px; height: 96px; border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1), 0 0 60px rgba(79,142,247,0.2);
+      display: block; position: relative; z-index: 1;
     }
 
     h1 {
-      font-size: clamp(38px, 6.5vw, 72px);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -0.04em;
+      font-size: clamp(44px, 7vw, 88px);
+      font-weight: 900;
+      line-height: 0.97;
+      letter-spacing: -0.05em;
       color: var(--label);
-      margin-bottom: 22px;
-      max-width: 820px;
+      margin-bottom: 24px;
+      max-width: 900px;
     }
-    h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, #4f8ef7 0%, #7eb3ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    h1 .gradient {
+      background: linear-gradient(135deg, #fff 20%, #4f8ef7 60%, #a78bfa 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .hero-sub {
-      font-size: clamp(16px, 2vw, 19px);
+      font-size: clamp(16px, 2vw, 20px);
       color: var(--secondary);
-      max-width: 500px;
-      margin-bottom: 44px;
+      max-width: 480px;
+      margin-bottom: 48px;
       line-height: 1.65;
+      font-weight: 400;
     }
-    .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; }
+
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .btn-primary {
-      background: var(--blue);
-      color: #fff;
-      padding: 13px 26px; border-radius: 12px;
-      font-size: 15px; font-weight: 600;
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--label); color: #08080a;
+      padding: 15px 28px; border-radius: 14px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
       transition: opacity .2s, transform .15s, box-shadow .2s;
-      display: inline-flex; align-items: center; gap: 8px;
-      box-shadow: 0 4px 24px rgba(79,142,247,0.3);
+      box-shadow: 0 8px 32px rgba(255,255,255,0.1);
     }
-    .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(79,142,247,0.4); }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(255,255,255,0.15); }
     .btn-secondary {
-      background: rgba(255,255,255,0.04);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06); border: 1px solid var(--border2);
       color: var(--label);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 13px 26px; border-radius: 12px;
-      font-size: 15px; font-weight: 500;
-      text-decoration: none;
+      padding: 15px 28px; border-radius: 14px;
+      font-size: 15px; font-weight: 500; text-decoration: none;
       transition: background .2s, transform .15s;
     }
-    .btn-secondary:hover { background: rgba(255,255,255,0.07); transform: translateY(-1px); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
 
-    /* ── Sections ── */
-    .section {
+    /* App Store badge style */
+    .as-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .as-badge svg { flex-shrink: 0; }
+    .as-badge-text { text-align: left; }
+    .as-badge-small { font-size: 10px; font-weight: 400; opacity: 0.7; display: block; }
+    .as-badge-big { font-size: 16px; font-weight: 700; line-height: 1; display: block; }
+
+    .hero-social {
+      margin-top: 40px;
+      display: flex; align-items: center; gap: 20px;
+      font-size: 13px; color: var(--tertiary);
+    }
+    .hero-social .stars { color: #fbbf24; letter-spacing: 2px; }
+
+    /* ─── SCREENS / FEATURE SHOWCASE ────────────────── */
+    .showcase {
       position: relative; z-index: 1;
-      padding: 100px 24px;
-      max-width: 1000px;
-      margin: 0 auto;
+      padding: 120px 24px;
+      overflow: hidden;
     }
-    .section-label {
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.14em;
-      color: var(--blue);
-      text-transform: uppercase;
-      margin-bottom: 10px;
+    .showcase-inner {
+      max-width: 1120px; margin: 0 auto;
     }
-    .section-title {
-      font-size: clamp(26px, 3.5vw, 40px);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      margin-bottom: 14px;
+
+    /* ── Phones row ── */
+    .phones-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 20px;
+      perspective: 1400px;
+      padding: 0 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .phone-wrapper {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    .phone-label {
+      font-size: 12px; font-weight: 500; color: var(--secondary);
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    .phone {
+      width: 230px; height: 498px;
+      background: #000;
+      border-radius: 46px;
+      position: relative;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.09),
+        0 40px 100px rgba(0,0,0,0.8),
+        0 0 80px rgba(79,142,247,0.04);
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
+    }
+    .phone:hover {
+      transform: translateY(-10px) rotateX(1deg) !important;
+      box-shadow: 0 0 0 1px rgba(79,142,247,0.15), 0 60px 120px rgba(0,0,0,0.9), 0 0 100px rgba(79,142,247,0.1);
+    }
+    .phone-center { transform: translateY(-20px) scale(1.07); }
+    .phone-side { transform: rotateY(8deg) translateX(8px) scale(0.96); }
+    .phone-side-left { transform: rotateY(-8deg) translateX(-8px) scale(0.96); }
+
+    /* Dynamic island */
+    .di {
+      position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+      width: 88px; height: 28px; background: #000; border-radius: 18px; z-index: 30;
+    }
+    /* Status bar */
+    .sb {
+      position: absolute; top: 0; left: 0; right: 0; height: 52px;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      padding: 0 22px 7px; z-index: 20;
+    }
+    .sb-time { font-size: 14px; font-weight: 600; color: #fff; font-family: -apple-system, sans-serif; }
+    .sb-icons { display: flex; align-items: center; gap: 5px; }
+
+    /* Phone screen content */
+    .phone-screen { position: absolute; inset: 0; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    .psc { padding-top: 52px; }
+
+    /* ── Shared phone UI atoms ── */
+    .p-title { font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.02em; padding: 6px 16px 10px; }
+    .p-slabel { font-size: 10px; color: #8E8E93; padding: 0 16px; margin-bottom: 6px; }
+    .p-card { margin: 0 13px 12px; background: #1C1C1E; border-radius: 13px; overflow: hidden; }
+    .p-row { display: flex; align-items: center; padding: 0 12px; min-height: 44px; gap: 11px; }
+    .p-row + .p-row { border-top: 0.5px solid #2C2C2E; }
+    .p-ib { width: 26px; height: 26px; border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .p-rl { flex: 1; font-size: 14px; color: #fff; }
+    .p-rv { font-size: 13px; color: #8E8E93; }
+    .p-rv-blue { color: #0A84FF; }
+    .p-rv-green { color: #32D74B; }
+
+    /* usage card */
+    .p-usage { margin: 0 13px 10px; background: #1C1C1E; border-radius: 13px; padding: 13px; }
+    .p-u-hd { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .p-u-sup { font-size: 8px; font-weight: 600; color: #8E8E93; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 2px; }
+    .p-u-big { font-size: 30px; font-weight: 700; color: #fff; line-height: 1; }
+    .p-u-sub { font-size: 10px; color: #8E8E93; }
+    .p-u-count { font-size: 16px; font-weight: 600; color: #fff; }
+    .p-bars { display: flex; align-items: flex-end; gap: 3px; height: 52px; margin-bottom: 4px; }
+    .p-bar { flex: 1; border-radius: 3px; }
+    .p-days { display: flex; gap: 3px; }
+    .p-day { flex: 1; text-align: center; font-size: 8px; color: #636366; }
+    .p-day.t { color: #0A84FF; }
+
+    .p-stats { margin: 0 13px 12px; background: #1C1C1E; border-radius: 11px; display: flex; overflow: hidden; }
+    .p-stat { flex: 1; text-align: center; padding: 9px 4px; }
+    .p-stat + .p-stat { border-left: 0.5px solid #2C2C2E; }
+    .p-sn { font-size: 17px; font-weight: 700; color: #fff; }
+    .p-sl { font-size: 8px; color: #8E8E93; margin-top: 1px; }
+
+    /* article */
+    .p-art { margin: 0 13px; background: #1C1C1E; border-radius: 13px; padding: 15px; }
+    .p-atag { font-size: 9px; font-weight: 600; color: #0A84FF; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 7px; }
+    .p-atitle { font-size: 17px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 9px; }
+    .p-abody { font-size: 12px; color: #8E8E93; line-height: 1.6; }
+    .p-abody strong { color: #d0d0d5; }
+    .p-prog { margin: 11px 13px 0; background: #1C1C1E; border-radius: 6px; height: 5px; overflow: hidden; }
+    .p-progfill { height: 100%; border-radius: 6px; background: #0A84FF; }
+    .p-pmeta { display: flex; justify-content: space-between; padding: 4px 13px 0; font-size: 9px; color: #48484A; }
+    .p-ubtn { margin: 11px 13px 0; background: #0A84FF33; border-radius: 11px; height: 42px; display: flex; align-items: center; justify-content: center; gap: 7px; }
+    .p-ubtxt { font-size: 13px; font-weight: 600; color: #0A84FF80; }
+
+    /* shield screen */
+    .p-shield { display: flex; flex-direction: column; align-items: center; height: 100%; padding: 0 22px; }
+    .p-sh-top { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .p-sh-ico { width: 68px; height: 68px; border-radius: 18px; background: #1C1C1E; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+    .p-sh-lbl { font-size: 9px; font-weight: 600; color: #8E8E93; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 6px; }
+    .p-sh-name { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .p-sh-sub { font-size: 12px; color: #8E8E93; text-align: center; line-height: 1.5; }
+    .p-sh-bot { width: 100%; padding-bottom: 30px; }
+    .p-sh-primary { background: #0A84FF; border-radius: 12px; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; }
+    .p-sh-ptxt { font-size: 16px; font-weight: 600; color: #fff; }
+    .p-sh-sec { height: 38px; display: flex; align-items: center; justify-content: center; }
+    .p-sh-stxt { font-size: 14px; color: #8E8E93; }
+
+    /* unlock done */
+    .p-done { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 0 24px; }
+    .p-done-glow { width: 110px; height: 110px; border-radius: 50%; background: radial-gradient(circle, rgba(50,215,75,0.2) 0%, transparent 70%); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+    .p-done-inner { width: 76px; height: 76px; border-radius: 50%; background: rgba(50,215,75,0.12); border: 1.5px solid rgba(50,215,75,0.3); display: flex; align-items: center; justify-content: center; }
+    .p-done-badge { font-size: 9px; font-weight: 700; color: #32D74B; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+    .p-done-title { font-size: 28px; font-weight: 800; color: #fff; text-align: center; line-height: 1.15; margin-bottom: 10px; }
+    .p-done-sub { font-size: 13px; color: #8E8E93; text-align: center; line-height: 1.5; margin-bottom: 28px; }
+    .p-timer { background: #32D74B; padding: 12px 32px; border-radius: 28px; }
+    .p-timer-txt { font-size: 26px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; }
+
+    /* history */
+    .p-hist-item { display: flex; align-items: center; gap: 11px; padding: 11px 12px; }
+    .p-hist-item + .p-hist-item { border-top: 0.5px solid #2C2C2E; }
+    .p-hdot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .p-htitle { font-size: 13px; font-weight: 600; color: #fff; }
+    .p-hmeta { font-size: 10px; color: #8E8E93; margin-top: 2px; }
+    .p-htime { font-size: 11px; color: #48484A; white-space: nowrap; }
+
+    /* ─── FEATURE SECTIONS ───────────────────────────── */
+    .features-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 0 24px 140px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 12px;
+    }
+    .section-h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800; letter-spacing: -0.035em; line-height: 1.05;
+      margin-bottom: 16px;
     }
     .section-sub {
-      font-size: 16px;
-      color: var(--secondary);
-      max-width: 440px;
-      margin-bottom: 56px;
-      line-height: 1.6;
+      font-size: 17px; color: var(--secondary); line-height: 1.65;
+      max-width: 440px; margin-bottom: 0;
     }
 
-    /* ── Steps ── */
-    .steps {
+    /* Split feature row */
+    .feat-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+      align-items: stretch;
     }
-    .step {
+    @media(max-width:760px){ .feat-row { grid-template-columns: 1fr; } }
+
+    .feat-card {
       background: var(--bg2);
-      padding: 36px 32px;
-      transition: background .2s;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px;
+      transition: border-color .3s, background .3s, transform .3s;
+      position: relative; overflow: hidden;
     }
-    .step:hover { background: var(--bg3); }
-    .step-num {
-      width: 34px; height: 34px;
-      background: var(--blue-glow);
-      border: 1px solid rgba(79,142,247,0.2);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
+    .feat-card:hover {
+      border-color: rgba(79,142,247,0.18);
+      background: var(--bg3);
+      transform: translateY(-3px);
+    }
+    .feat-card.wide { grid-column: 1 / -1; display: flex; align-items: center; gap: 48px; }
+    @media(max-width:760px){ .feat-card.wide { flex-direction: column; gap: 28px; } }
+
+    .feat-card-glow {
+      position: absolute; top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(79,142,247,0.08) 0%, transparent 70%);
+      pointer-events: none; border-radius: 50%;
+    }
+    .feat-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(79,142,247,0.12); border: 1px solid rgba(79,142,247,0.2);
       font-size: 14px; font-weight: 700; color: var(--blue);
       margin-bottom: 20px;
     }
-    .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
-    .step p { font-size: 14px; color: var(--secondary); line-height: 1.65; }
+    .feat-icon { font-size: 28px; margin-bottom: 18px; display: block; }
+    .feat-card h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .feat-card p { font-size: 14px; color: var(--secondary); line-height: 1.7; }
 
-    /* ── Feature cards ── */
-    .features {
+    .feat-card-text { flex: 1; }
+    .feat-card-visual { flex-shrink: 0; }
+
+    /* Mini phone inside feature card */
+    .mini-phone {
+      width: 160px; height: 346px;
+      background: #000; border-radius: 32px;
+      position: relative; overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 24px 60px rgba(0,0,0,0.6);
+    }
+    .mini-di { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 60px; height: 19px; background: #000; border-radius: 12px; z-index: 20; }
+
+    /* ─── HOW IT WORKS ───────────────────────────────── */
+    .how-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 0 24px 140px;
+    }
+    .how-steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
-    }
-    .feature-card {
-      background: var(--bg2);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      transition: border-color .25s, background .25s, transform .2s;
-      cursor: default;
+      border-radius: 24px; overflow: hidden;
+      margin-top: 56px;
     }
-    .feature-card:hover {
-      border-color: rgba(79,142,247,0.2);
-      background: var(--bg3);
-      transform: translateY(-2px);
+    @media(max-width:700px){ .how-steps { grid-template-columns: 1fr; } }
+    .how-step {
+      background: var(--bg2); padding: 40px 36px;
+      transition: background .2s;
     }
-    .feature-icon { font-size: 22px; margin-bottom: 14px; }
-    .feature-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 7px; letter-spacing: -0.01em; }
-    .feature-card p { font-size: 13px; color: var(--secondary); line-height: 1.65; }
-
-    /* ── Screenshots ── */
-    .screenshots-row {
-      display: flex;
-      gap: 28px;
-      justify-content: center;
-      flex-wrap: wrap;
-      perspective: 1200px;
-      align-items: flex-end;
-    }
-    .ss-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .ss-label {
-      font-size: 12px; font-weight: 500; color: var(--secondary);
-      letter-spacing: 0.04em;
-    }
-    .screenshot-frame {
-      width: 216px;
-      height: 468px;
-      background: #000;
-      border-radius: 42px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06);
-      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
-      flex-shrink: 0;
-    }
-    .screenshot-frame:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 56px 120px rgba(0,0,0,0.8), 0 0 0 1px rgba(79,142,247,0.15);
-    }
-    .ss-wrap:nth-child(2) .screenshot-frame { transform: scale(1.06); }
-    .ss-wrap:nth-child(2) .screenshot-frame:hover { transform: scale(1.06) translateY(-8px); }
-
-    /* Phone chrome */
-    .ss-island {
-      position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
-      width: 80px; height: 24px; background: #000; border-radius: 14px; z-index: 20;
-    }
-    .ss-statusbar {
-      position: absolute; top: 0; left: 0; right: 0; height: 48px;
-      display: flex; align-items: flex-end; justify-content: space-between;
-      padding: 0 20px 6px; z-index: 10;
-    }
-    .ss-time { font-size: 13px; font-weight: 600; color: #fff; font-family: -apple-system, sans-serif; }
-    .ss-icons { display: flex; align-items: center; gap: 5px; }
-
-    /* Screen content shared */
-    .ss-content { position: absolute; inset: 0; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    .ss-large-title { font-size: 26px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
-    .ss-section-label { font-size: 9px; color: #8E8E93; letter-spacing: 0.1px; padding: 0 14px; margin-bottom: 5px; }
-    .ss-card { margin: 0 12px 12px; background: #1C1C1E; border-radius: 12px; overflow: hidden; }
-    .ss-row {
-      display: flex; align-items: center; padding: 0 10px; min-height: 40px;
-    }
-    .ss-row + .ss-row { border-top: 0.5px solid #38383A; }
-    .ss-icon-box {
-      width: 24px; height: 24px; border-radius: 6px;
+    .how-step:hover { background: var(--bg3); }
+    .how-step-num {
+      width: 38px; height: 38px; border-radius: 12px;
+      background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.2);
       display: flex; align-items: center; justify-content: center;
-      margin-right: 10px; flex-shrink: 0;
+      font-size: 15px; font-weight: 800; color: var(--blue);
+      margin-bottom: 22px;
     }
-    .ss-row-label { flex: 1; font-size: 13px; color: #fff; }
-    .ss-row-value { font-size: 13px; color: #8E8E93; }
-    .ss-row-value.blue { color: #0A84FF; }
+    .how-step h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .how-step p { font-size: 14px; color: var(--secondary); line-height: 1.7; }
 
-    /* Screen 1 – Dashboard */
-    .ss-usage {
-      margin: 0 12px 10px; background: #1C1C1E; border-radius: 12px; padding: 12px;
+    /* ─── SOCIAL PROOF / STATS ───────────────────────── */
+    .stats-band {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 24px;
+      margin-bottom: 140px;
     }
-    .ss-usage-hd { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-    .ss-usage-sup { font-size: 8px; font-weight: 600; color: #8E8E93; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 1px; }
-    .ss-usage-big { font-size: 28px; font-weight: 700; color: #fff; line-height: 1; }
-    .ss-usage-sub { font-size: 10px; color: #8E8E93; }
-    .ss-usage-count { font-size: 15px; font-weight: 600; color: #fff; text-align: right; }
-    .ss-bars { display: flex; align-items: flex-end; gap: 3px; height: 48px; margin-bottom: 4px; }
-    .ss-bar { flex: 1; border-radius: 3px; }
-    .ss-day-labels { display: flex; gap: 3px; }
-    .ss-day-label { flex: 1; text-align: center; font-size: 8px; color: #636366; }
-    .ss-day-label.t { color: #0A84FF; }
-
-    .ss-stats { margin: 0 12px 12px; background: #1C1C1E; border-radius: 10px; display: flex; overflow: hidden; }
-    .ss-stat { flex: 1; text-align: center; padding: 8px 4px; }
-    .ss-stat + .ss-stat { border-left: 0.5px solid #38383A; }
-    .ss-stat-num { font-size: 16px; font-weight: 700; color: #fff; }
-    .ss-stat-lbl { font-size: 8px; color: #8E8E93; margin-top: 1px; }
-
-    /* Screen 2 – Reading */
-    .ss-article { margin: 0 12px; background: #1C1C1E; border-radius: 12px; padding: 14px; }
-    .ss-art-tag { font-size: 9px; font-weight: 600; color: #0A84FF; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 7px; }
-    .ss-art-title { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 9px; }
-    .ss-art-body { font-size: 11px; color: #8E8E93; line-height: 1.55; }
-    .ss-art-body strong { color: #ddd; }
-    .ss-progress { margin: 10px 12px 0; background: #1C1C1E; border-radius: 6px; height: 5px; overflow: hidden; }
-    .ss-progress-fill { height: 100%; border-radius: 6px; background: #0A84FF; }
-    .ss-unlock-btn {
-      margin: 10px 12px 0; background: #0A84FF40; border-radius: 10px; height: 40px;
-      display: flex; align-items: center; justify-content: center; gap: 6px;
+    .stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;
+      gap: 40px;
     }
-    .ss-unlock-btn-text { font-size: 13px; font-weight: 600; color: #0A84FF80; }
+    .stat-item { text-align: center; }
+    .stat-big { font-size: clamp(36px, 5vw, 56px); font-weight: 900; letter-spacing: -0.04em; color: var(--label); line-height: 1; }
+    .stat-big .accent { color: var(--blue); }
+    .stat-desc { font-size: 14px; color: var(--secondary); margin-top: 6px; }
 
-    /* Screen 3 – Shield */
-    .ss-shield { display: flex; flex-direction: column; align-items: center; height: 100%; padding: 0 20px; }
-    .ss-shield-top { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .ss-shield-icon { width: 62px; height: 62px; border-radius: 16px; background: #1C1C1E; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-    .ss-shield-name { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-    .ss-shield-sub { font-size: 11px; color: #8E8E93; text-align: center; line-height: 1.5; }
-    .ss-shield-bottom { width: 100%; padding-bottom: 28px; }
-    .ss-shield-btn { background: #0A84FF; border-radius: 10px; height: 44px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
-    .ss-shield-btn-text { font-size: 14px; font-weight: 600; color: #fff; }
-    .ss-shield-sec { height: 36px; display: flex; align-items: center; justify-content: center; }
-    .ss-shield-sec-text { font-size: 13px; color: #8E8E93; }
-
-    /* ── Divider ── */
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* ── CTA ── */
+    /* ─── CTA ────────────────────────────────────────── */
     .cta-section {
-      position: relative; z-index: 1;
-      text-align: center;
-      padding: 120px 24px;
+      padding: 0 24px 160px; text-align: center;
     }
     .cta-inner {
-      max-width: 560px;
-      margin: 0 auto;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 64px 48px;
-      position: relative;
-      overflow: hidden;
+      max-width: 680px; margin: 0 auto;
+      background: linear-gradient(145deg, var(--bg2) 0%, var(--bg3) 100%);
+      border: 1px solid var(--border2);
+      border-radius: 32px; padding: 72px 56px;
+      position: relative; overflow: hidden;
     }
+    @media(max-width:600px){ .cta-inner { padding: 48px 28px; } }
     .cta-inner::before {
       content: '';
-      position: absolute; top: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+      position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(79,142,247,0.1) 0%, transparent 60%);
       pointer-events: none;
     }
     .cta-inner h2 {
-      font-size: clamp(26px, 3.5vw, 38px);
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.025em;
-      position: relative;
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+      letter-spacing: -0.04em; margin-bottom: 14px; position: relative;
     }
-    .cta-inner p {
-      font-size: 16px;
-      color: var(--secondary);
-      margin-bottom: 36px;
-      position: relative;
-    }
+    .cta-inner p { font-size: 17px; color: var(--secondary); margin-bottom: 40px; position: relative; line-height: 1.6; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
 
-    /* ── Footer ── */
+    /* ─── FOOTER ─────────────────────────────────────── */
     footer {
-      position: relative; z-index: 1;
       border-top: 1px solid var(--border);
-      padding: 28px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      max-width: 1000px;
-      margin: 0 auto;
+      padding: 32px 40px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+      max-width: 100%; margin: 0 auto;
     }
-    .footer-logo { font-size: 14px; font-weight: 700; color: var(--label); }
-    .footer-links { display: flex; gap: 20px; }
+    .footer-logo { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 700; color: var(--label); }
+    .footer-logo img { width: 24px; height: 24px; border-radius: 6px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
     .footer-links a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--label); }
     .footer-copy { font-size: 12px; color: var(--tertiary); }
+    @media(max-width:600px){ footer { padding: 28px 20px; } }
 
-    /* ── Fade-in animation ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* ─── DIVIDER ────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+      max-width: 1120px; margin: 0 auto;
     }
 
-    @media (max-width: 600px) {
-      nav { padding: 14px 20px; }
-      .nav-links .nav-hide { display: none; }
-      footer { flex-direction: column; align-items: flex-start; }
-      .cta-inner { padding: 40px 28px; }
+    /* ─── FADE IN ────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
     }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+    .reveal-delay-5 { transition-delay: .5s; }
   </style>
 </head>
 <body>
 
-  <!-- Ambient glow -->
-  <div class="glow-orb glow-orb-1"></div>
-  <div class="glow-orb glow-orb-2"></div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/"><img src="/icon.png" alt="Readgate" />Readgate</a>
+  <div class="nav-links">
+    <a class="nav-hide" href="#how">How it works</a>
+    <a class="nav-hide" href="#features">Features</a>
+    <a class="nav-cta" href="#download">Download</a>
+  </div>
+</nav>
 
-  <!-- Nav -->
-  <nav>
-    <a class="nav-logo" href="/"><img src="/icon.png" alt="Readgate" />Readgate</a>
-    <div class="nav-links">
-      <a class="nav-hide" href="#how">How it works</a>
-      <a class="nav-hide" href="#why">Features</a>
-      <a class="nav-cta" href="#download">App Store</a>
-    </div>
-  </nav>
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow"><span></span>Now on the App Store</div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-icon-wrap">
-      <img class="hero-icon" src="/icon.png" alt="Readgate icon" />
+  <div class="hero-icon-wrap">
+    <div class="hero-icon-ring"></div>
+    <img class="hero-icon" src="/icon.png" alt="Readgate icon" />
+  </div>
+
+  <h1>Read to unlock.<br><span class="gradient">Get smarter.</span></h1>
+  <p class="hero-sub">Readgate blocks your most distracting apps — and only unlocks them after you read a short article. Less doom-scrolling. More learning.</p>
+
+  <div class="hero-actions" id="download">
+    <a class="btn-primary" href="#">
+      <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor"><path d="M16.67 0H3.33C1.49 0 0 1.49 0 3.33v17.34C0 22.51 1.49 24 3.33 24h13.34C18.51 24 20 22.51 20 20.67V3.33C20 1.49 18.51 0 16.67 0zm-1.12 6.14l-1.6.88c-.33-.46-.84-.71-1.4-.71-1.08 0-1.96.88-1.96 1.96v.03c.97-.54 2.08-.8 3.2-.73l.46.04c.68.08 1.28.4 1.74.91l1.16-1.2c-.77-.72-1.77-1.18-2.9-1.18h-.07zm-5.34 2.13c-.42 0-.82.16-1.13.44l-1.13-1.17c.68-.64 1.55-1.03 2.49-1.06v1.7c-.08.03-.16.06-.23.09zm6.14 1.94c0 2.43-1.97 4.4-4.4 4.4-1.79 0-3.34-1.07-4.06-2.62l1.54-.68c.4.88 1.28 1.5 2.32 1.5 1.4 0 2.54-1.14 2.54-2.54 0-1.4-1.14-2.54-2.54-2.54-.23 0-.46.03-.67.09v1.87c.19-.1.42-.16.67-.16.68 0 1.24.56 1.24 1.24 0 .68-.56 1.24-1.24 1.24-.93 0-1.7-.76-1.7-1.7V6.67c0-.2.09-.4.25-.52.33-.28.68-.43 1.06-.43 2.44 0 4.19 2.09 4.19 4.49z"/></svg>
+      <div class="as-badge-text"><span class="as-badge-small">Download on the</span><span class="as-badge-big">App Store</span></div>
+    </a>
+    <a class="btn-secondary" href="#how">See how it works →</a>
+  </div>
+
+  <div class="hero-social">
+    <span class="stars">★★★★★</span>
+    <span>Built for iPhone · Free to use · Privacy first</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PHONE SHOWCASE ══════════════════════════ -->
+<section class="showcase">
+  <div class="showcase-inner">
+    <div class="phones-row">
+
+      <!-- Phone 1: Dashboard -->
+      <div class="phone-wrapper reveal">
+        <div class="phone phone-side-left">
+          <div class="di"></div>
+          <div class="sb"><span class="sb-time">9:41</span><div class="sb-icons"><svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg><svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg></div></div>
+          <div class="phone-screen psc">
+            <div class="p-title">Readgate</div>
+            <div class="p-usage">
+              <div class="p-u-hd"><div><div class="p-u-sup">TODAY</div><div class="p-u-big">18m</div><div class="p-u-sub">reading time</div></div><div style="text-align:right"><div class="p-u-count">3 articles</div><div class="p-u-sub">today</div></div></div>
+              <div class="p-bars"><div class="p-bar" style="height:14px;background:#5E5CE699"></div><div class="p-bar" style="height:28px;background:#5E5CE699"></div><div class="p-bar" style="height:20px;background:#5E5CE699"></div><div class="p-bar" style="height:38px;background:#5E5CE699"></div><div class="p-bar" style="height:18px;background:#5E5CE699"></div><div class="p-bar" style="height:10px;background:#5E5CE699"></div><div class="p-bar" style="height:32px;background:#0A84FF"></div></div>
+              <div class="p-days"><div class="p-day">M</div><div class="p-day">T</div><div class="p-day">W</div><div class="p-day">T</div><div class="p-day">F</div><div class="p-day">S</div><div class="p-day t">S</div></div>
+            </div>
+            <div class="p-stats"><div class="p-stat"><div class="p-sn">17</div><div class="p-sl">Articles</div></div><div class="p-stat"><div class="p-sn">5</div><div class="p-sl">Streak</div></div><div class="p-stat"><div class="p-sn">3/5</div><div class="p-sl">Unlocks</div></div></div>
+            <div class="p-slabel">STATUS</div>
+            <div class="p-card"><div class="p-row"><div class="p-ib" style="background:#32D74B"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><div class="p-rl">App Blocking</div><div class="p-rv p-rv-blue">Active</div></div></div>
+            <div class="p-slabel">CHALLENGE</div>
+            <div class="p-card"><div class="p-row" style="padding:10px 12px;min-height:unset;"><div class="p-ib" style="background:#0A84FF;width:30px;height:30px;border-radius:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M6 2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm2 5h8v2H8V7zm0 4h8v2H8v-2zm0 4h5v2H8v-2z"/></svg></div><div style="flex:1;margin-left:8px"><div style="font-size:13px;font-weight:600;color:#fff">Read to Unlock</div><div style="font-size:10px;color:#8E8E93">Earn access to your apps</div></div><div style="background:#0A84FF;padding:4px 10px;border-radius:14px;font-size:11px;font-weight:600;color:#fff">Read</div></div></div>
+          </div>
+        </div>
+        <div class="phone-label">Dashboard</div>
+      </div>
+
+      <!-- Phone 2: Reading Challenge (CENTER) -->
+      <div class="phone-wrapper reveal reveal-delay-1">
+        <div class="phone phone-center">
+          <div class="di"></div>
+          <div class="sb"><span class="sb-time">9:41</span><div class="sb-icons"><svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg><svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg></div></div>
+          <div class="phone-screen psc">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 16px 12px"><div style="font-size:13px;color:#8E8E93">Close</div><div style="font-size:14px;font-weight:600;color:#fff">Challenge</div><div style="width:44px"></div></div>
+            <div class="p-art">
+              <div class="p-atag">📖 Today's Read</div>
+              <div class="p-atitle">Apollo 11 Moon Landing</div>
+              <div class="p-abody"><strong>Apollo 11</strong> was the spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin landed on July 20, 1969.<br><br>Armstrong became the first person to step onto the lunar surface. Aldrin joined him 19 minutes later. Together they spent about two hours outside the spacecraft, collecting 47.5 lbs of lunar material.<br><br>The third crew member, Michael Collins, piloted the command spacecraft alone in lunar orbit…</div>
+            </div>
+            <div class="p-prog"><div class="p-progfill" style="width:65%"></div></div>
+            <div class="p-pmeta"><span>65% read</span><span>~45s left</span></div>
+            <div class="p-ubtn"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0A84FF80"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z"/></svg><div class="p-ubtxt">Keep Reading to Unlock</div></div>
+          </div>
+        </div>
+        <div class="phone-label">Reading Challenge</div>
+      </div>
+
+      <!-- Phone 3: Shield -->
+      <div class="phone-wrapper reveal reveal-delay-2">
+        <div class="phone phone-side">
+          <div class="di"></div>
+          <div class="sb"><span class="sb-time">9:41</span><div class="sb-icons"><svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg><svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg></div></div>
+          <div class="phone-screen psc">
+            <div class="p-shield">
+              <div class="p-sh-top">
+                <div class="p-sh-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="#FF004F"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></div>
+                <div style="text-align:center"><div class="p-sh-lbl">Time Limit Reached</div><div class="p-sh-name">TikTok</div><div class="p-sh-sub">Read one short article and unlock <strong style="color:#fff">TikTok</strong> for 5 minutes.</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px"><div style="width:22px;height:22px;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 32 32" fill="none"><path d="M8 6 Q8 4 10 4 L22 4 Q24 4 24 6 L24 26 Q24 28 22 28 L10 28 Q8 28 8 26 Z" stroke="#000" stroke-width="2.5" fill="none"/><path d="M11 10 L21 10 M11 14 L21 14 M11 18 L17 18" stroke="#000" stroke-width="2.5" stroke-linecap="round"/></svg></div><span style="font-size:10px;color:#636366">Powered by Readgate</span></div>
+              <div class="p-sh-bot">
+                <div class="p-sh-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M6 2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z"/></svg><div class="p-sh-ptxt">Read to Unlock</div></div>
+                <div class="p-sh-sec"><div class="p-sh-stxt">Not Now</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">App Shield</div>
+      </div>
+
+      <!-- Phone 4: Unlock Done -->
+      <div class="phone-wrapper reveal reveal-delay-3">
+        <div class="phone phone-side" style="transform: rotateY(10deg) translateX(12px) scale(0.93);">
+          <div class="di"></div>
+          <div class="sb"><span class="sb-time">9:41</span><div class="sb-icons"><svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg><svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg></div></div>
+          <div class="phone-screen psc">
+            <div class="p-done">
+              <div class="p-done-glow"><div class="p-done-inner"><svg width="36" height="36" viewBox="0 0 24 24" fill="#32D74B"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div></div>
+              <div class="p-done-badge">Unlocked</div>
+              <div class="p-done-title">TikTok<br>is unlocked!</div>
+              <div class="p-done-sub">You've earned 5 minutes.<br>Great read about <strong style="color:#d0d0d5">Apollo 11</strong>.</div>
+              <div class="p-timer"><div class="p-timer-txt">4:59</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Unlocked</div>
+      </div>
+
+      <!-- Phone 5: History -->
+      <div class="phone-wrapper reveal reveal-delay-4">
+        <div class="phone" style="transform: rotateY(14deg) translateX(20px) scale(0.89);">
+          <div class="di"></div>
+          <div class="sb"><span class="sb-time">9:41</span><div class="sb-icons"><svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg><svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg></div></div>
+          <div class="phone-screen psc">
+            <div class="p-title">History</div>
+            <div style="margin:0 13px 12px;background:linear-gradient(135deg,#5E5CE620,#0A84FF20);border:1px solid #0A84FF30;border-radius:13px;padding:14px;display:flex;align-items:center;gap:12px"><div style="width:42px;height:42px;border-radius:12px;background:#5E5CE6;display:flex;align-items:center;justify-content:center;font-size:22px">🔥</div><div><div style="font-size:20px;font-weight:800;color:#fff">5 Day Streak</div><div style="font-size:10px;color:#8E8E93;margin-top:1px">Keep reading today!</div></div></div>
+            <div class="p-slabel">THIS WEEK</div>
+            <div class="p-card">
+              <div class="p-hist-item"><div class="p-hdot" style="background:#0A84FF"></div><div style="flex:1"><div class="p-htitle">Apollo 11 Moon Landing</div><div class="p-hmeta">2 min · Unlocked TikTok</div></div><div class="p-htime">9:41 AM</div></div>
+              <div class="p-hist-item"><div class="p-hdot" style="background:#32D74B"></div><div style="flex:1"><div class="p-htitle">The Dopamine Effect</div><div class="p-hmeta">3 min · Unlocked Instagram</div></div><div class="p-htime">Yesterday</div></div>
+              <div class="p-hist-item"><div class="p-hdot" style="background:#5E5CE6"></div><div style="flex:1"><div class="p-htitle">Cognitive Behavioral Therapy</div><div class="p-hmeta">4 min · Unlocked YouTube</div></div><div class="p-htime">Mon</div></div>
+              <div class="p-hist-item"><div class="p-hdot" style="background:#BF5AF2"></div><div style="flex:1"><div class="p-htitle">Roman Colosseum</div><div class="p-hmeta">2 min · Unlocked Twitter</div></div><div class="p-htime">Sun</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">History</div>
+      </div>
+
+    </div><!-- /phones-row -->
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════ STATS ══════════════════════════ -->
+<div class="stats-band reveal">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-big">100<span class="accent">%</span></div>
+      <div class="stat-desc">On-device · no account needed</div>
     </div>
-    <div class="hero-badge">✦ &nbsp;Coming soon to the App Store</div>
-    <h1>Read to unlock.<br /><em>Get smarter</em> every day.</h1>
-    <p class="hero-sub">
-      Readgate blocks your most distracting apps and only unlocks them after you read a short article. Less doom-scrolling, more learning.
-    </p>
-    <div class="hero-actions">
-      <a class="btn-primary" id="download" href="#">
+    <div class="stat-item">
+      <div class="stat-big">5<span class="accent">★</span></div>
+      <div class="stat-desc">Rating on the App Store</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-big">2<span class="accent">min</span></div>
+      <div class="stat-desc">Average article read time</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-big">0<span class="accent">€</span></div>
+      <div class="stat-desc">Free to download & use</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ HOW IT WORKS ══════════════════════════ -->
+<section class="how-section reveal" id="how">
+  <div class="section-eyebrow">How it works</div>
+  <div class="section-h2">Three steps to a healthier habit</div>
+  <p class="section-sub">No willpower needed. Readgate creates friction that actually pays you back.</p>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-num">1</div>
+      <h3>Block your distractions</h3>
+      <p>Choose which apps to block — Instagram, TikTok, YouTube, whatever steals your time. Uses Apple's built-in Screen Time framework, so it actually works. No VPN, no workarounds.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">2</div>
+      <h3>Read a short article</h3>
+      <p>Every time you try to open a blocked app, Readgate presents a short Wikipedia article. Science, history, culture — always interesting, always short enough to finish.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">3</div>
+      <h3>Unlock &amp; go</h3>
+      <p>Finish reading and your apps unlock for 5 minutes. You get what you wanted — and you picked up something new along the way. Your streak keeps you coming back.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════ FEATURES ══════════════════════════ -->
+<section class="features-section" id="features" style="padding-top:120px;">
+  <div class="section-eyebrow reveal">Why Readgate</div>
+  <div class="section-h2 reveal reveal-delay-1">Friction that<br>pays you back.</div>
+  <p class="section-sub reveal reveal-delay-2" style="margin-bottom:56px;">Other blockers just make you wait. Readgate makes you smarter every single day.</p>
+
+  <div class="feat-row">
+    <div class="feat-card reveal">
+      <div class="feat-card-glow"></div>
+      <div class="feat-num">01</div>
+      <h3>Powered by Apple Screen Time</h3>
+      <p>Blocks happen at the OS level using Apple's Family Controls framework. Apps are genuinely unavailable — there's no way to bypass it. Works exactly like Apple's own Screen Time limits, but with a smarter unlock mechanism.</p>
+    </div>
+    <div class="feat-card reveal reveal-delay-1">
+      <div class="feat-card-glow"></div>
+      <div class="feat-num">02</div>
+      <h3>Real knowledge, every time</h3>
+      <p>Every unlock is a new article from Wikipedia — one of the most trusted sources of knowledge in the world. Science, history, art, technology. Topics rotate so you never see the same article twice.</p>
+    </div>
+  </div>
+
+  <div class="feat-row">
+    <div class="feat-card reveal">
+      <div class="feat-card-glow"></div>
+      <div class="feat-num">03</div>
+      <h3>Build a reading streak</h3>
+      <p>Track how many articles you've read this week, your daily reading time, and your longest streak. Small daily habits compound fast — by the end of a month you'll have read dozens of articles.</p>
+    </div>
+    <div class="feat-card reveal reveal-delay-1">
+      <div class="feat-card-glow"></div>
+      <div class="feat-num">04</div>
+      <h3>Privacy by design</h3>
+      <p>Everything stays on your device. No account required. No data sent to any server. No tracking, no analytics, no third-party SDKs. Just you, your phone, and a better habit.</p>
+    </div>
+  </div>
+
+  <div class="feat-row">
+    <div class="feat-card reveal">
+      <div class="feat-card-glow"></div>
+      <div class="feat-num">05</div>
+      <h3>5 free unlocks per day</h3>
+      <p>A generous daily cap that creates just enough friction without feeling punishing. Five unlocks a day is plenty for mindful use — and the limit resets every night at midnight.</p>
+    </div>
+    <div class="feat-card reveal reveal-delay-1">
+      <div class="feat-card-glow"></div>
+      <div class="feat-num">06</div>
+      <h3>Set up in under 2 minutes</h3>
+      <p>Grant Screen Time permission, choose your apps, done. No complex configuration, no account sign-up, no subscription required to get started. Just open the app and start blocking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ CTA ══════════════════════════ -->
+<section class="cta-section reveal">
+  <div class="cta-inner">
+    <h2>Ready to scroll smarter?</h2>
+    <p>Download Readgate free and start earning your unlocks today.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="#">
+        <svg width="18" height="22" viewBox="0 0 20 24" fill="currentColor"><path d="M16.67 0H3.33C1.49 0 0 1.49 0 3.33v17.34C0 22.51 1.49 24 3.33 24h13.34C18.51 24 20 22.51 20 20.67V3.33C20 1.49 18.51 0 16.67 0zm-1.12 6.14l-1.6.88c-.33-.46-.84-.71-1.4-.71-1.08 0-1.96.88-1.96 1.96v.03c.97-.54 2.08-.8 3.2-.73l.46.04c.68.08 1.28.4 1.74.91l1.16-1.2c-.77-.72-1.77-1.18-2.9-1.18h-.07z"/></svg>
         Download on the App Store
       </a>
-      <a class="btn-secondary" href="#how">See how it works</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider"></div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><img src="/icon.png" alt="Readgate" />Readgate</div>
+  <div class="footer-links">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="mailto:hello@readgateapp.com">Contact</a>
+  </div>
+  <span class="footer-copy">&copy; 2026 Readgate. All rights reserved.</span>
+</footer>
 
-  <!-- How it works -->
-  <section class="section fade-in" id="how">
-    <p class="section-label">How it works</p>
-    <h2 class="section-title">Three steps to a healthier habit</h2>
-    <p class="section-sub">No willpower needed. Readgate creates friction that actually benefits you.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Block your distractions</h3>
-        <p>Choose which apps to block — Instagram, TikTok, X, whatever steals your time. Uses Apple's built-in Screen Time so it actually works.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Read a short article</h3>
-        <p>Every time you want to open a blocked app, Readgate shows you a short Wikipedia article. Read it to earn your unlock.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Unlock &amp; go</h3>
-        <p>Finish reading and your apps unlock for a few minutes. You get what you wanted — and you learned something new along the way.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- Features -->
-  <section class="section fade-in" id="why">
-    <p class="section-label">Why Readgate</p>
-    <h2 class="section-title">Friction that pays you back</h2>
-    <p class="section-sub">Other app blockers just make you wait. Readgate makes you smarter.</p>
-    <div class="features">
-      <div class="feature-card">
-        <div class="feature-icon">📚</div>
-        <h3>Learn while you scroll less</h3>
-        <p>Every unlock is a new piece of knowledge. Science, history, art — Wikipedia has something for everyone.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>Powered by Apple Screen Time</h3>
-        <p>Blocks happen at the OS level via Family Controls. No VPN, no workarounds — apps are genuinely blocked.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Track your streak</h3>
-        <p>See how many articles you've read, your daily streak, and your total reading time over the week.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>3 free unlocks per day</h3>
-        <p>A gentle daily cap that encourages mindful use without feeling like a prison. Enough room to breathe.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔐</div>
-        <h3>Privacy first</h3>
-        <p>Everything stays on your device. No account, no tracking, no data sent to any server.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Works instantly</h3>
-        <p>Set up in under two minutes. Select apps, grant Screen Time permission, and you're done.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- Screenshots -->
-  <section class="section fade-in" id="screenshots" style="text-align:center;">
-    <p class="section-label">Screenshots</p>
-    <h2 class="section-title">See it in action</h2>
-    <p class="section-sub" style="margin: 0 auto 56px;">A clean, focused experience designed for iOS.</p>
-    <div class="screenshots-row">
-
-      <!-- ── Screen 1: Dashboard ── -->
-      <div class="ss-wrap">
-        <div class="screenshot-frame">
-          <div class="ss-island"></div>
-          <div class="ss-statusbar">
-            <span class="ss-time">9:41</span>
-            <div class="ss-icons">
-              <svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
-              <svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg>
-            </div>
-          </div>
-          <div class="ss-content" style="padding-top:48px;">
-            <div style="padding: 6px 14px 10px;"><div class="ss-large-title">Readgate</div></div>
-
-            <div class="ss-usage">
-              <div class="ss-usage-hd">
-                <div>
-                  <div class="ss-usage-sup">TODAY</div>
-                  <div class="ss-usage-big">18m</div>
-                  <div class="ss-usage-sub">reading time</div>
-                </div>
-                <div>
-                  <div class="ss-usage-count">3 articles</div>
-                  <div class="ss-usage-sub" style="text-align:right;">today</div>
-                </div>
-              </div>
-              <div class="ss-bars">
-                <div class="ss-bar" style="height:16px;background:#5E5CE699;"></div>
-                <div class="ss-bar" style="height:30px;background:#5E5CE699;"></div>
-                <div class="ss-bar" style="height:22px;background:#5E5CE699;"></div>
-                <div class="ss-bar" style="height:36px;background:#5E5CE699;"></div>
-                <div class="ss-bar" style="height:20px;background:#5E5CE699;"></div>
-                <div class="ss-bar" style="height:10px;background:#5E5CE699;"></div>
-                <div class="ss-bar" style="height:28px;background:#0A84FF;"></div>
-              </div>
-              <div class="ss-day-labels">
-                <div class="ss-day-label">M</div><div class="ss-day-label">T</div><div class="ss-day-label">W</div>
-                <div class="ss-day-label">T</div><div class="ss-day-label">F</div><div class="ss-day-label">S</div>
-                <div class="ss-day-label t">S</div>
-              </div>
-            </div>
-
-            <div class="ss-stats">
-              <div class="ss-stat"><div class="ss-stat-num">17</div><div class="ss-stat-lbl">Articles</div></div>
-              <div class="ss-stat"><div class="ss-stat-num">5</div><div class="ss-stat-lbl">Streak</div></div>
-              <div class="ss-stat"><div class="ss-stat-num">3/5</div><div class="ss-stat-lbl">Unlocks</div></div>
-            </div>
-
-            <div class="ss-section-label">STATUS</div>
-            <div class="ss-card">
-              <div class="ss-row">
-                <div class="ss-icon-box" style="background:#32D74B;">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-                </div>
-                <div class="ss-row-label">App Blocking</div>
-                <div class="ss-row-value blue">Active</div>
-              </div>
-            </div>
-
-            <div class="ss-section-label">CHALLENGE</div>
-            <div class="ss-card">
-              <div class="ss-row" style="padding: 10px; min-height:unset;">
-                <div class="ss-icon-box" style="background:#0A84FF; width:30px; height:30px; border-radius:8px;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M6 2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm2 5h8v2H8V7zm0 4h8v2H8v-2zm0 4h5v2H8v-2z"/></svg>
-                </div>
-                <div style="flex:1; margin-left:8px;">
-                  <div style="font-size:13px;font-weight:600;color:#fff;">Read to Unlock</div>
-                  <div style="font-size:10px;color:#8E8E93;">Earn access to your apps</div>
-                </div>
-                <div style="background:#0A84FF;padding:4px 10px;border-radius:14px;font-size:11px;font-weight:600;color:#fff;">Read</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ss-label">Dashboard</div>
-      </div>
-
-      <!-- ── Screen 2: Reading Challenge (center, larger) ── -->
-      <div class="ss-wrap">
-        <div class="screenshot-frame">
-          <div class="ss-island"></div>
-          <div class="ss-statusbar">
-            <span class="ss-time">9:41</span>
-            <div class="ss-icons">
-              <svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
-              <svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg>
-            </div>
-          </div>
-          <div class="ss-content" style="padding-top:48px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 14px 12px;">
-              <div style="font-size:12px;color:#8E8E93;">Close</div>
-              <div style="font-size:13px;font-weight:600;color:#fff;">Challenge</div>
-              <div style="width:40px;"></div>
-            </div>
-
-            <div class="ss-article">
-              <div class="ss-art-tag">📖 Today's Read</div>
-              <div class="ss-art-title">Apollo 11 Moon Landing</div>
-              <div class="ss-art-body">
-                <strong>Apollo 11</strong> was the spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin landed the Eagle on July 20, 1969.<br><br>
-                Armstrong became the first person to step onto the lunar surface. Aldrin joined him 19 minutes later, and they spent about two hours outside the spacecraft, collecting 47.5 pounds of lunar material.<br><br>
-                The third member, Michael Collins, piloted the command spacecraft alone in lunar orbit while the others walked on the Moon's surface…
-              </div>
-            </div>
-
-            <div class="ss-progress" style="margin-top:12px;">
-              <div class="ss-progress-fill" style="width:65%;"></div>
-            </div>
-            <div style="display:flex;justify-content:space-between;padding:4px 12px 0;font-size:9px;color:#636366;">
-              <span>65% read</span><span>~45s left</span>
-            </div>
-
-            <div class="ss-unlock-btn" style="margin-top:12px;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#0A84FF80"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-              <div class="ss-unlock-btn-text">Keep Reading to Unlock</div>
-            </div>
-
-            <!-- Unlock success state peeking in from bottom -->
-            <div style="margin: 14px 12px 0; background: #32D74B15; border: 1px solid #32D74B30; border-radius: 12px; padding: 12px; display:flex; align-items:center; gap: 10px;">
-              <div style="width:32px;height:32px;border-radius:50%;background:#32D74B25;display:flex;align-items:center;justify-content:center;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#32D74B"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <div>
-                <div style="font-size:12px;font-weight:600;color:#32D74B;">Done! Apps unlocked</div>
-                <div style="font-size:10px;color:#8E8E93;">5:00 remaining</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ss-label">Reading Challenge</div>
-      </div>
-
-      <!-- ── Screen 3: Shield ── -->
-      <div class="ss-wrap">
-        <div class="screenshot-frame">
-          <div class="ss-island"></div>
-          <div class="ss-statusbar">
-            <span class="ss-time">9:41</span>
-            <div class="ss-icons">
-              <svg width="13" height="9" viewBox="0 0 17 12" fill="white"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
-              <svg width="18" height="9" viewBox="0 0 25 12"><rect x="0" y="1.5" width="22" height="9" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="3" width="17" height="6" rx="1.5" fill="white"/></svg>
-            </div>
-          </div>
-          <div class="ss-content" style="padding-top:48px;">
-            <div class="ss-shield">
-              <div class="ss-shield-top">
-                <div class="ss-shield-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#FF004F"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
-                </div>
-                <div style="text-align:center;">
-                  <div style="font-size:9px;font-weight:600;color:#8E8E93;letter-spacing:0.6px;text-transform:uppercase;margin-bottom:4px;">Time Limit Reached</div>
-                  <div class="ss-shield-name">TikTok</div>
-                  <div class="ss-shield-sub">Take a reading break. Read one short article and unlock <strong style="color:#fff;">TikTok</strong> for 5 minutes.</div>
-                </div>
-              </div>
-
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
-                <div style="width:24px;height:24px;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;">
-                  <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M8 6 Q8 4 10 4 L22 4 Q24 4 24 6 L24 26 Q24 28 22 28 L10 28 Q8 28 8 26 Z" stroke="#000" stroke-width="2" fill="none"/><path d="M11 10 L21 10 M11 14 L21 14 M11 18 L17 18" stroke="#000" stroke-width="2" stroke-linecap="round"/></svg>
-                </div>
-                <span style="font-size:10px;color:#636366;">Powered by Readgate</span>
-              </div>
-
-              <div class="ss-shield-bottom">
-                <div class="ss-shield-btn">
-                  <div class="ss-shield-btn-text">Read to Unlock</div>
-                </div>
-                <div class="ss-shield-sec"><div class="ss-shield-sec-text">Not Now</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ss-label">App Shield</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section fade-in">
-    <div class="cta-inner">
-      <h2>Ready to scroll smarter?</h2>
-      <p>Download Readgate free and start earning your unlocks today.</p>
-      <a class="btn-primary" href="#">Download on the App Store</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <span class="footer-logo">Readgate</span>
-    <div class="footer-links">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
-      <a href="mailto:hello@readgateapp.com">Contact</a>
-    </div>
-    <span class="footer-copy">&copy; 2026 Readgate</span>
-  </footer>
-
-  <script>
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
-
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
