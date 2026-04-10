@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Readgate — Read to Unlock</title>
-  <meta name="description" content="Readgate blocks your most distracting apps and unlocks them only after you read a short article. Reduce screen time. Get smarter every day." />
+  <title>Readgate — Read to Unlock on iPhone</title>
+  <meta name="description" content="Readgate is an upcoming iPhone app that adds a short reading challenge before your most distracting apps. Learn how it works, plus support and privacy details ahead of launch." />
   <link rel="icon" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -111,22 +111,6 @@
     .hero-eyebrow span { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-    .svg-sprite {
-      position: absolute;
-      width: 0;
-      height: 0;
-      overflow: hidden;
-    }
-    .apple-mark {
-      display: block;
-      flex-shrink: 0;
-      fill: currentColor;
-    }
-    .apple-mark-eyebrow { width: 13px; height: 13px; }
-    .apple-mark-store { width: 21px; height: 21px; }
-    .apple-mark-feature { width: 18px; height: 18px; }
-    .apple-mark-review { width: 12px; height: 12px; }
-
     .hero-icon-wrap {
       position: relative; display: inline-block; margin-bottom: 36px;
     }
@@ -192,21 +176,12 @@
     }
     .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
 
-    /* App Store badge style */
-    .as-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-    }
-    .as-badge svg { flex-shrink: 0; }
-    .as-badge-text { text-align: left; }
-    .as-badge-small { font-size: 10px; font-weight: 400; opacity: 0.7; display: block; }
-    .as-badge-big { font-size: 16px; font-weight: 700; line-height: 1; display: block; }
-
     .hero-social {
       margin-top: 40px;
-      display: flex; align-items: center; gap: 20px;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
       font-size: 13px; color: var(--tertiary);
     }
-    .hero-social .stars { color: #fbbf24; letter-spacing: 2px; }
 
     /* ─── SCREENS / FEATURE SHOWCASE ────────────────── */
     .showcase {
@@ -599,69 +574,6 @@
       pointer-events: none; filter: blur(80px);
     }
 
-    /* ─── TESTIMONIALS ───────────────────────────────── */
-    .testimonials-section {
-      max-width: 1120px; margin: 0 auto;
-      padding: 0 24px 140px;
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 56px;
-    }
-    @media(max-width:760px){ .testimonials-grid { grid-template-columns: 1fr; } }
-    @media(min-width:761px) and (max-width:960px){ .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
-
-    .testimonial-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px 28px 24px;
-      transition: border-color .3s, transform .3s, background .3s;
-      position: relative;
-    }
-    .testimonial-card:hover {
-      border-color: rgba(255,255,255,0.12);
-      background: var(--bg3); transform: translateY(-3px);
-    }
-    .tcard-stars { color: #fbbf24; font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
-    .tcard-quote { font-size: 15px; line-height: 1.65; color: var(--label); margin-bottom: 20px; font-style: italic; }
-    .tcard-quote::before { content: '"'; }
-    .tcard-quote::after { content: '"'; }
-    .tcard-author { display: flex; align-items: center; gap: 12px; }
-    .tcard-avatar {
-      width: 36px; height: 36px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; font-weight: 700; color: #fff;
-      flex-shrink: 0;
-    }
-    .tcard-name { font-size: 14px; font-weight: 600; color: var(--label); }
-    .tcard-handle { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--secondary); margin-top: 1px; }
-
-    /* Featured (wide) testimonial */
-    .testimonial-card.featured {
-      grid-column: 1 / -1;
-      display: flex; gap: 40px; align-items: flex-start;
-      padding: 36px 40px;
-      background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
-      border-color: rgba(79,142,247,0.15);
-    }
-    @media(max-width:600px){ .testimonial-card.featured { flex-direction: column; gap: 20px; padding: 28px; } }
-    .tcard-featured-quote {
-      font-size: clamp(18px, 2.5vw, 24px);
-      line-height: 1.45; color: var(--label); font-weight: 500;
-      font-style: italic; flex: 1;
-    }
-    .tcard-featured-quote::before { content: '"'; color: var(--blue); }
-    .tcard-featured-quote::after { content: '"'; color: var(--blue); }
-    .tcard-featured-source { flex-shrink: 0; text-align: right; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; gap: 8px; }
-    @media(max-width:600px){ .tcard-featured-source { align-items: flex-start; text-align: left; } }
-    .tcard-source-label {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue);
-    }
-    .tcard-source-name { font-size: 15px; font-weight: 700; color: var(--label); }
-    .tcard-source-sub { font-size: 12px; color: var(--secondary); }
-    .tcard-source-stars { color: #fbbf24; font-size: 16px; letter-spacing: 3px; }
 
     /* ─── APP BRAND ICON BOXES ───────────────────────── */
     .app-icon {
@@ -696,25 +608,19 @@
   </style>
 </head>
 <body>
-<svg class="svg-sprite" aria-hidden="true" focusable="false">
-  <symbol id="apple-mark-icon" viewBox="0 0 24 24">
-    <path d="M17.538 12.625c-.023-2.363 1.952-3.489 2.044-3.548-1.115-1.631-2.849-1.855-3.453-1.88-1.471-.15-2.868.865-3.611.865-.743 0-1.891-.843-3.11-.82-1.599.023-3.075.93-3.897 2.364-1.664 2.888-.426 7.16 1.196 9.503.792 1.145 1.736 2.428 2.975 2.382 1.195-.046 1.646-.773 3.087-.773 1.442 0 1.846.773 3.11.751 1.285-.023 2.094-1.167 2.883-2.317.908-1.326 1.282-2.612 1.304-2.676-.029-.013-2.502-.96-2.528-3.851Zm-2.38-6.964c.66-.8 1.106-1.911.983-3.02-.953.038-2.108.636-2.794 1.434-.612.709-1.149 1.839-1.004 2.922 1.062.082 2.152-.539 2.815-1.336Z" />
-  </symbol>
-</svg>
-
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="/"><img src="/icon.png" alt="Readgate" />Readgate</a>
   <div class="nav-links">
     <a class="nav-hide" href="#how">How it works</a>
     <a class="nav-hide" href="#features">Features</a>
-    <a class="nav-cta" href="#download">Download</a>
+    <a class="nav-cta" href="/support">Support</a>
   </div>
 </nav>
 
 <!-- ══════════════════════════ HERO ══════════════════════════ -->
 <section class="hero">
-  <div class="hero-eyebrow"><span></span><svg class="apple-mark apple-mark-eyebrow"><use href="#apple-mark-icon"></use></svg>Now on the App Store</div>
+  <div class="hero-eyebrow"><span></span>Coming soon to the App Store</div>
 
   <div class="hero-icon-wrap">
     <div class="hero-icon-ring"></div>
@@ -722,19 +628,17 @@
   </div>
 
   <h1>Read to unlock.<br><span class="gradient">Get smarter.</span></h1>
-  <p class="hero-sub">Readgate blocks your most distracting apps — and only unlocks them after you read a short article. Less doom-scrolling. More learning.</p>
+  <p class="hero-sub">Readgate blocks your most distracting apps behind a short reading challenge. Built with Apple's Family Controls — no account, no tracking, no shortcuts.</p>
 
-  <div class="hero-actions" id="download">
-    <a class="btn-primary" href="#">
-      <svg class="apple-mark apple-mark-store"><use href="#apple-mark-icon"></use></svg>
-      <div class="as-badge-text"><span class="as-badge-small">Download on the</span><span class="as-badge-big">App Store</span></div>
-    </a>
+  <div class="hero-actions" id="launch">
+    <a class="btn-primary" href="/support">Support &amp; setup</a>
     <a class="btn-secondary" href="#how">See how it works →</a>
   </div>
 
   <div class="hero-social">
-    <span class="stars">★★★★★</span>
-    <span>Built for iPhone · Free to use · Privacy first</span>
+    <span>Built for iPhone</span>
+    <span>No account required</span>
+    <span>Support and privacy pages are live</span>
   </div>
 </section>
 
@@ -909,14 +813,14 @@
     <div class="feat-card reveal">
       <div class="feat-card-glow"></div>
       <div class="feat-num">01</div>
-      <h3><svg class="apple-mark apple-mark-feature"><use href="#apple-mark-icon"></use></svg>Powered by Apple Screen Time</h3>
-      <p>Blocks happen at the OS level using Apple's Family Controls framework. Apps are genuinely unavailable — there's no way to bypass it. Works exactly like Apple's own Screen Time limits, but with a smarter unlock mechanism.</p>
+      <h3>Built with Family Controls</h3>
+      <p>Readgate uses Apple's Family Controls framework to apply system-level blocking on iPhone. The full flow is designed for a native build on a physical device, which is also the expected review path.</p>
     </div>
     <div class="feat-card reveal reveal-delay-1">
       <div class="feat-card-glow"></div>
       <div class="feat-num">02</div>
       <h3>Real knowledge, every time</h3>
-      <p>Every unlock is a new article from Wikipedia — one of the most trusted sources of knowledge in the world. Science, history, art, technology. Topics rotate so you never see the same article twice.</p>
+      <p>Reading challenges draw from curated Wikipedia-based topics with local fallbacks for launch. Science, history, art, technology, and culture stay short enough to finish before your unlock window begins.</p>
     </div>
   </div>
 
@@ -931,7 +835,7 @@
       <div class="feat-card-glow"></div>
       <div class="feat-num">04</div>
       <h3>Privacy by design</h3>
-      <p>Everything stays on your device. No account required. No data sent to any server. No tracking, no analytics, no third-party SDKs. Just you, your phone, and a better habit.</p>
+      <p>Most app data stays on your device. No account, no analytics, no ads, and no third-party SDKs. In the current version, the only network requests go to Wikimedia endpoints to load article content.</p>
     </div>
   </div>
 
@@ -939,14 +843,14 @@
     <div class="feat-card reveal">
       <div class="feat-card-glow"></div>
       <div class="feat-num">05</div>
-      <h3>5 free unlocks per day</h3>
-      <p>A generous daily cap that creates just enough friction without feeling punishing. Five unlocks a day is plenty for mindful use — and the limit resets every night at midnight.</p>
+      <h3>Unlimited unlocks at launch</h3>
+      <p>The current launch build does not impose a daily unlock cap. Finish the reading challenge, take your short break, and repeat whenever you choose to reopen a blocked app.</p>
     </div>
     <div class="feat-card reveal reveal-delay-1">
       <div class="feat-card-glow"></div>
       <div class="feat-num">06</div>
-      <h3>Set up in under 2 minutes</h3>
-      <p>Grant Screen Time permission, choose your apps, done. No complex configuration, no account sign-up, no subscription required to get started. Just open the app and start blocking.</p>
+      <h3>Quick iPhone setup</h3>
+      <p>Onboarding walks through Family Controls access, blocked-app selection, and optional notifications. The support page documents the same path App Review needs to verify the experience.</p>
     </div>
   </div>
 </section>
@@ -974,15 +878,15 @@
           </div>
           <div class="p-slabel" style="margin-top:8px">DAILY LIMIT</div>
           <div class="p-card">
-            <div class="p-row"><div class="p-ib" style="background:#0A84FF"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div><div class="p-rl" style="font-size:13px">Free Unlocks</div><div class="p-rv" style="font-size:13px">5 per day</div></div>
+            <div class="p-row"><div class="p-ib" style="background:#0A84FF"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div><div class="p-rl" style="font-size:13px">Unlock Limit</div><div class="p-rv" style="font-size:13px">No daily cap</div></div>
           </div>
         </div>
       </div>
     </div>
     <div class="fshow-text">
-      <div class="fshow-kicker"><svg class="apple-mark apple-mark-feature"><use href="#apple-mark-icon"></use></svg>OS-Level Blocking</div>
-      <div class="fshow-h3">Actually blocked.<br>No workarounds.</div>
-      <p class="fshow-p">Readgate uses Apple's Family Controls framework — the same technology that powers Screen Time. When an app is blocked, it's genuinely unavailable. Not hidden, not restricted — blocked at the system level.</p>
+      <div class="fshow-kicker">System-Level Blocking</div>
+      <div class="fshow-h3">Blocking that feels<br>native on iPhone.</div>
+      <p class="fshow-p">Readgate relies on Apple's Family Controls framework and system shield flow. The app does not fake blocking with timers or overlays, and the reviewer path is documented on the support page.</p>
     </div>
   </div>
 
@@ -991,7 +895,7 @@
     <div class="fshow-text" style="border-right:1px solid var(--border);">
       <div class="fshow-kicker">The Challenge</div>
       <div class="fshow-h3">Learn something<br>every unlock.</div>
-      <p class="fshow-p">Every unlock earns you a Wikipedia article — curated for length and interest. Science, history, culture. You'll never see the same article twice, and you'll never want to skip one.</p>
+      <p class="fshow-p">Each unlock starts a short reading challenge built from curated Wikipedia content and local fallbacks. The launch version keeps the pool focused, readable, and quick to finish.</p>
     </div>
     <div class="fshow-img">
       <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%, rgba(99,102,241,0.08) 0%, transparent 60%);"></div>
@@ -1042,67 +946,16 @@
 
 </section>
 
-<!-- ══════════════════════════ TESTIMONIALS ══════════════════════════ -->
 <div class="divider"></div>
-<section class="testimonials-section reveal" style="padding-top:120px;">
-  <div class="section-eyebrow">What people say</div>
-  <div class="section-h2">Loved by readers.</div>
-
-  <div class="testimonials-grid">
-
-    <!-- Featured wide card -->
-    <div class="testimonial-card featured reveal">
-      <div class="tcard-featured-quote">The most clever app blocker I've used. Instead of just punishing you for trying to open TikTok, it actually makes you smarter. I've learned more in two weeks with Readgate than in months of scrolling.</div>
-      <div class="tcard-featured-source">
-        <div class="tcard-source-stars">★★★★★</div>
-        <div class="tcard-source-label">Early Tester</div>
-        <div class="tcard-source-name">@mindfulscroller</div>
-        <div class="tcard-source-sub">iPhone 15 Pro</div>
-      </div>
-    </div>
-
-    <!-- Regular cards -->
-    <div class="testimonial-card reveal reveal-delay-1">
-      <div class="tcard-stars">★★★★★</div>
-      <div class="tcard-quote">I've tried every screen time app. This is the only one that actually changed my behavior. Two weeks in and I've read 30+ Wikipedia articles. My brain feels different.</div>
-      <div class="tcard-author">
-        <div class="tcard-avatar" style="background:#5E5CE6">M</div>
-        <div><div class="tcard-name">Marcus T.</div><div class="tcard-handle">Early Tester</div></div>
-      </div>
-    </div>
-
-    <div class="testimonial-card reveal reveal-delay-2">
-      <div class="tcard-stars">★★★★★</div>
-      <div class="tcard-quote">Genius concept. Finally an app that uses friction for good. I now look forward to getting blocked so I can read something interesting. Wild how that works.</div>
-      <div class="tcard-author">
-        <div class="tcard-avatar" style="background:#0A84FF">S</div>
-        <div><div class="tcard-name">Sophie K.</div><div class="tcard-handle">Early Tester</div></div>
-      </div>
-    </div>
-
-    <div class="testimonial-card reveal reveal-delay-3">
-      <div class="tcard-stars">★★★★★</div>
-      <div class="tcard-quote">Setup took literally 2 minutes. Works exactly as promised. TikTok is blocked, and when I really need it I read an article first. Simple, brilliant.</div>
-      <div class="tcard-author">
-        <div class="tcard-avatar" style="background:#32D74B">J</div>
-        <div><div class="tcard-name">Jonas B.</div><div class="tcard-handle">Early Tester</div></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<div class="divider" style="margin-top:120px;"></div>
 
 <!-- ══════════════════════════ CTA ══════════════════════════ -->
 <section class="cta-section reveal">
   <div class="cta-inner">
-    <h2>Ready to scroll smarter?</h2>
-    <p>Download Readgate free and start earning your unlocks today.</p>
+    <h2>Preparing for App Store launch</h2>
+    <p>Readgate is not publicly available on the App Store yet. This site exists so App Review and early users can verify support, privacy, and the core blocking flow before release.</p>
     <div class="cta-actions">
-      <a class="btn-primary" href="#">
-        <svg class="apple-mark apple-mark-store"><use href="#apple-mark-icon"></use></svg>
-        Download on the App Store
-      </a>
+      <a class="btn-primary" href="/support">Open Support</a>
+      <a class="btn-secondary" href="/privacy">Read Privacy Policy</a>
     </div>
   </div>
 </section>
@@ -1111,9 +964,10 @@
 <footer>
   <div class="footer-logo"><img src="/icon.png" alt="Readgate" />Readgate</div>
   <div class="footer-links">
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
-    <a href="mailto:hello@readgateapp.com">Contact</a>
+    <a href="/support">Support</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="mailto:support@readgateapp.com">Contact</a>
   </div>
   <span class="footer-copy">&copy; 2026 Readgate. All rights reserved.</span>
 </footer>
