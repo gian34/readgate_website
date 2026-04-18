@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Readgate</title>
+  <meta name="description" content="Frequently asked questions about Readgate — Screen Time, privacy, blocking, streaks, and troubleshooting." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e5e5e5;
+      line-height: 1.7;
+      padding: 48px 24px 80px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; }
+    .logo { font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; display: inline-block; margin-bottom: 48px; }
+    h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .meta { font-size: 14px; color: #666; margin-bottom: 40px; }
+    a { color: #3b82f6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #1f1f1f; font-size: 13px; color: #555; }
+
+    /* ── Accordion ── */
+    .faq-list { border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; }
+
+    details {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    details:last-child { border-bottom: none; }
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: #f2f2f7;
+      list-style: none;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { background: rgba(255,255,255,0.03); }
+
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 300;
+      color: #555;
+      flex-shrink: 0;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+    details[open] > summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: #999;
+      line-height: 1.75;
+    }
+    .faq-answer p { margin-bottom: 10px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="logo" href="/">Readgate</a>
+
+    <h1>FAQ</h1>
+    <p class="meta">Common questions about Readgate. Can't find an answer? <a href="mailto:support@readgateapp.com">Contact support.</a></p>
+
+    <div class="faq-list">
+
+      <details>
+        <summary>Why does Readgate need Screen Time access?</summary>
+        <div class="faq-answer">
+          <p>Screen Time (Family Controls) is Apple's only API that lets third-party apps display a system-level shield when you open another app. Without it, Readgate can't intercept a blocked app at all.</p>
+          <p>Your permission is stored entirely on-device. Readgate never communicates with Apple or any external server about your Family Controls authorization.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Does Readgate track me or send my data anywhere?</summary>
+        <div class="faq-answer">
+          <p>No. Your sessions, streak, and blocked app selection are stored locally on your device. The only outbound network requests are to Wikipedia's public API to fetch article content.</p>
+          <p>No account, no analytics, no backend server.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>I finished reading but the app is still blocked. Why?</summary>
+        <div class="faq-answer">
+          <p>If you have another Screen Time app installed (such as Opal or Freedom), it manages its own independent shield. Readgate can only remove its own block — it has no access to other apps' shields.</p>
+          <p>Both apps need to be satisfied for the blocked app to open. If you rely primarily on Readgate, consider disabling shields in the other app.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How long is the unlock window?</summary>
+        <div class="faq-answer">
+          <p>By default, 5 minutes. Once the window expires, the shield re-activates automatically and the next time you open the blocked app requires a new reading session.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I change which apps are blocked?</summary>
+        <div class="faq-answer">
+          <p>Yes. Open Readgate, go to Settings → Manage Blocked Apps, and use Apple's native picker to add or remove apps at any time. Changes take effect immediately.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>My streak disappeared. What happened?</summary>
+        <div class="faq-answer">
+          <p>Streaks are calculated from completed reading sessions stored locally on your device. If you reinstalled Readgate or cleared app data, the history is gone.</p>
+          <p>Streaks also reset if you miss a full calendar day without completing at least one article.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>The shield doesn't appear when I open a blocked app.</summary>
+        <div class="faq-answer">
+          <p>Family Controls requires a physical iPhone running iOS 18 or later. The shield does not work in the iOS Simulator, on iPad, or on Mac.</p>
+          <p>Make sure Readgate is authorized: go to Settings → Screen Time → Readgate on your device and confirm access is enabled.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What happens if I close the article before finishing?</summary>
+        <div class="faq-answer">
+          <p>The session is abandoned and no unlock is granted. The blocked app stays blocked. A new reading session starts fresh the next time you open a blocked app.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>The notification shows "applicationName" instead of the app name.</summary>
+        <div class="faq-answer">
+          <p>This was a known issue fixed in Build 28. Update Readgate to the latest version from the App Store.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Readgate &middot; <a href="/support">Support</a> &middot; <a href="/faq">FAQ</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
+    </div>
+  </div>
+</body>
+</html>
