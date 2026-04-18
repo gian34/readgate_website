@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Readgate</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e5e5e5;
+      line-height: 1.7;
+      padding: 48px 24px 80px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; }
+    .logo { font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; display: inline-block; margin-bottom: 48px; }
+    h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .meta { font-size: 14px; color: #666; margin-bottom: 40px; }
+    h2 { font-size: 18px; font-weight: 600; color: #fff; margin: 36px 0 10px; }
+    p { color: #aaa; margin-bottom: 14px; }
+    ul { color: #aaa; padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+    a { color: #3b82f6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #1f1f1f; font-size: 13px; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="logo" href="/">Readgate</a>
+
+    <h1>Support</h1>
+    <p class="meta">Support resources for testers, early users, and App Review. Last updated: April 10, 2026.</p>
+
+    <p>For help with Readgate, contact <a href="mailto:support@readgateapp.com">support@readgateapp.com</a>.</p>
+
+    <h2>1. Availability</h2>
+    <p>Readgate is currently preparing for App Store launch. This page is live before public release so Apple App Review and early users can verify support details and the expected setup flow.</p>
+
+    <h2>2. Device requirements</h2>
+    <p>Readgate is built for iPhone and uses Apple's Family Controls frameworks. The full blocking flow requires a native iPhone build on a physical device. The Family Controls shield does not work in the iOS Simulator.</p>
+
+    <h2>3. How the app works</h2>
+    <p>Readgate lets you choose a set of apps to gate behind a short reading challenge. When you open a blocked app, iOS shows a system shield. From there, Readgate brings you back into the reading challenge so you can finish the read and unlock the app for a short break.</p>
+
+    <h2>4. Common setup issues</h2>
+    <ul>
+      <li>Make sure Family Controls access was granted during onboarding or in iOS Settings.</li>
+      <li>Make sure at least one app is selected in Apple's native app picker.</li>
+      <li>Allow notifications if you want the fastest return path from the shield back into Readgate.</li>
+      <li>If you changed your blocked apps, reopen Readgate and confirm the new selection saved successfully.</li>
+    </ul>
+
+    <h2>5. Troubleshooting</h2>
+    <ul>
+      <li>If the challenge does not open after tapping the shield action, open Readgate manually and the pending challenge should appear automatically.</li>
+      <li>If no notification appears after tapping the shield action, check whether notifications are disabled for Readgate in iOS Settings.</li>
+      <li>If the app never unlocks, complete the reading challenge and wait for the success screen before returning to the blocked app.</li>
+      <li>The unlock window is intentionally short. After it expires, the next open can require another reading break.</li>
+      <li>If stats look wrong after reinstalling, remember that the app stores usage history locally on-device.</li>
+    </ul>
+
+    <h2>6. When you contact support</h2>
+    <p>Please include:</p>
+    <ul>
+      <li>Your iPhone model and iOS version.</li>
+      <li>The Readgate app version.</li>
+      <li>A short description of the issue and the steps that reproduce it.</li>
+      <li>Screenshots or a screen recording of the shield, notification, and challenge flow if the issue is setup-related.</li>
+    </ul>
+
+    <div class="footer">
+      &copy; 2026 Readgate &middot; <a href="/support">Support</a> &middot; <a href="/faq">FAQ</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
+    </div>
+  </div>
+</body>
+</html>
