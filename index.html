@@ -453,6 +453,64 @@
     .reveal-d2 { transition-delay: .2s; }
     .reveal-d3 { transition-delay: .3s; }
 
+    /* ── PHONE GALLERY ───────────────────────────────────── */
+    .gallery-section {
+      padding: 0 24px 80px;
+      overflow: hidden;
+    }
+    .phones-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 16px;
+      perspective: 1400px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .phone-wrap-item {
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
+      flex-shrink: 0;
+    }
+    .phone-label {
+      font-size: 11px; font-weight: 500; color: var(--sub);
+      letter-spacing: .07em; text-transform: uppercase;
+    }
+    .gallery-phone {
+      width: 200px; height: 432px;
+      background: #000;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.09), 0 32px 80px rgba(0,0,0,0.7);
+      transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
+    }
+    .gallery-phone img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .gallery-phone:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 0 0 1px rgba(79,142,247,0.15), 0 48px 100px rgba(0,0,0,0.85);
+    }
+    .gp-center { transform: translateY(-16px) scale(1.06); }
+    .gp-side   { transform: rotateY(7deg) translateX(6px) scale(0.95); }
+    .gp-side-l { transform: rotateY(-7deg) translateX(-6px) scale(0.95); }
+    @media (max-width: 700px) {
+      .phones-row { gap: 10px; }
+      .gallery-phone { width: 140px; height: 302px; border-radius: 28px; }
+      .phone-label { font-size: 10px; }
+    }
+    @media (max-width: 440px) {
+      .gallery-phone { width: 110px; height: 238px; border-radius: 22px; }
+    }
+
+    /* ── MOBILE FIXES ────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .phone { width: 200px; height: 432px; border-radius: 40px; }
+      .screen { border-radius: 40px; }
+      .section { padding: 80px 24px; }
+      .trust-section { padding: 80px 24px; }
+      .stats-section { padding: 48px 24px; }
+    }
+
     /* ── DIVIDER ─────────────────────────────────────────── */
     hr {
       border: none;
@@ -517,6 +575,38 @@
       <div class="phone-dot" id="d1"></div>
       <div class="phone-dot" id="d2"></div>
       <div class="phone-dot" id="d3"></div>
+    </div>
+  </div>
+</section>
+
+<hr />
+
+<!-- PHONE GALLERY -->
+<section class="gallery-section reveal">
+  <div class="phones-row">
+    <div class="phone-wrap-item">
+      <div class="gallery-phone gp-side-l">
+        <img src="/screenshots/readgate-screen-onboarding.png" alt="Onboarding" />
+      </div>
+      <span class="phone-label">Setup</span>
+    </div>
+    <div class="phone-wrap-item">
+      <div class="gallery-phone gp-center">
+        <img src="/screenshots/readgate-screen-reading.png" alt="Reading challenge" />
+      </div>
+      <span class="phone-label">Reading challenge</span>
+    </div>
+    <div class="phone-wrap-item">
+      <div class="gallery-phone gp-side">
+        <img src="/screenshots/readgate-screen-home.png" alt="Dashboard" />
+      </div>
+      <span class="phone-label">Dashboard</span>
+    </div>
+    <div class="phone-wrap-item">
+      <div class="gallery-phone gp-side" style="transform: rotateY(10deg) translateX(10px) scale(0.91);">
+        <img src="/screenshots/readgate-screen-completion.png" alt="Well done" />
+      </div>
+      <span class="phone-label">Well done</span>
     </div>
   </div>
 </section>
