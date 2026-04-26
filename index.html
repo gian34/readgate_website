@@ -72,25 +72,18 @@
     /* ── HERO ────────────────────────────────────────────── */
     .hero {
       min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 420px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 60px;
-      padding: 80px 72px 80px;
-      max-width: 1200px;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 80px;
+      max-width: 960px;
       margin: 0 auto;
-    }
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 100px 28px 60px;
-        gap: 56px;
-        text-align: center;
-        justify-items: center;
-      }
+      position: relative;
     }
 
-    .hero-text { max-width: 560px; }
+    .hero-text { max-width: 680px; }
 
     .hero-label {
       display: inline-flex; align-items: center; gap: 7px;
@@ -129,13 +122,12 @@
     h1 em { font-style: italic; color: rgba(255,255,255,0.55); }
 
     .hero-sub {
-      font-size: 17px; font-weight: 300; color: var(--sub);
-      line-height: 1.65; max-width: 400px;
-      margin-bottom: 40px;
+      font-size: 18px; font-weight: 300; color: var(--sub);
+      line-height: 1.65; max-width: 480px;
+      margin: 0 auto 40px;
       opacity: 0; transform: translateY(16px);
       animation: rise .6s .35s forwards;
     }
-    @media (max-width: 900px) { .hero-sub { max-width: 100%; } }
 
     .hero-cta {
       opacity: 0; transform: translateY(12px);
@@ -455,20 +447,25 @@
 
     /* ── PHONE GALLERY ───────────────────────────────────── */
     .gallery-section {
-      padding: 0 24px 80px;
+      padding: 80px 24px 100px;
       overflow: hidden;
+      text-align: center;
+    }
+    .gallery-header {
+      max-width: 600px;
+      margin: 0 auto 64px;
     }
     .phones-row {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      gap: 16px;
-      perspective: 1400px;
+      gap: 20px;
+      perspective: 1600px;
       max-width: 1100px;
       margin: 0 auto;
     }
     .phone-wrap-item {
-      display: flex; flex-direction: column; align-items: center; gap: 14px;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
       flex-shrink: 0;
     }
     .phone-label {
@@ -476,29 +473,29 @@
       letter-spacing: .07em; text-transform: uppercase;
     }
     .gallery-phone {
-      width: 200px; height: 432px;
+      width: 210px; height: 454px;
       background: #000;
-      border-radius: 40px;
+      border-radius: 42px;
       overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.09), 0 32px 80px rgba(0,0,0,0.7);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.09), 0 40px 100px rgba(0,0,0,0.75);
       transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
     }
     .gallery-phone img {
       width: 100%; height: 100%; object-fit: cover; display: block;
     }
     .gallery-phone:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 0 0 1px rgba(79,142,247,0.15), 0 48px 100px rgba(0,0,0,0.85);
+      transform: translateY(-10px) !important;
+      box-shadow: 0 0 0 1px rgba(10,132,255,0.2), 0 56px 120px rgba(0,0,0,0.9);
     }
-    .gp-center { transform: translateY(-16px) scale(1.06); }
-    .gp-side   { transform: rotateY(7deg) translateX(6px) scale(0.95); }
-    .gp-side-l { transform: rotateY(-7deg) translateX(-6px) scale(0.95); }
-    @media (max-width: 700px) {
+    .gp-center { transform: translateY(-24px) scale(1.07); }
+    .gp-side   { transform: rotateY(8deg) translateX(8px) scale(0.94); }
+    .gp-side-l { transform: rotateY(-8deg) translateX(-8px) scale(0.94); }
+    @media (max-width: 760px) {
       .phones-row { gap: 10px; }
       .gallery-phone { width: 140px; height: 302px; border-radius: 28px; }
       .phone-label { font-size: 10px; }
     }
-    @media (max-width: 440px) {
+    @media (max-width: 480px) {
       .gallery-phone { width: 110px; height: 238px; border-radius: 22px; }
     }
 
@@ -537,45 +534,26 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <img src="/icon.png" alt="Readgate" class="hero-app-icon" />
+  <img src="/icon.png" alt="Readgate" class="hero-app-icon" />
 
-    <div class="hero-label">
-      <div class="hero-label-dot"></div>
-      Now on the App Store
-    </div>
-
-    <h1>Your phone is<br>making you <em>dumber.</em></h1>
-
-    <p class="hero-sub">
-      Readgate adds one short article before your most-used apps.
-      Read it, unlock, repeat. Built with Apple's Family Controls — nothing leaves your device.
-    </p>
-
-    <div class="hero-cta">
-      <a class="btn-dl" href="https://apps.apple.com/de/app/readgate/id6761989769">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Download on the App Store
-      </a>
-      <p class="hero-note">Free · iPhone only · iOS 18+</p>
-    </div>
+  <div class="hero-label">
+    <div class="hero-label-dot"></div>
+    Now on the App Store
   </div>
 
-  <!-- Animated phone -->
-  <div class="phone-wrap">
-    <div class="phone" id="phone">
-      <img src="/screenshots/readgate-screen-home.png"       alt="Readgate home"       class="screen active" id="s1" />
-      <img src="/screenshots/readgate-screen-reading.png"    alt="Reading challenge"   class="screen"        id="s2" />
-      <img src="/screenshots/readgate-screen-completion.png" alt="Well done screen"    class="screen"        id="s3" />
-      <img src="/screenshots/readgate-screen-onboarding.png" alt="Onboarding"          class="screen"        id="s4" />
-    </div>
+  <h1>Your phone is<br>making you <em>dumber.</em></h1>
 
-    <div class="phone-dots">
-      <div class="phone-dot active" id="d0"></div>
-      <div class="phone-dot" id="d1"></div>
-      <div class="phone-dot" id="d2"></div>
-      <div class="phone-dot" id="d3"></div>
-    </div>
+  <p class="hero-sub">
+    Readgate adds one short article before your most-used apps.
+    Read it, unlock, repeat. Built with Apple's Family Controls — nothing leaves your device.
+  </p>
+
+  <div class="hero-cta">
+    <a class="btn-dl" href="https://apps.apple.com/de/app/readgate/id6761989769">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+    </a>
+    <p class="hero-note">Free · iPhone only · iOS 18+</p>
   </div>
 </section>
 
@@ -583,6 +561,10 @@
 
 <!-- PHONE GALLERY -->
 <section class="gallery-section reveal">
+  <div class="gallery-header">
+    <div class="eyebrow">The experience</div>
+    <div class="section-h2">Every screen, <em>built for focus.</em></div>
+  </div>
   <div class="phones-row">
     <div class="phone-wrap-item">
       <div class="gallery-phone gp-side-l">
@@ -603,7 +585,7 @@
       <span class="phone-label">Dashboard</span>
     </div>
     <div class="phone-wrap-item">
-      <div class="gallery-phone gp-side" style="transform: rotateY(10deg) translateX(10px) scale(0.91);">
+      <div class="gallery-phone gp-side" style="transform: rotateY(10deg) translateX(10px) scale(0.88);">
         <img src="/screenshots/readgate-screen-completion.png" alt="Well done" />
       </div>
       <span class="phone-label">Well done</span>
@@ -817,24 +799,6 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('.count').forEach(el => countObs.observe(el));
 
-  // ── Phone screen cycler
-  const screens = ['s1', 's2', 's3', 's4'];
-  const dots    = ['d0', 'd1', 'd2', 'd3'];
-  let current   = 0;
-
-  function showScreen(idx) {
-    screens.forEach((id, i) => {
-      document.getElementById(id).classList.toggle('active', i === idx);
-    });
-    dots.forEach((id, i) => {
-      document.getElementById(id).classList.toggle('active', i === idx);
-    });
-  }
-
-  setInterval(() => {
-    current = (current + 1) % screens.length;
-    showScreen(current);
-  }, 3000);
 </script>
 </body>
 </html>
