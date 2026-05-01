@@ -47,16 +47,16 @@
 
     <h2>2. Information sent over the network</h2>
     <p>When Readgate fetches a reading challenge, it requests article content from Wikipedia's public REST API. These requests are made from your device to Wikimedia servers and may include technical request data such as your IP address, user agent, and request timing under Wikimedia's own policies.</p>
+    <p>Readgate may also fetch a first-party curated article-title index from readgateapp.com so the app can keep its reading pool fresh without requiring an app update.</p>
     <p>Readgate uses RevenueCat to present the Pro paywall and manage subscription status. RevenueCat may receive purchase and subscription information, an anonymous RevenueCat app user identifier, product identifiers, app and device information needed to process purchases, and limited paywall context such as where the paywall was opened. Payments are processed by Apple through the App Store.</p>
     <p>Readgate does not require account creation and does not use analytics data for advertising targeting.</p>
 
-    <h2>3. Analytics and crash reporting</h2>
-    <p>To improve app quality and reliability, Readgate uses two third-party services:</p>
+    <h2>3. Crash reporting</h2>
+    <p>To improve app quality and reliability, Readgate uses one third-party crash reporting service:</p>
     <ul>
-      <li><strong>Sentry</strong> (crash reporting): captures crash logs and error traces when the app encounters an unexpected failure. Logs include device model, OS version, app version, and a stack trace. No personally identifiable information is attached. Data is retained for 90 days.</li>
-      <li><strong>PostHog</strong> (usage analytics): captures anonymised product events such as challenge completed, paywall viewed, and onboarding step reached. Each installation is assigned a random UUID at first launch. This ID is not linked to your name, email, Apple ID, RevenueCat ID, or any other identifier. Data is retained for 12 months.</li>
+      <li><strong>Sentry</strong> (crash reporting): captures crash logs and error traces when the app encounters an unexpected failure. Logs include device model, OS version, app version, and a stack trace. Readgate configures Sentry without default PII and scrubs app/article context from events where possible. Data is retained for 90 days.</li>
     </ul>
-    <p>Neither service receives your name, email address, Apple ID, or any other personally identifiable information.</p>
+    <p>Readgate does not send your name, email address, Apple ID, or advertising identifier to Sentry. Readgate does not currently use third-party product analytics.</p>
 
     <h2>4. Information we do not intentionally collect</h2>
     <ul>
@@ -78,13 +78,13 @@
     </ul>
 
     <h2>6. Sharing</h2>
-    <p>We do not sell your personal information. The app communicates externally with: Wikipedia/Wikimedia for reading content; Apple for App Store purchases; RevenueCat for subscription management; Sentry for crash reporting; and PostHog for anonymous usage analytics.</p>
+    <p>We do not sell your personal information. The app communicates externally with: Wikipedia/Wikimedia for reading content; readgateapp.com for a curated article-title index; Apple for App Store purchases; RevenueCat for subscription management; and Sentry for crash reporting.</p>
     <p>RevenueCat is used only to support purchases, restore purchases, subscription status, and paywall presentation. Readgate does not use RevenueCat data for third-party advertising tracking.</p>
 
     <h2>7. Retention and deletion</h2>
     <p>Data stored by the app remains on your device until you delete it by uninstalling the app or clearing the app's local data through device-level tools, if available.</p>
     <p>Subscription records are retained by Apple and RevenueCat as needed to process purchases, renewals, cancellations, refunds, and restore requests.</p>
-    <p>Crash logs are retained by Sentry for 90 days. Anonymous usage analytics are retained by PostHog for 12 months. Neither service stores personally identifiable information.</p>
+    <p>Crash logs are retained by Sentry for 90 days. Readgate does not intentionally send personally identifiable information to Sentry.</p>
 
     <h2>8. Children's privacy</h2>
     <p>Readgate is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
