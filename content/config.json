@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "minimumSupportedVersion": "1.1.0",
+  "articlePool": {
+    "enabled": true,
+    "url": "https://readgateapp.com/content/articles.json",
+    "version": 1
+  },
+  "features": {
+    "articleNetwork": true,
+    "featuredArticles": false,
+    "randomArticles": false
+  },
+  "killSwitches": {
+    "articleNetwork": false,
+    "remoteArticlePool": false,
+    "hideUpgradePrompts": false,
+    "sentryEvents": false
+  }
+}
