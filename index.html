@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Readgate: Turn Scroll Impulses Into Knowledge</title>
-  <meta name="description" content="Every time you open Instagram, Readgate shows a short Wikipedia article first. Read it, unlock your app. Turn scroll impulses into knowledge moments — no account required." />
+  <meta name="description" content="Every time you open a distracting app, Readgate shows a short Wikipedia article first. Read it, unlock your app. Turn scroll impulses into knowledge moments — no account required." />
   <link rel="icon" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -445,58 +445,88 @@
     .reveal-d2 { transition-delay: .2s; }
     .reveal-d3 { transition-delay: .3s; }
 
-    /* ── PHONE GALLERY ───────────────────────────────────── */
+    /* ── SCREENSHOT CAROUSEL ────────────────────────────────── */
     .gallery-section {
-      padding: 80px 24px 100px;
+      padding: 80px 0 60px;
       overflow: hidden;
       text-align: center;
     }
     .gallery-header {
       max-width: 600px;
-      margin: 0 auto 64px;
+      margin: 0 auto 56px;
+      padding: 0 24px;
     }
-    .phones-row {
+
+    /* Desktop: static 3D perspective row */
+    .ss-row {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      gap: 20px;
-      perspective: 1600px;
+      gap: 14px;
       max-width: 1100px;
       margin: 0 auto;
+      perspective: 1600px;
+      padding: 20px 24px 40px;
     }
-    .phone-wrap-item {
-      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    .ss-card {
       flex-shrink: 0;
-    }
-    .phone-label {
-      font-size: 11px; font-weight: 500; color: var(--sub);
-      letter-spacing: .07em; text-transform: uppercase;
-    }
-    .gallery-phone {
-      width: 210px; height: 454px;
-      background: #000;
-      border-radius: 42px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.09), 0 40px 100px rgba(0,0,0,0.75);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.65);
       transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
     }
-    .gallery-phone img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
+    .ss-card img { width: 100%; height: auto; display: block; }
+    .ss-card:hover {
+      transform: translateY(-14px) !important;
+      box-shadow: 0 0 0 1px rgba(10,132,255,0.18), 0 48px 110px rgba(0,0,0,0.9);
     }
-    .gallery-phone:hover {
-      transform: translateY(-10px) !important;
-      box-shadow: 0 0 0 1px rgba(10,132,255,0.2), 0 56px 120px rgba(0,0,0,0.9);
+    .ss-c0 { width: 165px; transform: rotateY(-9deg) translateX(-10px) scale(0.88); }
+    .ss-c1 { width: 182px; transform: translateY(-10px) scale(0.96); }
+    .ss-c2 { width: 200px; transform: translateY(-28px) scale(1.07); }
+    .ss-c3 { width: 182px; transform: translateY(-10px) scale(0.96); }
+    .ss-c4 { width: 165px; transform: rotateY(9deg) translateX(10px) scale(0.88); }
+
+    /* Dots */
+    .ss-dots {
+      display: none;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 20px;
     }
-    .gp-center { transform: translateY(-24px) scale(1.07); }
-    .gp-side   { transform: rotateY(8deg) translateX(8px) scale(0.94); }
-    .gp-side-l { transform: rotateY(-8deg) translateX(-8px) scale(0.94); }
+    .ss-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--dim);
+      transition: background .3s, transform .3s;
+    }
+    .ss-dot.active { background: var(--label); transform: scale(1.4); }
+
+    /* Mobile: swipeable carousel */
     @media (max-width: 760px) {
-      .phones-row { gap: 10px; }
-      .gallery-phone { width: 140px; height: 302px; border-radius: 28px; }
-      .phone-label { font-size: 10px; }
+      .ss-row {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 14px;
+        perspective: none;
+        padding: 12px max(24px, calc(50vw - 128px));
+        max-width: none;
+      }
+      .ss-row::-webkit-scrollbar { display: none; }
+      .ss-card {
+        scroll-snap-align: center;
+        width: 256px !important;
+        transform: none !important;
+        border-radius: 22px;
+      }
+      .ss-card:hover { transform: none !important; }
+      .ss-dots { display: flex; }
     }
-    @media (max-width: 480px) {
-      .gallery-phone { width: 110px; height: 238px; border-radius: 22px; }
+    @media (max-width: 430px) {
+      .ss-card { width: 224px !important; }
+      .ss-row { padding: 12px max(20px, calc(50vw - 112px)); }
     }
 
     /* ── MOBILE FIXES ────────────────────────────────────── */
@@ -544,7 +574,7 @@
   <h1>Turn scroll impulses<br>into <em>knowledge moments.</em></h1>
 
   <p class="hero-sub">
-    Every time you open Instagram, Readgate shows a short Wikipedia article first.
+    Every time you open a distracting app, Readgate shows a short Wikipedia article first.
     Read it, unlock your app, repeat. Small moments that add up — no account required.
   </p>
 
@@ -559,37 +589,35 @@
 
 <hr />
 
-<!-- PHONE GALLERY -->
+<!-- SCREENSHOT CAROUSEL -->
 <section class="gallery-section reveal">
   <div class="gallery-header">
     <div class="eyebrow">The experience</div>
     <div class="section-h2">Every screen, <em>built for focus.</em></div>
   </div>
-  <div class="phones-row">
-    <div class="phone-wrap-item">
-      <div class="gallery-phone gp-side-l">
-        <img src="/screenshots/readgate-screen-onboarding.png" alt="Onboarding" />
-      </div>
-      <span class="phone-label">Setup</span>
+  <div class="ss-row" id="ssRow">
+    <div class="ss-card ss-c0">
+      <img src="/screenshots/readgate-ss-goal.png" alt="Build a reading habit" loading="lazy" />
     </div>
-    <div class="phone-wrap-item">
-      <div class="gallery-phone gp-center">
-        <img src="/screenshots/readgate-screen-reading.png" alt="Reading challenge" />
-      </div>
-      <span class="phone-label">Reading challenge</span>
+    <div class="ss-card ss-c1">
+      <img src="/screenshots/readgate-ss-howitworks.png" alt="A quick read" loading="lazy" />
     </div>
-    <div class="phone-wrap-item">
-      <div class="gallery-phone gp-side">
-        <img src="/screenshots/readgate-screen-home.png" alt="Dashboard" />
-      </div>
-      <span class="phone-label">Dashboard</span>
+    <div class="ss-card ss-c2">
+      <img src="/screenshots/readgate-ss-hero.png" alt="Read every day" loading="lazy" />
     </div>
-    <div class="phone-wrap-item">
-      <div class="gallery-phone gp-side" style="transform: rotateY(10deg) translateX(10px) scale(0.88);">
-        <img src="/screenshots/readgate-screen-completion.png" alt="Well done" />
-      </div>
-      <span class="phone-label">Well done</span>
+    <div class="ss-card ss-c3">
+      <img src="/screenshots/readgate-ss-reading.png" alt="Read something new" loading="lazy" />
     </div>
+    <div class="ss-card ss-c4">
+      <img src="/screenshots/readgate-ss-privacy.png" alt="Private reading, always" loading="lazy" />
+    </div>
+  </div>
+  <div class="ss-dots" id="ssDots">
+    <div class="ss-dot active"></div>
+    <div class="ss-dot"></div>
+    <div class="ss-dot"></div>
+    <div class="ss-dot"></div>
+    <div class="ss-dot"></div>
   </div>
 </section>
 
@@ -604,7 +632,7 @@
     <div class="step reveal">
       <div class="step-n">1</div>
       <h3>Redirect your apps</h3>
-      <p>Choose which apps to redirect — Instagram, TikTok, YouTube. Uses Apple's native Screen Time framework. No VPN, no workarounds.</p>
+      <p>Choose which apps to redirect — social media, video, news, or anything else. Uses Apple's native Screen Time framework. No VPN, no workarounds.</p>
     </div>
     <div class="step reveal reveal-d1">
       <div class="step-n">2</div>
@@ -797,6 +825,22 @@
     });
   }, { threshold: 0.5 });
   document.querySelectorAll('.count').forEach(el => countObs.observe(el));
+
+  // ── Screenshot carousel dots (mobile only)
+  const ssRow = document.getElementById('ssRow');
+  const ssDotEls = document.querySelectorAll('#ssDots .ss-dot');
+  if (ssRow && ssDotEls.length) {
+    const ssCards = ssRow.querySelectorAll('.ss-card');
+    const dotObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+          const idx = Array.from(ssCards).indexOf(e.target);
+          ssDotEls.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+      });
+    }, { root: ssRow, threshold: 0.5 });
+    ssCards.forEach(c => dotObs.observe(c));
+  }
 
 </script>
 </body>
