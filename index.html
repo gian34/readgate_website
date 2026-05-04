@@ -457,7 +457,6 @@
       padding: 0 24px;
     }
 
-    /* Ambient glow layer behind the row */
     .ss-stage {
       position: relative;
     }
@@ -466,84 +465,110 @@
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -56%);
-      width: 800px; height: 700px;
+      width: 900px; height: 800px;
       background: radial-gradient(ellipse at center,
-        rgba(10,132,255,0.18) 0%,
-        rgba(10,132,255,0.06) 35%,
+        rgba(10,132,255,0.16) 0%,
+        rgba(10,132,255,0.05) 40%,
         transparent 65%);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Desktop: 3D perspective row */
+    /* Desktop: 3D perspective row — ss-item is the transform unit */
     .ss-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 18px;
-      max-width: 1200px;
+      gap: 20px;
+      max-width: 1300px;
       margin: 0 auto;
-      perspective: 2200px;
-      padding: 48px 24px 72px;
+      perspective: 2400px;
+      padding: 48px 24px 80px;
       position: relative;
       z-index: 1;
+    }
+
+    .ss-item {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+      transition: transform .5s cubic-bezier(.2,.8,.2,1);
     }
 
     .ss-card {
-      flex-shrink: 0;
       border-radius: 22px;
       overflow: hidden;
-      transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s;
-      position: relative;
-      z-index: 1;
+      width: 100%;
+      transition: box-shadow .5s;
     }
     .ss-card img { width: 100%; height: auto; display: block; }
 
-    .ss-c0 {
-      width: 188px;
-      transform: rotateY(-16deg) translateX(-20px) scale(0.82);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.75);
-    }
-    .ss-c1 {
-      width: 218px;
-      transform: rotateY(-6deg) translateX(-8px) translateY(16px) scale(0.91);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.75);
-    }
-    .ss-c2 {
-      width: 310px;
-      transform: translateY(-12px) scale(1.0);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.07),
-        0 56px 140px rgba(0,0,0,0.9),
-        0 0 100px rgba(10,132,255,0.18);
-      z-index: 3;
-    }
-    .ss-c3 {
-      width: 218px;
-      transform: rotateY(6deg) translateX(8px) translateY(16px) scale(0.91);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.75);
-    }
-    .ss-c4 {
-      width: 188px;
-      transform: rotateY(16deg) translateX(20px) scale(0.82);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.75);
+    .ss-label {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      color: var(--dim); transition: color .3s;
     }
 
-    .ss-card:hover {
-      transform: translateY(-18px) scale(1.04) !important;
+    /* Per-card sizes, transforms, borders */
+    .ss-c0 {
+      width: 196px;
+      transform: rotateY(-15deg) translateX(-18px) scale(0.83);
+    }
+    .ss-c0 .ss-card { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 16px 50px rgba(0,0,0,0.8); }
+
+    .ss-c1 {
+      width: 236px;
+      transform: rotateY(-5deg) translateX(-6px) translateY(20px) scale(0.92);
+    }
+    .ss-c1 .ss-card { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.13), 0 28px 70px rgba(0,0,0,0.8); }
+
+    .ss-c2 {
+      width: 360px;
+      transform: translateY(-16px);
+      z-index: 3;
+    }
+    .ss-c2 .ss-card {
       box-shadow:
-        0 0 0 1px rgba(10,132,255,0.25),
-        0 64px 140px rgba(0,0,0,0.95),
-        0 0 80px rgba(10,132,255,0.15) !important;
+        inset 0 0 0 1px rgba(255,255,255,0.18),
+        0 56px 140px rgba(0,0,0,0.9),
+        0 0 120px rgba(10,132,255,0.22);
+    }
+    .ss-c2 .ss-label { color: var(--sub); }
+
+    .ss-c3 {
+      width: 236px;
+      transform: rotateY(5deg) translateX(6px) translateY(20px) scale(0.92);
+    }
+    .ss-c3 .ss-card { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.13), 0 28px 70px rgba(0,0,0,0.8); }
+
+    .ss-c4 {
+      width: 196px;
+      transform: rotateY(15deg) translateX(18px) scale(0.83);
+    }
+    .ss-c4 .ss-card { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 16px 50px rgba(0,0,0,0.8); }
+
+    .ss-item:hover {
+      transform: translateY(-20px) scale(1.05) !important;
       z-index: 10;
     }
+    .ss-item:hover .ss-card {
+      box-shadow:
+        inset 0 0 0 1px rgba(10,132,255,0.45),
+        0 64px 140px rgba(0,0,0,0.95),
+        0 0 80px rgba(10,132,255,0.2) !important;
+    }
+    .ss-item:hover .ss-label { color: var(--blue); }
 
     /* Dots (mobile only) */
     .ss-dots {
       display: none;
       justify-content: center;
       gap: 6px;
-      margin-top: 24px;
+      margin-top: 8px;
     }
     .ss-dot {
       width: 5px; height: 5px; border-radius: 50%;
@@ -568,19 +593,23 @@
         max-width: none;
       }
       .ss-row::-webkit-scrollbar { display: none; }
-      .ss-card {
+      .ss-item {
         scroll-snap-align: center;
         width: 300px !important;
         transform: none !important;
-        border-radius: 24px;
-        box-shadow: 0 24px 64px rgba(0,0,0,0.75) !important;
       }
-      .ss-card:hover { transform: none !important; box-shadow: 0 24px 64px rgba(0,0,0,0.75) !important; }
+      .ss-item:hover { transform: none !important; }
+      .ss-item .ss-card {
+        border-radius: 24px;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.13), 0 24px 64px rgba(0,0,0,0.8) !important;
+      }
+      .ss-item:hover .ss-card { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.13), 0 24px 64px rgba(0,0,0,0.8) !important; }
+      .ss-label { font-size: 11px; }
       .ss-dots { display: flex; }
     }
     @media (max-width: 480px) {
-      .ss-card { width: 270px !important; }
-      .ss-row { padding: 16px max(20px, calc(50vw - 135px)); }
+      .ss-item { width: 272px !important; }
+      .ss-row { padding: 16px max(20px, calc(50vw - 136px)); }
     }
 
     /* ── MOBILE FIXES ────────────────────────────────────── */
@@ -651,20 +680,25 @@
   </div>
   <div class="ss-stage">
     <div class="ss-row" id="ssRow">
-      <div class="ss-card ss-c0">
-        <img src="/screenshots/readgate-ss-goal.png" alt="Build a reading habit" loading="lazy" />
+      <div class="ss-item ss-c0">
+        <div class="ss-card"><img src="/screenshots/readgate-ss-goal.png" alt="Build a reading habit" loading="lazy" /></div>
+        <span class="ss-label">Your goal</span>
       </div>
-      <div class="ss-card ss-c1">
-        <img src="/screenshots/readgate-ss-howitworks.png" alt="A quick read" loading="lazy" />
+      <div class="ss-item ss-c1">
+        <div class="ss-card"><img src="/screenshots/readgate-ss-howitworks.png" alt="A quick read" loading="lazy" /></div>
+        <span class="ss-label">How it works</span>
       </div>
-      <div class="ss-card ss-c2">
-        <img src="/screenshots/readgate-ss-hero.png" alt="Read every day" loading="lazy" />
+      <div class="ss-item ss-c2">
+        <div class="ss-card"><img src="/screenshots/readgate-ss-hero.png" alt="Read every day" loading="lazy" /></div>
+        <span class="ss-label">Read every day</span>
       </div>
-      <div class="ss-card ss-c3">
-        <img src="/screenshots/readgate-ss-reading.png" alt="Read something new" loading="lazy" />
+      <div class="ss-item ss-c3">
+        <div class="ss-card"><img src="/screenshots/readgate-ss-reading.png" alt="Read something new" loading="lazy" /></div>
+        <span class="ss-label">The article</span>
       </div>
-      <div class="ss-card ss-c4">
-        <img src="/screenshots/readgate-ss-privacy.png" alt="Private reading, always" loading="lazy" />
+      <div class="ss-item ss-c4">
+        <div class="ss-card"><img src="/screenshots/readgate-ss-privacy.png" alt="Private reading, always" loading="lazy" /></div>
+        <span class="ss-label">Private</span>
       </div>
     </div>
   </div>
@@ -886,16 +920,16 @@
   const ssRow = document.getElementById('ssRow');
   const ssDotEls = document.querySelectorAll('#ssDots .ss-dot');
   if (ssRow && ssDotEls.length) {
-    const ssCards = ssRow.querySelectorAll('.ss-card');
+    const ssItems = ssRow.querySelectorAll('.ss-item');
     const dotObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting && e.intersectionRatio >= 0.5) {
-          const idx = Array.from(ssCards).indexOf(e.target);
+          const idx = Array.from(ssItems).indexOf(e.target);
           ssDotEls.forEach((d, i) => d.classList.toggle('active', i === idx));
         }
       });
     }, { root: ssRow, threshold: 0.5 });
-    ssCards.forEach(c => dotObs.observe(c));
+    ssItems.forEach(c => dotObs.observe(c));
   }
 
 </script>
