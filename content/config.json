@@ -4,7 +4,7 @@
   "articlePool": {
     "enabled": true,
     "url": "https://readgateapp.com/content/articles.json",
-    "version": 1
+    "version": 2
   },
   "features": {
     "articleNetwork": true,

@@ -1,192 +1,2635 @@
 [
-  "Dunning–Kruger_effect",
-  "Bystander_effect",
-  "Stockholm_syndrome",
-  "Milgram_experiment",
-  "Stanford_prison_experiment",
-  "Placebo_effect",
-  "Confirmation_bias",
-  "Cognitive_dissonance",
-  "Sunk_cost",
-  "Loss_aversion",
-  "Mere_exposure_effect",
-  "Hawthorne_effect",
-  "Attachment_theory",
-  "Procrastination",
-  "Imposter_syndrome",
-  "Flow_(psychology)",
-  "Learned_helplessness",
-  "Maslow's_hierarchy_of_needs",
-  "Emotional_intelligence",
-  "Narcissism",
-  "Altruism",
-  "Cognitive_behavioral_therapy",
-  "Dopamine",
-  "Serotonin",
-  "Neuroplasticity",
-  "Sleep",
-  "Habit",
-  "Willpower",
-  "Decision_fatigue",
-  "Compound_interest",
-  "Inflation",
-  "Bitcoin",
-  "Tulip_mania",
-  "Ponzi_scheme",
-  "Stock_market_crash",
-  "Wall_Street_Crash_of_1929",
-  "Great_Depression",
-  "Behavioral_economics",
-  "Index_fund",
-  "Warren_Buffett",
-  "Microfinance",
-  "Gold_standard",
-  "Federal_Reserve",
-  "Opportunity_cost",
-  "Supply_and_demand",
-  "Venture_capital",
-  "Cryptocurrency",
-  "Economic_inequality",
-  "Poverty",
-  "Circular_economy",
-  "Chernobyl_disaster",
-  "Titanic",
-  "Cuban_Missile_Crisis",
-  "Manhattan_Project",
-  "Black_Death",
-  "Great_Fire_of_London",
-  "Berlin_Wall",
-  "Space_Race",
-  "Apollo_13",
-  "Hiroshima",
-  "Operation_Mincemeat",
-  "Assassination_of_Archduke_Franz_Ferdinand",
-  "Munich_Agreement",
-  "Storming_of_the_Bastille",
-  "Pompeii",
-  "Library_of_Alexandria",
-  "Gutenberg_Bible",
-  "Nelson_Mandela",
-  "Mahatma_Gandhi",
-  "Marcus_Aurelius",
-  "Nikola_Tesla",
-  "Marie_Curie",
-  "Alan_Turing",
-  "Ada_Lovelace",
-  "Quantum_entanglement",
-  "Heisenberg_uncertainty_principle",
-  "Theory_of_relativity",
-  "Evolution",
-  "Natural_selection",
-  "CRISPR",
-  "Gut_microbiome",
-  "Epigenetics",
-  "Fermi_paradox",
-  "Dark_matter",
-  "Photosynthesis",
-  "Metabolism",
-  "RNA",
-  "Antibiotic_resistance",
-  "Vaccine",
-  "Placebo",
-  "Anesthesia",
-  "Immune_system",
-  "Stem_cell",
-  "Black_hole",
-  "Neutron_star",
-  "Big_Bang",
-  "Exoplanet",
-  "Andromeda_Galaxy",
-  "International_Space_Station",
-  "SpaceX",
-  "Artemis_program",
-  "Octopus",
-  "Mantis_shrimp",
-  "Turritopsis_dohrnii",
-  "Tardigrade",
-  "Axolotl",
-  "Platypus",
-  "Electric_eel",
-  "Bioluminescence",
-  "Camouflage",
-  "Mycorrhiza",
-  "Monarch_butterfly",
-  "Crow",
-  "Tool_use_by_animals",
-  "Animal_cognition",
-  "Symbiosis",
-  "Honey_bee",
-  "Giant_panda",
-  "Komodo_dragon",
-  "Plankton",
-  "Coral_reef",
-  "GPS",
-  "Internet",
-  "Blockchain",
-  "Machine_learning",
-  "Neural_network",
-  "Artificial_intelligence",
-  "Nuclear_reactor",
-  "MRI",
-  "Refrigeration",
-  "Printing_press",
-  "Steam_engine",
-  "Penicillin",
-  "X-ray",
-  "Transistor",
-  "Telephone",
-  "Photography",
-  "Natural_language_processing",
-  "Autonomous_vehicle",
-  "Electric_vehicle",
-  "Renewable_energy",
-  "Solar_energy",
-  "Nanotechnology",
-  "Stoicism",
-  "Existentialism",
-  "Allegory_of_the_cave",
-  "Socratic_method",
-  "Epicurus",
-  "Seneca_the_Younger",
-  "Free_will",
-  "Consciousness",
-  "Meaning_of_life",
-  "Social_contract",
-  "Pragmatism",
-  "Buddhism",
-  "Meditation",
-  "Mindfulness",
-  "Chess",
-  "Jazz",
-  "Hip_hop_music",
-  "Bauhaus",
-  "Pop_art",
-  "Science_fiction",
-  "Mythology",
-  "Coffee",
-  "Chocolate",
-  "Fermentation",
-  "Mediterranean_diet",
-  "Spice_trade",
-  "Silk_Road",
-  "Trade_union",
-  "Universal_Declaration_of_Human_Rights",
-  "Welfare_state",
-  "Philanthropy",
-  "Biomimicry",
-  "Microplastics",
-  "Carbon_capture_and_storage",
-  "Ocean_acidification",
-  "Deforestation",
-  "Urbanization",
-  "Social_media",
-  "Attention_economy",
-  "Filter_bubble",
-  "Misinformation",
-  "Surveillance_capitalism",
-  "Imposter_syndrome",
-  "Burnout",
-  "Work–life_balance",
-  "Remote_work",
-  "Gig_economy"
+  {
+    "title": "Dunning–Kruger_effect",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.72,
+    "tags": [
+      "dunning",
+      "kruger",
+      "effect"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Bystander_effect",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.72,
+    "tags": [
+      "bystander",
+      "effect"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Stockholm_syndrome",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.72,
+    "tags": [
+      "stockholm",
+      "syndrome"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Milgram_experiment",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.72,
+    "tags": [
+      "milgram",
+      "experiment"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Stanford_prison_experiment",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.72,
+    "tags": [
+      "stanford",
+      "prison",
+      "experiment"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Placebo_effect",
+    "categories": [
+      "Psychology",
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "placebo",
+      "effect"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Confirmation_bias",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "confirmation",
+      "bias"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Cognitive_dissonance",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "cognitive",
+      "dissonance"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Sunk_cost",
+    "categories": [
+      "Finance",
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "sunk",
+      "cost"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Loss_aversion",
+    "categories": [
+      "Finance",
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "loss",
+      "aversion"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Mere_exposure_effect",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "mere",
+      "exposure",
+      "effect"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Hawthorne_effect",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "hawthorne",
+      "effect"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Attachment_theory",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "attachment",
+      "theory"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Procrastination",
+    "categories": [
+      "Productivity",
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "procrastination"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Imposter_syndrome",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.71,
+    "tags": [
+      "imposter",
+      "syndrome"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Flow_(psychology)",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "flow",
+      "psychology"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Learned_helplessness",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "learned",
+      "helplessness"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Maslow's_hierarchy_of_needs",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "maslow",
+      "hierarchy",
+      "needs"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Emotional_intelligence",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "emotional",
+      "intelligence"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Narcissism",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "narcissism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Altruism",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "altruism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Cognitive_behavioral_therapy",
+    "categories": [
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "cognitive",
+      "behavioral",
+      "therapy"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Dopamine",
+    "categories": [
+      "Psychology",
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "dopamine"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Serotonin",
+    "categories": [
+      "Psychology",
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "serotonin"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Neuroplasticity",
+    "categories": [
+      "Science",
+      "Psychology"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.7,
+    "tags": [
+      "neuroplasticity"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Sleep",
+    "categories": [
+      "Science",
+      "Psychology"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "sleep"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Habit",
+    "categories": [
+      "Psychology",
+      "Productivity"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "habit"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Willpower",
+    "categories": [
+      "Productivity",
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "willpower"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Decision_fatigue",
+    "categories": [
+      "Productivity",
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "decision",
+      "fatigue"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Compound_interest",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "compound",
+      "interest"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Inflation",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "inflation"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Bitcoin",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "bitcoin"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Tulip_mania",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "tulip",
+      "mania"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Ponzi_scheme",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "ponzi",
+      "scheme"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Stock_market_crash",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.69,
+    "tags": [
+      "stock",
+      "market",
+      "crash"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Wall_Street_Crash_of_1929",
+    "categories": [
+      "Finance",
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.68,
+    "tags": [
+      "wall",
+      "street",
+      "crash",
+      "1929"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Great_Depression",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "great",
+      "depression"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Behavioral_economics",
+    "categories": [
+      "Finance",
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "behavioral",
+      "economics"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Index_fund",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "index",
+      "fund"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Warren_Buffett",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "warren",
+      "buffett"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Microfinance",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "microfinance"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Gold_standard",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "gold",
+      "standard"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Federal_Reserve",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "federal",
+      "reserve"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Opportunity_cost",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "opportunity",
+      "cost"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Supply_and_demand",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.68,
+    "tags": [
+      "supply",
+      "and",
+      "demand"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Venture_capital",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.67,
+    "tags": [
+      "venture",
+      "capital"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Cryptocurrency",
+    "categories": [
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.67,
+    "tags": [
+      "cryptocurrency"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Economic_inequality",
+    "categories": [
+      "Finance",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.67,
+    "tags": [
+      "economic",
+      "inequality"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Poverty",
+    "categories": [
+      "Finance",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.67,
+    "tags": [
+      "poverty"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Circular_economy",
+    "categories": [
+      "Society",
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.67,
+    "tags": [
+      "circular",
+      "economy"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Chernobyl_disaster",
+    "categories": [
+      "History",
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.67,
+    "tags": [
+      "chernobyl",
+      "disaster"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Titanic",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.67,
+    "tags": [
+      "titanic"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Cuban_Missile_Crisis",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.67,
+    "tags": [
+      "cuban",
+      "missile",
+      "crisis"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Manhattan_Project",
+    "categories": [
+      "History",
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.67,
+    "tags": [
+      "manhattan",
+      "project"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Black_Death",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.67,
+    "tags": [
+      "black",
+      "death"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Great_Fire_of_London",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "great",
+      "fire",
+      "london"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Berlin_Wall",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "berlin",
+      "wall"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Space_Race",
+    "categories": [
+      "Space",
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "space",
+      "race"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Apollo_13",
+    "categories": [
+      "Space",
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "apollo"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Hiroshima",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "hiroshima"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Operation_Mincemeat",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "operation",
+      "mincemeat"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Assassination_of_Archduke_Franz_Ferdinand",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "assassination",
+      "archduke",
+      "franz",
+      "ferdinand"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Munich_Agreement",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "munich",
+      "agreement"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Storming_of_the_Bastille",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "storming",
+      "the",
+      "bastille"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Pompeii",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "pompeii"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Library_of_Alexandria",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.66,
+    "tags": [
+      "library",
+      "alexandria"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Gutenberg_Bible",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "gutenberg",
+      "bible"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Nelson_Mandela",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "nelson",
+      "mandela"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Mahatma_Gandhi",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "mahatma",
+      "gandhi"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Marcus_Aurelius",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "marcus",
+      "aurelius"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Nikola_Tesla",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "nikola",
+      "tesla"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Marie_Curie",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "marie",
+      "curie"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Alan_Turing",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "alan",
+      "turing"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Ada_Lovelace",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.65,
+    "tags": [
+      "ada",
+      "lovelace"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Quantum_entanglement",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.65,
+    "tags": [
+      "quantum",
+      "entanglement"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Heisenberg_uncertainty_principle",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.65,
+    "tags": [
+      "heisenberg",
+      "uncertainty",
+      "principle"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Theory_of_relativity",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "theory",
+      "relativity"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Evolution",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "evolution"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Natural_selection",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "natural",
+      "selection"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "CRISPR",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "crispr"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Gut_microbiome",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "gut",
+      "microbiome"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Epigenetics",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "epigenetics"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Fermi_paradox",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "fermi",
+      "paradox"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Dark_matter",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "dark",
+      "matter"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Photosynthesis",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "photosynthesis"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Metabolism",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.64,
+    "tags": [
+      "metabolism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "RNA",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "rna"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Antibiotic_resistance",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "antibiotic",
+      "resistance"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Vaccine",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "vaccine"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Placebo",
+    "categories": [
+      "Science",
+      "Psychology"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "placebo"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Anesthesia",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "anesthesia"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Immune_system",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "immune",
+      "system"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Stem_cell",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "stem",
+      "cell"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Black_hole",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "black",
+      "hole"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Neutron_star",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "neutron",
+      "star"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Big_Bang",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.63,
+    "tags": [
+      "big",
+      "bang"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Exoplanet",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "exoplanet"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Andromeda_Galaxy",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "andromeda",
+      "galaxy"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "International_Space_Station",
+    "categories": [
+      "Science",
+      "Space"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "international",
+      "space",
+      "station"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "SpaceX",
+    "categories": [
+      "Space",
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "spacex"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Artemis_program",
+    "categories": [
+      "Space"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "artemis",
+      "program"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Octopus",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "octopus"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Mantis_shrimp",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "mantis",
+      "shrimp"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Turritopsis_dohrnii",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "turritopsis",
+      "dohrnii"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Tardigrade",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.62,
+    "tags": [
+      "tardigrade"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Axolotl",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "axolotl"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Platypus",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "platypus"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Electric_eel",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "electric",
+      "eel"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Bioluminescence",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "bioluminescence"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Camouflage",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "camouflage"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Mycorrhiza",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "mycorrhiza"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Monarch_butterfly",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "monarch",
+      "butterfly"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Crow",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "crow"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Tool_use_by_animals",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "tool",
+      "use",
+      "animals"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Animal_cognition",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.61,
+    "tags": [
+      "animal",
+      "cognition"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Symbiosis",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "symbiosis"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Honey_bee",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "honey",
+      "bee"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Giant_panda",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "giant",
+      "panda"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Komodo_dragon",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "komodo",
+      "dragon"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Plankton",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "plankton"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Coral_reef",
+    "categories": [
+      "Nature"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "coral",
+      "reef"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "GPS",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "gps"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Internet",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "internet"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Blockchain",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "blockchain"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Machine_learning",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.6,
+    "tags": [
+      "machine",
+      "learning"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Neural_network",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "neural",
+      "network"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Artificial_intelligence",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "artificial",
+      "intelligence"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Nuclear_reactor",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "nuclear",
+      "reactor"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "MRI",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "mri"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Refrigeration",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "refrigeration"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Printing_press",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "printing",
+      "press"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Steam_engine",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "steam",
+      "engine"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Penicillin",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "penicillin"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "X-ray",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "ray"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Transistor",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.59,
+    "tags": [
+      "transistor"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Telephone",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "telephone"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Photography",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "photography"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Natural_language_processing",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "natural",
+      "language",
+      "processing"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Autonomous_vehicle",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "autonomous",
+      "vehicle"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Electric_vehicle",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "electric",
+      "vehicle"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Renewable_energy",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "renewable",
+      "energy"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Solar_energy",
+    "categories": [
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "solar",
+      "energy"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Nanotechnology",
+    "categories": [
+      "Science"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "nanotechnology"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Stoicism",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "stoicism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Existentialism",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.58,
+    "tags": [
+      "existentialism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Allegory_of_the_cave",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "allegory",
+      "the",
+      "cave"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Socratic_method",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "socratic",
+      "method"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Epicurus",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "epicurus"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Seneca_the_Younger",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "seneca",
+      "the",
+      "younger"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Free_will",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "free",
+      "will"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Consciousness",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "consciousness"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Meaning_of_life",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "meaning",
+      "life"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Social_contract",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "social",
+      "contract"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Pragmatism",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "pragmatism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Buddhism",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.57,
+    "tags": [
+      "buddhism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Meditation",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "meditation"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Mindfulness",
+    "categories": [
+      "Philosophy"
+    ],
+    "difficulty": "medium",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "mindfulness"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Chess",
+    "categories": [
+      "Culture"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "chess"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Jazz",
+    "categories": [
+      "Culture"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "jazz"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Hip_hop_music",
+    "categories": [
+      "Culture"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "hip",
+      "hop",
+      "music"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Bauhaus",
+    "categories": [
+      "Culture"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "bauhaus"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Pop_art",
+    "categories": [
+      "Culture"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "pop",
+      "art"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Science_fiction",
+    "categories": [
+      "Culture"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "science",
+      "fiction"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Mythology",
+    "categories": [
+      "Culture"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "mythology"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Coffee",
+    "categories": [
+      "Food"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.56,
+    "tags": [
+      "coffee"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Chocolate",
+    "categories": [
+      "Food"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "chocolate"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Fermentation",
+    "categories": [
+      "Food"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "fermentation"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Mediterranean_diet",
+    "categories": [
+      "Food"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "mediterranean",
+      "diet"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Spice_trade",
+    "categories": [
+      "Food"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "spice",
+      "trade"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Silk_Road",
+    "categories": [
+      "History"
+    ],
+    "difficulty": "deep",
+    "estimatedMinutes": 3,
+    "priority": 0.55,
+    "tags": [
+      "silk",
+      "road"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Trade_union",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "trade",
+      "union"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Universal_Declaration_of_Human_Rights",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "universal",
+      "declaration",
+      "human",
+      "rights"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Welfare_state",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "welfare",
+      "state"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Philanthropy",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "philanthropy"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Biomimicry",
+    "categories": [
+      "Nature",
+      "Technology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.55,
+    "tags": [
+      "biomimicry"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Microplastics",
+    "categories": [
+      "Nature",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "microplastics"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Carbon_capture_and_storage",
+    "categories": [
+      "Technology",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "carbon",
+      "capture",
+      "and",
+      "storage"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Ocean_acidification",
+    "categories": [
+      "Nature",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "ocean",
+      "acidification"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Deforestation",
+    "categories": [
+      "Nature",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "deforestation"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Urbanization",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "urbanization"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Social_media",
+    "categories": [
+      "Society",
+      "Productivity"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "social",
+      "media"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Attention_economy",
+    "categories": [
+      "Productivity",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "attention",
+      "economy"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Filter_bubble",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "filter",
+      "bubble"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Misinformation",
+    "categories": [
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "misinformation"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Surveillance_capitalism",
+    "categories": [
+      "Society",
+      "Finance"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "surveillance",
+      "capitalism"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Burnout",
+    "categories": [
+      "Productivity",
+      "Psychology"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "burnout"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Work–life_balance",
+    "categories": [
+      "Productivity"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "work",
+      "life",
+      "balance"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Remote_work",
+    "categories": [
+      "Productivity"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "remote",
+      "work"
+    ],
+    "locale": "en"
+  },
+  {
+    "title": "Gig_economy",
+    "categories": [
+      "Finance",
+      "Society"
+    ],
+    "difficulty": "easy",
+    "estimatedMinutes": 2,
+    "priority": 0.54,
+    "tags": [
+      "gig",
+      "economy"
+    ],
+    "locale": "en"
+  }
 ]
