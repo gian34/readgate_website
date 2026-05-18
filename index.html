@@ -381,6 +381,18 @@
     }
     .faq-answer p { margin-bottom: 10px; }
     .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-more {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .faq-more a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity .2s;
+    }
+    .faq-more a:hover { opacity: 0.75; }
 
     /* ── CTA ─────────────────────────────────────────────── */
     .cta-section {
@@ -732,8 +744,7 @@
   <h1>Turn scroll impulses<br>into <em>knowledge moments.</em></h1>
 
   <p class="hero-sub">
-    You already know the loop. You open the app. You didn't mean to stay that long.
-    Readgate puts one short article between you and that impulse — every time, automatically.
+    You know the loop. Readgate breaks it — one short article between you and every scroll, every time.
   </p>
 
   <div class="hero-cta">
@@ -745,7 +756,36 @@
   </div>
 </section>
 
-<hr />
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="eyebrow reveal">Privacy</div>
+  <div class="section-h2 reveal reveal-d1">Built with your<br><em>privacy in mind.</em></div>
+  <p class="section-p reveal reveal-d2">No account. Your reading habit stays yours — Readgate is a tool you own, not a service that owns you.</p>
+
+  <div class="trust-grid">
+    <div class="trust-card reveal">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Apple Family Controls</h3>
+      <p>System-level blocking built into iOS. No overlays, no timers, no fake restrictions. It either works or it doesn't.</p>
+    </div>
+    <div class="trust-card reveal reveal-d1">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3>No personal data</h3>
+      <p>No account. No name, no email, no profile. Sessions and streaks live on your device. Readgate uses privacy-conscious crash reporting to keep the app reliable.</p>
+    </div>
+    <div class="trust-card reveal reveal-d2">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <h3>No account required</h3>
+      <p>Download, set up in 60 seconds, done. No email, no password, no subscription wall on first launch.</p>
+    </div>
+  </div>
+</section>
 
 <!-- SCREENSHOT CAROUSEL -->
 <section class="gallery-section reveal">
@@ -786,7 +826,6 @@
   </div>
 </section>
 
-<hr />
 
 <!-- HOW IT WORKS -->
 <section class="section" id="how">
@@ -812,7 +851,6 @@
   </div>
 </section>
 
-<hr />
 
 <!-- STATS -->
 <div class="stats-section">
@@ -836,40 +874,7 @@
   </div>
 </div>
 
-<hr />
 
-<!-- TRUST -->
-<section class="trust-section">
-  <div class="eyebrow reveal">Privacy</div>
-  <div class="section-h2 reveal reveal-d1">Built with your<br><em>privacy in mind.</em></div>
-  <p class="section-p reveal reveal-d2">No account. Your reading habit stays yours — Readgate is a tool you own, not a service that owns you.</p>
-
-  <div class="trust-grid">
-    <div class="trust-card reveal">
-      <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <h3>Apple Family Controls</h3>
-      <p>System-level blocking built into iOS. No overlays, no timers, no fake restrictions. It either works or it doesn't.</p>
-    </div>
-    <div class="trust-card reveal reveal-d1">
-      <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      </div>
-      <h3>No personal data</h3>
-      <p>No account. No name, no email, no profile. Sessions and streaks live on your device. Readgate uses privacy-conscious crash reporting to keep the app reliable.</p>
-    </div>
-    <div class="trust-card reveal reveal-d2">
-      <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </div>
-      <h3>No account required</h3>
-      <p>Download, set up in 60 seconds, done. No email, no password, no subscription wall on first launch.</p>
-    </div>
-  </div>
-</section>
-
-<hr />
 
 <!-- FAQ -->
 <section class="faq-section">
@@ -897,15 +902,15 @@
       </div>
     </details>
     <details>
-      <summary>How long is the unlock window?</summary>
-      <div class="faq-answer">
-        <p>10 minutes by default. Once the window expires, the shield re-activates automatically. Pro users can set a custom duration from 1 to 60 minutes in one-minute steps.</p>
-      </div>
-    </details>
-    <details>
       <summary>Can I change which apps are blocked?</summary>
       <div class="faq-answer">
         <p>Yes. Open Readgate, go to Settings → Manage Apps & Websites, and use Apple's native picker to add or remove apps and websites at any time. Changes take effect immediately.</p>
+      </div>
+    </details>
+    <details>
+      <summary>What's the difference between Free and Pro?</summary>
+      <div class="faq-answer">
+        <p>Free lets you protect 1 app or website with unlimited reading unlocks, a fixed 10-minute break window, and 7 days of reading history. Pro removes the app limit, lets you set your own daily unlock limit, customize the break duration from 1 to 60 minutes, and gives you your full reading history.</p>
       </div>
     </details>
     <details>
@@ -915,40 +920,16 @@
         <p>Make sure Readgate is authorized: go to Settings → Screen Time → Readgate on your device and confirm access is enabled.</p>
       </div>
     </details>
-    <details>
-      <summary>My streak disappeared. What happened?</summary>
-      <div class="faq-answer">
-        <p>Streaks are calculated from completed reading sessions stored locally. If you reinstalled Readgate or cleared app data, the history is gone. Streaks also reset if you miss a full calendar day without completing at least one article.</p>
-      </div>
-    </details>
-    <details>
-      <summary>What happens if I skip or close the article before finishing?</summary>
-      <div class="faq-answer">
-        <p>The session is abandoned and no unlock is granted. The blocked app stays blocked. A new reading session starts fresh the next time you open a blocked app.</p>
-      </div>
-    </details>
-    <details>
-      <summary>Can I read more than one article per session?</summary>
-      <div class="faq-answer">
-        <p>Yes. After completing a challenge you'll see a "Read another article" button on the completion screen. Bonus reads count toward your streak but don't consume an additional unlock — your apps stay open.</p>
-      </div>
-    </details>
-    <details>
-      <summary>What's the difference between Free and Pro?</summary>
-      <div class="faq-answer">
-        <p>Free lets you protect 1 app or website with unlimited reading unlocks, a fixed 10-minute break window, and 7 days of reading history. Pro removes the app limit, lets you set your own daily unlock limit, customize the break duration from 1 to 60 minutes, and gives you your full reading history.</p>
-      </div>
-    </details>
   </div>
+  <p class="faq-more reveal reveal-d3"><a href="/faq">More questions →</a></p>
 </section>
 
-<hr />
 
 <!-- CTA -->
 <section class="cta-section reveal">
   <div class="cta-box">
     <h2>The smallest habit<br><em>that actually sticks.</em></h2>
-    <p>One article before every scroll. 60 seconds that add up to 300+ ideas a year. Free to download. No account required.</p>
+    <p>One article between you and every scroll. 60 seconds today, 300+ ideas a year.</p>
     <a class="btn-dl" href="https://apps.apple.com/de/app/readgate/id6761989769" style="margin: 0 auto; display: inline-flex;">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:#080B10;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       Download on the App Store
