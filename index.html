@@ -281,6 +281,53 @@
     }
     .step p { font-size: 13px; color: var(--sub); line-height: 1.7; font-weight: 300; }
 
+    /* ── TOPICS ──────────────────────────────────────────── */
+    .topics-section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 120px 48px;
+    }
+    @media (max-width: 700px) { .topics-section { padding: 80px 24px; } }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 56px;
+    }
+    @media (max-width: 800px) { .topics-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .topics-grid { grid-template-columns: 1fr; } }
+
+    .topic-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      transition: border-color .25s, background .25s, transform .2s;
+    }
+    .topic-card:hover {
+      border-color: rgba(99,102,241,0.35);
+      background: var(--bg3);
+      transform: translateY(-2px);
+    }
+    .topic-emoji {
+      font-size: 28px;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .topic-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--label);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .topic-example {
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.55;
+      font-weight: 300;
+    }
+
     /* ── STATS ───────────────────────────────────────────── */
     .stats-section {
       border-top: 1px solid var(--border);
@@ -826,6 +873,60 @@
   </div>
 </section>
 
+<!-- TOPICS -->
+<section class="topics-section">
+  <div class="eyebrow reveal">What you'll read</div>
+  <div class="section-h2 reveal reveal-d1">Nine fields.<br><em>Every scroll a new one.</em></div>
+  <p class="section-p reveal reveal-d2">Wikipedia's best, cycled by what catches your interest. Never the same loop twice.</p>
+
+  <div class="topics-grid">
+    <div class="topic-card reveal">
+      <div class="topic-emoji">🔬</div>
+      <div class="topic-name">Science</div>
+      <div class="topic-example">CRISPR · Quantum tunneling · The Higgs boson</div>
+    </div>
+    <div class="topic-card reveal reveal-d1">
+      <div class="topic-emoji">🏛</div>
+      <div class="topic-name">History</div>
+      <div class="topic-example">The Black Death · Apollo 11 · Roman Empire</div>
+    </div>
+    <div class="topic-card reveal reveal-d2">
+      <div class="topic-emoji">🧠</div>
+      <div class="topic-name">Psychology</div>
+      <div class="topic-example">Flow · Cognitive dissonance · Anchoring</div>
+    </div>
+    <div class="topic-card reveal">
+      <div class="topic-emoji">💭</div>
+      <div class="topic-name">Philosophy</div>
+      <div class="topic-example">Stoicism · Plato's cave · The trolley problem</div>
+    </div>
+    <div class="topic-card reveal reveal-d1">
+      <div class="topic-emoji">🎨</div>
+      <div class="topic-name">Culture</div>
+      <div class="topic-example">Bauhaus · Haiku · Wabi-sabi</div>
+    </div>
+    <div class="topic-card reveal reveal-d2">
+      <div class="topic-emoji">🗺</div>
+      <div class="topic-name">Geography</div>
+      <div class="topic-example">Patagonia · The Silk Road · Atacama Desert</div>
+    </div>
+    <div class="topic-card reveal">
+      <div class="topic-emoji">🌿</div>
+      <div class="topic-name">Nature</div>
+      <div class="topic-example">Tulip mania · Aurora borealis · Coral reefs</div>
+    </div>
+    <div class="topic-card reveal reveal-d1">
+      <div class="topic-emoji">🌍</div>
+      <div class="topic-name">Society</div>
+      <div class="topic-example">Universal basic income · Public libraries</div>
+    </div>
+    <div class="topic-card reveal reveal-d2">
+      <div class="topic-emoji">🎯</div>
+      <div class="topic-name">Productivity</div>
+      <div class="topic-example">Deep work · Pomodoro · Zettelkasten</div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="section" id="how">
