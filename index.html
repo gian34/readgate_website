@@ -20,7 +20,9 @@
       --label:    #f2f2f7;
       --sub:      #8e8e9a;
       --dim:      #3a3a42;
-      --blue:     #0A84FF;
+      --brand:    #6366F1;
+      --streak:   #FFB155;
+      --pro:      #F5B84B;
       --green:    #30D158;
       --serif:    'Instrument Serif', Georgia, serif;
       --sans:     'DM Sans', system-ui, sans-serif;
@@ -88,14 +90,14 @@
     .hero-label {
       display: inline-flex; align-items: center; gap: 7px;
       font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--blue);
+      text-transform: uppercase; color: var(--brand);
       margin-bottom: 28px;
       opacity: 0; transform: translateY(16px);
       animation: rise .6s .1s forwards;
     }
     .hero-label-dot {
       width: 5px; height: 5px; border-radius: 50%;
-      background: var(--blue);
+      background: var(--brand);
       animation: pulse 2s ease-in-out infinite;
     }
 
@@ -166,7 +168,7 @@
       content: '';
       position: absolute;
       width: 300px; height: 500px;
-      background: radial-gradient(ellipse, rgba(10,132,255,0.12) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(99,102,241,0.12) 0%, transparent 65%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -237,7 +239,7 @@
 
     .eyebrow {
       font-size: 11px; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 14px;
+      text-transform: uppercase; color: var(--brand); margin-bottom: 14px;
     }
     .section-h2 {
       font-family: var(--serif);
@@ -303,7 +305,7 @@
       font-weight: 400; letter-spacing: -.04em; line-height: 1;
       color: var(--label); margin-bottom: 8px;
     }
-    .stat-n .accent { color: var(--blue); }
+    .stat-n .accent { color: var(--brand); }
     .stat-l { font-size: 13px; font-weight: 300; color: var(--sub); }
 
     /* ── TESTIMONIALS ────────────────────────────────────── */
@@ -337,7 +339,7 @@
       display: flex; gap: 3px;
     }
     .testimonial-stars span {
-      font-size: 13px; color: var(--blue);
+      font-size: 13px; color: var(--brand);
     }
     .testimonial-quote {
       font-family: var(--serif);
@@ -373,12 +375,12 @@
       transition: border-color .25s, background .25s;
     }
     .trust-card:hover {
-      border-color: rgba(10,132,255,.2);
+      border-color: rgba(99,102,241,.2);
       background: var(--bg3);
     }
     .trust-icon {
       width: 36px; height: 36px; border-radius: 10px;
-      background: rgba(10,132,255,.1);
+      background: rgba(99,102,241,.1);
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 16px;
     }
@@ -442,7 +444,7 @@
       content: '';
       position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(10,132,255,.08) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(99,102,241,.08) 0%, transparent 60%);
       pointer-events: none;
     }
     .cta-box h2 {
@@ -511,8 +513,8 @@
       transform: translate(-50%, -56%);
       width: 900px; height: 800px;
       background: radial-gradient(ellipse at center,
-        rgba(10,132,255,0.16) 0%,
-        rgba(10,132,255,0.05) 40%,
+        rgba(99,102,241,0.16) 0%,
+        rgba(99,102,241,0.05) 40%,
         transparent 65%);
       pointer-events: none;
       z-index: 0;
@@ -579,7 +581,7 @@
       box-shadow:
         inset 0 0 0 1px rgba(255,255,255,0.18),
         0 56px 140px rgba(0,0,0,0.9),
-        0 0 120px rgba(10,132,255,0.22);
+        0 0 120px rgba(99,102,241,0.22);
     }
     .ss-c2 .ss-label { color: var(--sub); }
 
@@ -601,11 +603,11 @@
     }
     .ss-item:hover .ss-card {
       box-shadow:
-        inset 0 0 0 1px rgba(10,132,255,0.45),
+        inset 0 0 0 1px rgba(99,102,241,0.45),
         0 64px 140px rgba(0,0,0,0.95),
-        0 0 80px rgba(10,132,255,0.2) !important;
+        0 0 80px rgba(99,102,241,0.2) !important;
     }
-    .ss-item:hover .ss-label { color: var(--blue); }
+    .ss-item:hover .ss-label { color: var(--brand); }
 
     /* Dots (mobile only) */
     .ss-dots {
@@ -921,21 +923,21 @@
   <div class="trust-grid">
     <div class="trust-card reveal">
       <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0A84FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
       <h3>Apple Family Controls</h3>
       <p>System-level blocking built into iOS. No overlays, no timers, no fake restrictions. It either works or it doesn't.</p>
     </div>
     <div class="trust-card reveal reveal-d1">
       <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0A84FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       </div>
       <h3>No personal data</h3>
       <p>No account. No name, no email, no profile. Sessions and streaks live on your device. Readgate uses privacy-conscious crash reporting to keep the app reliable.</p>
     </div>
     <div class="trust-card reveal reveal-d2">
       <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0A84FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       </div>
       <h3>No account required</h3>
       <p>Download, set up in 60 seconds, done. No email, no password, no subscription wall on first launch.</p>
