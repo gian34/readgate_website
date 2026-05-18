@@ -3,8 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-itunes-app" content="app-id=6761989769" />
   <title>FAQ — Readgate App Blocker & Screen Time</title>
   <meta name="description" content="Frequently asked questions about Readgate — app blocker, screen time, privacy, blocking, reading habits, and troubleshooting." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does Readgate need Screen Time access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Screen Time (Family Controls) is Apple's only API that lets third-party apps display a system-level shield when you open another app. Without it, Readgate can't intercept a blocked app at all. Your Screen Time authorization is managed entirely by iOS and never shared with Readgate's servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Readgate collect personal data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No account. No name, no email, no profile. Your sessions, streak, and blocked app selection are stored on your device. Readgate contacts Wikipedia for articles, readgateapp.com for curated article-title updates, Apple/RevenueCat for purchases, PostHog for anonymous product analytics, and Sentry for crash reporting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I finished reading but the app is still blocked. Why?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you have another Screen Time app installed (such as Opal or Freedom), it manages its own independent shield. Readgate can only remove its own block — it has no access to other apps' shields. Both apps need to be satisfied for the blocked app to open."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long is the unlock window?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10 minutes by default. Pro users can set the reading break duration from 1 to 60 minutes in one-minute steps. Once the window expires, the shield re-activates automatically and the next time you open the blocked app requires a new reading session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change which apps are blocked?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Open Readgate, go to Settings → Manage Apps & Websites, and use Apple's native picker to add or remove apps and websites at any time. Changes take effect immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "My streak disappeared. What happened?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Streaks are calculated from completed reading sessions stored locally on your device. If you reinstalled Readgate or cleared app data, the history is gone. Streaks also reset if you miss a full calendar day without completing at least one article."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "The shield doesn't appear when I open a blocked app.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Family Controls requires a physical iPhone running iOS 18 or later. The shield does not work in the iOS Simulator, on iPad, or on Mac. Make sure Readgate is authorized: go to Settings → Screen Time → Readgate on your device and confirm access is enabled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I close the article before finishing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The session is abandoned and no unlock is granted. The blocked app stays blocked. A new reading session starts fresh the next time you open a blocked app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I read more than one article per session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. After completing a challenge you'll see a 'Read another article' button on the completion screen. Bonus reads count toward your streak but don't consume an additional unlock — your apps stay open."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Free and Pro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free lets you protect 1 app or website with unlimited reading unlocks, a fixed 10-minute break window, and 7 days of reading history. Pro removes the app limit, lets you set your own daily unlock limit, customize the break duration from 1 to 60 minutes, and gives you your full reading history with no cutoff."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
