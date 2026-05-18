@@ -87,6 +87,52 @@
 
     .hero-text { max-width: 680px; }
 
+    .hero-phone { display: none; }
+
+    @media (min-width: 980px) {
+      .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        gap: 64px;
+        max-width: 1180px;
+      }
+      .hero-text { max-width: 480px; flex-shrink: 0; }
+      .hero-phone {
+        display: block;
+        position: relative;
+        flex-shrink: 0;
+        opacity: 0; transform: translateY(24px);
+        animation: rise .8s .3s forwards;
+      }
+      .hero-phone::before {
+        content: '';
+        position: absolute;
+        inset: -40px;
+        background: radial-gradient(ellipse, rgba(99,102,241,0.18) 0%, transparent 65%);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .hero-phone-frame {
+        width: 260px;
+        border-radius: 44px;
+        overflow: hidden;
+        background: #000;
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.1),
+          0 40px 80px rgba(0,0,0,0.7),
+          0 0 0 6px rgba(255,255,255,0.03);
+        animation: float 4s ease-in-out infinite;
+        display: block;
+      }
+      .hero-phone-frame img {
+        width: 100%;
+        display: block;
+      }
+    }
+
     .hero-label {
       display: inline-flex; align-items: center; gap: 7px;
       font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
@@ -781,25 +827,33 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="/icon.png" alt="Readgate" class="hero-app-icon" />
+  <div class="hero-text">
+    <img src="/icon.png" alt="Readgate" class="hero-app-icon" />
 
-  <div class="hero-label">
-    <div class="hero-label-dot"></div>
-    Now on the App Store
+    <div class="hero-label">
+      <div class="hero-label-dot"></div>
+      Now on the App Store
+    </div>
+
+    <h1>Turn scroll impulses<br>into <em>knowledge moments.</em></h1>
+
+    <p class="hero-sub">
+      You know the loop. Readgate breaks it — one short article between you and every scroll, every time.
+    </p>
+
+    <div class="hero-cta">
+      <a class="btn-dl" href="https://apps.apple.com/de/app/readgate/id6761989769">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download on the App Store
+      </a>
+      <p class="hero-note">Free · iPhone only · iOS 18+</p>
+    </div>
   </div>
 
-  <h1>Turn scroll impulses<br>into <em>knowledge moments.</em></h1>
-
-  <p class="hero-sub">
-    You know the loop. Readgate breaks it — one short article between you and every scroll, every time.
-  </p>
-
-  <div class="hero-cta">
-    <a class="btn-dl" href="https://apps.apple.com/de/app/readgate/id6761989769">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      Download on the App Store
-    </a>
-    <p class="hero-note">Free · iPhone only · iOS 18+</p>
+  <div class="hero-phone">
+    <div class="hero-phone-frame">
+      <img src="/screenshots/readgate-ss-hero.png" alt="Readgate home screen — daily reading challenge" />
+    </div>
   </div>
 </section>
 
