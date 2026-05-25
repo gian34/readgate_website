@@ -619,7 +619,7 @@
 
   <p class="hero-sub">
     Readgate adds one short article before your most-used apps.
-    Read it, unlock, repeat. Built with Apple's Family Controls — no account required.
+    Read it, unlock, repeat. No account required.
   </p>
 
   <div class="hero-cta">
@@ -730,8 +730,8 @@
       <div class="trust-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <h3>Apple Family Controls</h3>
-      <p>System-level blocking built into iOS. No overlays, no timers, no fake restrictions. It either works or it doesn't.</p>
+      <h3>Screen Time permission</h3>
+      <p>Uses Apple's built-in Screen Time controls for the apps you choose. Permission stays managed by iOS.</p>
     </div>
     <div class="trust-card reveal reveal-d1">
       <div class="trust-icon">
@@ -761,53 +761,52 @@
     <details>
       <summary>Why does Readgate need Screen Time access?</summary>
       <div class="faq-answer">
-        <p>Screen Time (Family Controls) is Apple's only API that lets third-party apps display a system-level shield when you open another app. Without it, Readgate can't intercept a blocked app at all.</p>
-        <p>Your Screen Time authorization is managed entirely by iOS and never shared with Readgate's servers.</p>
+        <p>Readgate uses Screen Time permission to protect the apps you choose and show a reading prompt before they open.</p>
+        <p>iOS manages this permission, and you can change it in Settings at any time.</p>
       </div>
     </details>
     <details>
       <summary>Does Readgate collect personal data?</summary>
       <div class="faq-answer">
-        <p>No personal data — no name, email, or profile. Your sessions, streak, and blocked app selection are stored on your device.</p>
-          <p>No account. No name, no email, no profile. Your sessions, streak, and blocked app selection are stored on your device.</p>
-          <p>Readgate contacts Wikipedia for articles, Apple/RevenueCat for purchases, PostHog for anonymous product analytics, and Sentry for crash reporting.</p>
+        <p>Readgate does not require an account. Your selected apps, sessions, and streak stay on your device.</p>
+        <p>We use limited service providers for articles, purchases, diagnostics, and privacy-conscious analytics. See the <a href="/privacy">Privacy Policy</a> for details.</p>
       </div>
     </details>
     <details>
       <summary>I finished reading but the app is still blocked. Why?</summary>
       <div class="faq-answer">
-        <p>If you have another Screen Time app installed (such as Opal or Freedom), it manages its own independent shield. Readgate can only remove its own block — it has no access to other apps' shields.</p>
+        <p>Another Screen Time rule, device setting, or blocking app can still keep an app unavailable. Readgate can only lift the gate it created.</p>
       </div>
     </details>
     <details>
       <summary>How long is the unlock window?</summary>
       <div class="faq-answer">
-        <p>10 minutes by default. Once the window expires, the shield re-activates automatically. Pro users can set a custom duration from 1 to 60 minutes in one-minute steps.</p>
+        <p>A completed read opens a short break window. Pro users can customize the duration in Settings. When the window ends, the gate returns automatically.</p>
       </div>
     </details>
     <details>
       <summary>Can I change which apps are blocked?</summary>
       <div class="faq-answer">
-        <p>Yes. Open Readgate, go to Settings → Manage Blocked Apps, and use Apple's native picker to add or remove apps at any time. Changes take effect immediately.</p>
+        <p>Yes. Open Readgate, go to Settings, and update the apps, websites, or categories protected by Readgate. Changes apply after saving.</p>
       </div>
     </details>
     <details>
       <summary>The shield doesn't appear when I open a blocked app.</summary>
       <div class="faq-answer">
-        <p>Family Controls requires a physical iPhone running iOS 18 or later. The shield does not work in the iOS Simulator, on iPad, or on Mac.</p>
-        <p>Make sure Readgate is authorized: go to Settings → Screen Time → Readgate on your device and confirm access is enabled.</p>
+        <p>Make sure Screen Time access is enabled for Readgate and the app is included in your protected list.</p>
+        <p>Readgate's app-gating flow is designed for iPhone and depends on Apple's Screen Time availability.</p>
       </div>
     </details>
     <details>
       <summary>My streak disappeared. What happened?</summary>
       <div class="faq-answer">
-        <p>Streaks are calculated from completed reading sessions stored locally. If you reinstalled Readgate or cleared app data, the history is gone. Streaks also reset if you miss a full calendar day.</p>
+        <p>Your streak is based on completed reads on this device. It can reset after a missed day, reinstall, or cleared app data.</p>
       </div>
     </details>
     <details>
       <summary>What's the difference between Free and Pro?</summary>
       <div class="faq-answer">
-        <p>Free users can protect 1 app or website with unlimited reading unlocks. Pro adds deeper reading history, minute-level challenge timing, focus insights, and more room for the apps and websites you want to protect.</p>
+        <p>Free includes the core reading gate for a limited setup. Pro expands app protection, customization, and progress insights.</p>
       </div>
     </details>
   </div>
