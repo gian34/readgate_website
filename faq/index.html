@@ -6,6 +6,11 @@
   <meta name="apple-itunes-app" content="app-id=6761989769" />
   <title>FAQ — Readgate App Blocker & Screen Time</title>
   <meta name="description" content="Frequently asked questions about Readgate — app blocker, screen time, privacy, blocking, reading habits, and troubleshooting." />
+  <link rel="icon" href="/icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -96,72 +101,94 @@
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #080B10;
-      color: #e5e5e5;
-      line-height: 1.7;
-      padding: 48px 24px 80px;
+
+    :root {
+      --paper:      #F5F2EC;
+      --ink:        #16140F;
+      --ink-sub:    #6B675E;
+      --ink-faint:  #A39E92;
+      --line:       rgba(22,20,15,0.10);
+      --brand:      #6366F1;
+      --serif:      'Instrument Serif', Georgia, serif;
+      --sans:       'Hanken Grotesk', -apple-system, system-ui, sans-serif;
     }
-    .wrap { max-width: 760px; margin: 0 auto; }
-    .logo { font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; display: inline-block; margin-bottom: 48px; }
-    h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-    .meta { font-size: 14px; color: #666; margin-bottom: 40px; }
-    a { color: #6366F1; text-decoration: none; }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+      padding: 0 24px 96px;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-top: 44px; }
+
+    .logo {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 16px; font-weight: 700; letter-spacing: -0.02em;
+      color: var(--ink); text-decoration: none;
+      margin-bottom: clamp(48px, 8vw, 80px);
+    }
+    .logo img { width: 28px; height: 28px; border-radius: 8px; }
+
+    h1 {
+      font-family: var(--serif); font-weight: 400; color: var(--ink);
+      font-size: clamp(40px, 7vw, 66px); line-height: 0.98;
+      letter-spacing: -0.01em; margin-bottom: 14px;
+    }
+    h1 em { font-style: italic; color: var(--brand); }
+    .meta { font-size: 15px; color: var(--ink-sub); margin-bottom: clamp(40px, 6vw, 56px); }
+    a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #1f1f1f; font-size: 13px; color: #555; }
+
+    /* long-form sections (privacy / terms / support reuse this sheet) */
+    h2 { font-family: var(--sans); font-weight: 800; font-size: 21px;
+      letter-spacing: -0.02em; color: var(--ink); margin: 40px 0 12px; }
+    p { color: var(--ink-sub); margin-bottom: 14px; }
+    ul { color: var(--ink-sub); margin: 0 0 14px 20px; }
+    li { margin-bottom: 8px; }
+    strong { color: var(--ink); font-weight: 600; }
+
+    .footer {
+      margin-top: clamp(56px, 9vw, 80px); padding-top: 26px;
+      border-top: 1px solid var(--line);
+      font-size: 13px; color: var(--ink-faint);
+    }
+    .footer a { color: var(--ink-sub); }
 
     /* ── Accordion ── */
-    .faq-list { border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; }
-
-    details {
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .faq-list {
+      border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+      background: rgba(255,255,255,0.45);
     }
+    details { border-bottom: 1px solid var(--line); }
     details:last-child { border-bottom: none; }
 
     summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 20px;
-      cursor: pointer;
-      font-size: 15px;
-      font-weight: 600;
-      color: #f2f2f7;
-      list-style: none;
-      user-select: none;
-      transition: background 0.15s;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 20px 22px; cursor: pointer; font-size: 16px; font-weight: 600;
+      color: var(--ink); list-style: none; user-select: none;
+      transition: background .15s, color .15s;
     }
     summary::-webkit-details-marker { display: none; }
-    summary:hover { background: rgba(255,255,255,0.03); }
+    summary:hover { background: rgba(22,20,15,0.03); }
 
     summary::after {
-      content: '+';
-      font-size: 20px;
-      font-weight: 300;
-      color: #555;
-      flex-shrink: 0;
-      line-height: 1;
-      transition: transform 0.2s;
+      content: '+'; font-size: 22px; font-weight: 300; color: var(--ink-faint);
+      flex-shrink: 0; line-height: 1; transition: transform .2s, color .2s;
     }
-    details[open] > summary::after {
-      transform: rotate(45deg);
-    }
+    details[open] > summary { color: var(--brand); }
+    details[open] > summary::after { transform: rotate(45deg); color: var(--brand); }
 
-    .faq-answer {
-      padding: 0 20px 18px;
-      font-size: 14px;
-      color: #999;
-      line-height: 1.75;
-    }
-    .faq-answer p { margin-bottom: 10px; }
+    .faq-answer { padding: 0 22px 20px; font-size: 15px; color: var(--ink-sub); line-height: 1.7; }
+    .faq-answer p { margin-bottom: 10px; color: var(--ink-sub); }
     .faq-answer p:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <a class="logo" href="/">Readgate</a>
+    <a class="logo" href="/"><img src="/icon.png" alt="" />Readgate</a>
 
     <h1>FAQ</h1>
     <p class="meta">Common questions about Readgate. Can't find an answer? <a href="mailto:hello@readgate.com">Contact support.</a></p>
