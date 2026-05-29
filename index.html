@@ -132,7 +132,7 @@
       transition: transform .15s, opacity .2s !important;
     }
     .nav-cta:hover { transform: translateY(-1px); opacity: 1 !important; }
-    @media (max-width: 640px) { nav { padding: 0 18px; } .nav-hide { display: none; } }
+    @media (max-width: 640px) { nav { padding: 0 18px; } .nav-hide, .nav-cta { display: none; } }
 
     /* ── BUTTONS ─────────────────────────────────────────── */
     .btn-dl {
@@ -201,6 +201,11 @@
     .hero .lede { max-width: 460px; margin-bottom: 34px; }
     .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .hero-note { margin-top: 16px; font-size: 13px; color: var(--ink-faint); }
+    @media (max-width: 540px) {
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn-dl,
+      .hero-actions .btn-ghost { width: 100%; justify-content: center; }
+    }
 
     .hero-qr { display: none; }
     @media (min-width: 920px) {
@@ -432,7 +437,7 @@
     </div>
   </div>
   <div class="hero-visual">
-    <img class="hero-phone" src="/screenshots/readgate-ss-hero.png" alt="Readgate home screen — today's reading gate" />
+    <img class="hero-phone" src="/screenshots/readgate-ss-hero.jpg" alt="Readgate onboarding screen — learn before you scroll" />
   </div>
 </section>
 
@@ -481,24 +486,24 @@
   <div class="ss-stage">
     <div class="ss-row" id="ssRow">
       <div class="ss-item ss-c0">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-goal.png" alt="Build a reading habit" loading="lazy" /></div>
-        <span class="ss-label">Your goal</span>
+        <div class="ss-card"><img src="/screenshots/readgate-ss-goal.jpg" alt="Choose your smart opens" loading="lazy" /></div>
+        <span class="ss-label">Smart opens</span>
       </div>
       <div class="ss-item ss-c1">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-howitworks.png" alt="A quick read" loading="lazy" /></div>
+        <div class="ss-card"><img src="/screenshots/readgate-ss-howitworks.jpg" alt="How Readgate works" loading="lazy" /></div>
         <span class="ss-label">How it works</span>
       </div>
       <div class="ss-item ss-c2">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-hero.png" alt="Read every day" loading="lazy" /></div>
-        <span class="ss-label">Read every day</span>
+        <div class="ss-card"><img src="/screenshots/readgate-ss-hero.jpg" alt="Block doomscrolling and learn first" loading="lazy" /></div>
+        <span class="ss-label">Learn first</span>
       </div>
       <div class="ss-item ss-c3">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-reading.png" alt="Read something new" loading="lazy" /></div>
+        <div class="ss-card"><img src="/screenshots/readgate-ss-reading.jpg" alt="Read one article before unlocking" loading="lazy" /></div>
         <span class="ss-label">The article</span>
       </div>
       <div class="ss-item ss-c4">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-privacy.png" alt="Private reading, always" loading="lazy" /></div>
-        <span class="ss-label">Private</span>
+        <div class="ss-card"><img src="/screenshots/readgate-ss-privacy.jpg" alt="Readgate home screen with today's gate" loading="lazy" /></div>
+        <span class="ss-label">Home</span>
       </div>
     </div>
   </div>
@@ -684,11 +689,11 @@
 
   // ── Lightbox
   const ssModalData = [
-    { src: '/screenshots/readgate-ss-goal.png',       label: 'Your goal',      alt: 'Build a reading habit' },
-    { src: '/screenshots/readgate-ss-howitworks.png', label: 'How it works',   alt: 'A quick read' },
-    { src: '/screenshots/readgate-ss-hero.png',       label: 'Read every day', alt: 'Read every day' },
-    { src: '/screenshots/readgate-ss-reading.png',    label: 'The article',    alt: 'Read something new' },
-    { src: '/screenshots/readgate-ss-privacy.png',    label: 'Private',        alt: 'Private reading, always' },
+    { src: '/screenshots/readgate-ss-goal.jpg',       label: 'Smart opens',    alt: 'Choose your smart opens' },
+    { src: '/screenshots/readgate-ss-howitworks.jpg', label: 'How it works',   alt: 'How Readgate works' },
+    { src: '/screenshots/readgate-ss-hero.jpg',       label: 'Learn first',    alt: 'Block doomscrolling and learn first' },
+    { src: '/screenshots/readgate-ss-reading.jpg',    label: 'The article',    alt: 'Read one article before unlocking' },
+    { src: '/screenshots/readgate-ss-privacy.jpg',    label: 'Home',           alt: "Readgate home screen with today's gate" },
   ];
   const modal      = document.getElementById('ssModal');
   const modalImg   = document.getElementById('ssModalImg');
