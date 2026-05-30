@@ -250,19 +250,6 @@
     .step h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; color: var(--ink); }
     .step p { font-size: 14px; color: var(--ink-sub); line-height: 1.65; }
 
-    /* ── TOPICS ──────────────────────────────────────────── */
-    .topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 52px; }
-    @media (max-width: 820px) { .topics-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 500px) { .topics-grid { grid-template-columns: 1fr; } }
-    .topic-card {
-      background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px;
-      transition: transform .2s, border-color .2s, box-shadow .25s;
-    }
-    .topic-card:hover { transform: translateY(-3px); border-color: rgba(99,102,241,0.30); box-shadow: 0 16px 36px rgba(22,20,15,0.07); }
-    .topic-emoji { font-size: 26px; margin-bottom: 12px; line-height: 1; }
-    .topic-name { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.01em; }
-    .topic-example { font-size: 13px; color: var(--ink-sub); line-height: 1.55; }
-
     /* ── TRUST / PRIVACY ─────────────────────────────────── */
     .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 52px; }
     @media (max-width: 720px) { .trust-grid { grid-template-columns: 1fr; } }
@@ -411,7 +398,6 @@
   </a>
   <div class="nav-links">
     <a class="nav-hide" href="#how">How it works</a>
-    <a class="nav-hide" href="#topics">Topics</a>
     <a class="nav-hide" href="#faq">FAQ</a>
     <a class="nav-cta" href="https://apps.apple.com/de/app/readgate/id6761989769">Get the app</a>
   </div>
@@ -509,28 +495,6 @@
   </div>
   <div class="ss-dots" id="ssDots">
     <div class="ss-dot active"></div><div class="ss-dot"></div><div class="ss-dot"></div><div class="ss-dot"></div><div class="ss-dot"></div>
-  </div>
-</section>
-
-<!-- TOPICS -->
-<section class="section-warm" id="topics">
-  <div class="inner">
-    <div class="section-head">
-      <div class="eyebrow reveal">What you'll read</div>
-      <div class="h2 reveal reveal-d1" style="margin-top:14px;">Nine fields.<br>Every scroll a <em>new one.</em></div>
-      <p class="lede reveal reveal-d2" style="margin-top:16px; max-width:440px;">Wikipedia's best, cycled by what catches your interest. Never the same loop twice.</p>
-    </div>
-    <div class="topics-grid">
-      <div class="topic-card reveal"><div class="topic-emoji">🔬</div><div class="topic-name">Science</div><div class="topic-example">CRISPR · Quantum tunneling · The Higgs boson</div></div>
-      <div class="topic-card reveal reveal-d1"><div class="topic-emoji">🏛</div><div class="topic-name">History</div><div class="topic-example">The Black Death · Apollo 11 · Roman Empire</div></div>
-      <div class="topic-card reveal reveal-d2"><div class="topic-emoji">🧠</div><div class="topic-name">Psychology</div><div class="topic-example">Flow · Cognitive dissonance · Anchoring</div></div>
-      <div class="topic-card reveal"><div class="topic-emoji">💭</div><div class="topic-name">Philosophy</div><div class="topic-example">Stoicism · Plato's cave · The trolley problem</div></div>
-      <div class="topic-card reveal reveal-d1"><div class="topic-emoji">🎨</div><div class="topic-name">Culture</div><div class="topic-example">Bauhaus · Haiku · Wabi-sabi</div></div>
-      <div class="topic-card reveal reveal-d2"><div class="topic-emoji">🗺</div><div class="topic-name">Geography</div><div class="topic-example">Patagonia · The Silk Road · Atacama Desert</div></div>
-      <div class="topic-card reveal"><div class="topic-emoji">🌿</div><div class="topic-name">Nature</div><div class="topic-example">Tulip mania · Aurora borealis · Coral reefs</div></div>
-      <div class="topic-card reveal reveal-d1"><div class="topic-emoji">🌍</div><div class="topic-name">Society</div><div class="topic-example">Universal basic income · Public libraries</div></div>
-      <div class="topic-card reveal reveal-d2"><div class="topic-emoji">🎯</div><div class="topic-name">Productivity</div><div class="topic-example">Deep work · Pomodoro · Zettelkasten</div></div>
-    </div>
   </div>
 </section>
 
