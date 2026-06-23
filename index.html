@@ -228,11 +228,20 @@
       background: radial-gradient(ellipse at center, rgba(99,102,241,0.22) 0%, transparent 62%);
       pointer-events: none; z-index: 0;
     }
-    .hero-phone {
+    /* ── DEVICE FRAME (clean phone mockup) ───────────────── */
+    .device {
+      --frame-edge: inset 0 0 0 1.5px rgba(255,255,255,0.10), inset 0 0 0 3.5px rgba(0,0,0,0.55);
       position: relative; z-index: 1; width: min(300px, 78vw);
-      border-radius: 40px; display: block;
-      filter: drop-shadow(0 34px 80px rgba(99,102,241,0.28)) drop-shadow(0 12px 28px rgba(22,20,15,0.18));
+      background: linear-gradient(150deg, #34343a 0%, #161618 48%, #232327 100%);
+      border-radius: 13.5% / 6.4%;
+      padding: 2.6%;
+      box-shadow: 0 34px 80px rgba(99,102,241,0.28), 0 12px 28px rgba(22,20,15,0.18), var(--frame-edge);
     }
+    .device-screen {
+      position: relative; aspect-ratio: 1206 / 2622;
+      border-radius: 11.4% / 5.3%; overflow: hidden; background: #000;
+    }
+    .device-screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* ── PROOF STRIP ─────────────────────────────────────── */
     .proof {
@@ -276,25 +285,20 @@
       max-width: 1300px; margin: 0 auto; perspective: 2400px; padding: 40px 24px 64px;
       position: relative; z-index: 1;
     }
-    .ss-item { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; z-index: 1; cursor: pointer; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
-    .ss-card { border-radius: 26px; overflow: hidden; width: 100%; transition: box-shadow .5s; background: #000; }
-    .ss-card img { width: 100%; height: auto; display: block; }
+    .ss-item { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; position: relative; z-index: 1; cursor: pointer; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+    .ss-item .device { width: 100%; }
     .ss-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); transition: color .3s; }
 
-    .ss-c0 { width: 196px; transform: rotateY(-15deg) translateX(-18px) scale(0.83); }
-    .ss-c0 .ss-card { box-shadow: 0 16px 50px rgba(22,20,15,0.22); }
-    .ss-c1 { width: 236px; transform: rotateY(-5deg) translateX(-6px) translateY(20px) scale(0.92); }
-    .ss-c1 .ss-card { box-shadow: 0 28px 70px rgba(22,20,15,0.26); }
-    .ss-c2 { width: 320px; transform: translateY(-16px); z-index: 3; }
-    .ss-c2 .ss-card { box-shadow: 0 48px 120px rgba(22,20,15,0.32), 0 0 110px rgba(99,102,241,0.22); }
+    .ss-c1 { width: 244px; transform: rotateY(-7deg) translateX(8px) translateY(16px) scale(0.9); }
+    .ss-c1 .device { box-shadow: 0 28px 70px rgba(22,20,15,0.26), var(--frame-edge); }
+    .ss-c2 { width: 308px; transform: translateY(-16px); z-index: 3; }
+    .ss-c2 .device { box-shadow: 0 48px 120px rgba(22,20,15,0.32), 0 0 110px rgba(99,102,241,0.22), var(--frame-edge); }
     .ss-c2 .ss-label { color: var(--ink-sub); }
-    .ss-c3 { width: 236px; transform: rotateY(5deg) translateX(6px) translateY(20px) scale(0.92); }
-    .ss-c3 .ss-card { box-shadow: 0 28px 70px rgba(22,20,15,0.26); }
-    .ss-c4 { width: 196px; transform: rotateY(15deg) translateX(18px) scale(0.83); }
-    .ss-c4 .ss-card { box-shadow: 0 16px 50px rgba(22,20,15,0.22); }
+    .ss-c3 { width: 244px; transform: rotateY(7deg) translateX(-8px) translateY(16px) scale(0.9); }
+    .ss-c3 .device { box-shadow: 0 28px 70px rgba(22,20,15,0.26), var(--frame-edge); }
 
     .ss-item:hover { transform: translateY(-20px) scale(1.05) !important; z-index: 10; }
-    .ss-item:hover .ss-card { box-shadow: 0 60px 130px rgba(22,20,15,0.4), 0 0 70px rgba(99,102,241,0.28) !important; }
+    .ss-item:hover .device { box-shadow: 0 60px 130px rgba(22,20,15,0.4), 0 0 70px rgba(99,102,241,0.28), var(--frame-edge) !important; }
     .ss-item:hover .ss-label { color: var(--brand); }
 
     .ss-dots { display: none; justify-content: center; gap: 6px; margin-top: 8px; }
@@ -306,7 +310,7 @@
       .ss-row::-webkit-scrollbar { display: none; }
       .ss-item { scroll-snap-align: center; width: 300px !important; transform: none !important; }
       .ss-item:hover { transform: none !important; }
-      .ss-item .ss-card, .ss-item:hover .ss-card { box-shadow: 0 24px 64px rgba(22,20,15,0.26) !important; }
+      .ss-item .device, .ss-item:hover .device { box-shadow: 0 24px 64px rgba(22,20,15,0.26), var(--frame-edge) !important; }
       .ss-dots { display: flex; }
     }
     @media (max-width: 480px) { .ss-item { width: 272px !important; } .ss-row { padding: 16px max(20px, calc(50vw - 136px)); } }
@@ -430,7 +434,11 @@
     </div>
   </div>
   <div class="hero-visual">
-    <img class="hero-phone" src="/screenshots/readgate-ss-hero.jpg" alt="Readgate onboarding screen — learn before you scroll" />
+    <div class="device">
+      <div class="device-screen">
+        <img src="/screenshots/readgate-screen-home.png" alt="Readgate home screen — today's reading gate" />
+      </div>
+    </div>
   </div>
 </section>
 
@@ -478,30 +486,22 @@
   </div>
   <div class="ss-stage">
     <div class="ss-row" id="ssRow">
-      <div class="ss-item ss-c0">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-goal.jpg" alt="Choose your smart opens" loading="lazy" /></div>
-        <span class="ss-label">Smart opens</span>
-      </div>
       <div class="ss-item ss-c1">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-howitworks.jpg" alt="How Readgate works" loading="lazy" /></div>
-        <span class="ss-label">How it works</span>
+        <div class="device"><div class="device-screen"><img src="/screenshots/readgate-screen-home.png" alt="Readgate home screen with today's gate" loading="lazy" /></div></div>
+        <span class="ss-label">Home</span>
       </div>
       <div class="ss-item ss-c2">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-hero.jpg" alt="Block doomscrolling and learn first" loading="lazy" /></div>
-        <span class="ss-label">Learn first</span>
-      </div>
-      <div class="ss-item ss-c3">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-reading.jpg" alt="Read one article before unlocking" loading="lazy" /></div>
+        <div class="device"><div class="device-screen"><img src="/screenshots/readgate-screen-reading.png" alt="Read one short article before unlocking" loading="lazy" /></div></div>
         <span class="ss-label">The article</span>
       </div>
-      <div class="ss-item ss-c4">
-        <div class="ss-card"><img src="/screenshots/readgate-ss-privacy.jpg" alt="Readgate home screen with today's gate" loading="lazy" /></div>
-        <span class="ss-label">Home</span>
+      <div class="ss-item ss-c3">
+        <div class="device"><div class="device-screen"><img src="/screenshots/readgate-screen-settings.png" alt="Readgate settings and app blocking controls" loading="lazy" /></div></div>
+        <span class="ss-label">Controls</span>
       </div>
     </div>
   </div>
   <div class="ss-dots" id="ssDots">
-    <div class="ss-dot active"></div><div class="ss-dot"></div><div class="ss-dot"></div><div class="ss-dot"></div><div class="ss-dot"></div>
+    <div class="ss-dot active"></div><div class="ss-dot"></div><div class="ss-dot"></div>
   </div>
 </section>
 
@@ -660,11 +660,9 @@
 
   // ── Lightbox
   const ssModalData = [
-    { src: '/screenshots/readgate-ss-goal.jpg',       label: 'Smart opens',    alt: 'Choose your smart opens' },
-    { src: '/screenshots/readgate-ss-howitworks.jpg', label: 'How it works',   alt: 'How Readgate works' },
-    { src: '/screenshots/readgate-ss-hero.jpg',       label: 'Learn first',    alt: 'Block doomscrolling and learn first' },
-    { src: '/screenshots/readgate-ss-reading.jpg',    label: 'The article',    alt: 'Read one article before unlocking' },
-    { src: '/screenshots/readgate-ss-privacy.jpg',    label: 'Home',           alt: "Readgate home screen with today's gate" },
+    { src: '/screenshots/readgate-screen-home.png',     label: 'Home',        alt: "Readgate home screen with today's gate" },
+    { src: '/screenshots/readgate-screen-reading.png',  label: 'The article', alt: 'Read one short article before unlocking' },
+    { src: '/screenshots/readgate-screen-settings.png', label: 'Controls',    alt: 'Readgate settings and app blocking controls' },
   ];
   const modal      = document.getElementById('ssModal');
   const modalImg   = document.getElementById('ssModalImg');
