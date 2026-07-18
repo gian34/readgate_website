@@ -562,60 +562,167 @@
       animation: orbit-drift 14s ease-in-out infinite alternate;
       pointer-events: none;
     }
-    .product-grid {
+    .showcase-heading {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-      gap: clamp(52px, 9vw, 122px);
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
+      gap: clamp(40px, 8vw, 100px);
+      align-items: end;
+      margin-bottom: clamp(52px, 8vw, 90px);
+    }
+    .showcase-heading .section-heading { margin-bottom: 0; }
+    .showcase-heading .section-intro { margin-bottom: 4px; }
+    .poster-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(20px, 3vw, 36px);
       align-items: start;
     }
-    .product-copy .section-intro { margin-bottom: 0; }
-    .product-list {
+    .poster-card {
       margin: 0;
-      padding: 0;
-      border-top: 1px solid var(--line);
-      list-style: none;
+      min-width: 0;
     }
-    .product-item {
+    .poster-card:nth-child(2) {
+      padding-top: clamp(70px, 9vw, 130px);
+      --reveal-delay: 140ms;
+    }
+    .poster-visual {
+      --media-y: 0px;
+      --poster-rotate: -0.7deg;
       position: relative;
-      display: grid;
-      grid-template-columns: 62px minmax(0, 1fr);
-      gap: 18px;
-      padding: 27px 0;
-      border-bottom: 1px solid var(--line);
-      transition: padding 360ms var(--ease-premium), background 360ms ease;
+      aspect-ratio: 0.62;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 28px;
+      background: #f4f0e9;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.38);
+      transform: translate3d(0, var(--media-y), 0) rotate(var(--poster-rotate));
+      transition:
+        transform 620ms var(--ease-premium),
+        border-color 260ms ease,
+        box-shadow 360ms ease;
+      will-change: transform;
     }
-    .product-item::after {
+    .poster-card:nth-child(2) .poster-visual { --poster-rotate: 0.8deg; }
+    .poster-visual::after {
       position: absolute;
-      right: 0;
-      bottom: -1px;
-      width: 0;
-      height: 1px;
-      background: linear-gradient(90deg, #7779ff, #bc7ce8);
+      inset: 0;
+      background: linear-gradient(125deg, rgba(255, 255, 255, 0.12), transparent 20%, transparent 78%, rgba(94, 81, 232, 0.08));
       content: "";
-      transition: width 520ms var(--ease-premium);
+      pointer-events: none;
     }
-    .product-item:hover { padding-left: 12px; background: linear-gradient(90deg, rgba(119, 121, 255, 0.055), transparent 70%); }
-    .product-item:hover::after { width: 100%; }
-    .product-number {
+    .poster-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 900ms var(--ease-premium);
+    }
+    .poster-card:hover .poster-visual {
+      border-color: rgba(183, 184, 255, 0.42);
+      box-shadow: 0 42px 110px rgba(0, 0, 0, 0.48), 0 0 70px rgba(92, 95, 235, 0.12);
+      transform: translate3d(0, calc(var(--media-y) - 8px), 0) rotate(0deg) scale(1.012);
+    }
+    .poster-card:hover .poster-visual img { transform: scale(1.025); }
+    .poster-caption {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+      padding-right: 12px;
+    }
+    .poster-caption span,
+    .reel-caption span {
       padding-top: 3px;
       color: #9fa1ff;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
     }
-    .product-item h3 {
-      margin-bottom: 7px;
-      font-size: 20px;
-      letter-spacing: -0.03em;
+    .poster-caption strong,
+    .reel-caption strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+      letter-spacing: -0.02em;
     }
-    .product-item p {
-      max-width: 520px;
+    .poster-caption p,
+    .reel-caption p {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .screen-reel {
+      position: relative;
+      z-index: 1;
+      margin-top: clamp(110px, 14vw, 180px);
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+    .reel-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 34px;
+    }
+    .reel-heading h3 {
+      max-width: 620px;
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -0.045em;
+    }
+    .reel-heading p {
+      max-width: 370px;
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .reel-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 22px);
+      align-items: start;
+    }
+    .reel-card {
+      min-width: 0;
+      margin: 0;
+    }
+    .reel-card:nth-child(even) { padding-top: 48px; }
+    .reel-card:nth-child(2) { --reveal-delay: 80ms; }
+    .reel-card:nth-child(3) { --reveal-delay: 160ms; }
+    .reel-card:nth-child(4) { --reveal-delay: 240ms; }
+    .reel-visual {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      background: #030407;
+      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.32);
+      transition:
+        transform 480ms var(--ease-premium),
+        border-color 260ms ease,
+        box-shadow 360ms ease;
+    }
+    .reel-visual img {
+      width: 100%;
+      transition: transform 800ms var(--ease-premium);
+    }
+    .reel-card:hover .reel-visual {
+      border-color: rgba(183, 184, 255, 0.44);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42), 0 0 50px rgba(92, 95, 235, 0.1);
+      transform: translateY(-10px);
+    }
+    .reel-card:hover .reel-visual img { transform: scale(1.018); }
+    .reel-caption {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .value-grid {
@@ -917,10 +1024,8 @@
     .js .how-wrap.in .step:nth-child(1) { transition-delay: 120ms; }
     .js .how-wrap.in .step:nth-child(2) { transition-delay: 220ms; }
     .js .how-wrap.in .step:nth-child(3) { transition-delay: 320ms; }
-    .product-item:nth-child(2),
     .value-card:nth-child(2),
     .trust-card:nth-child(2) { --reveal-delay: 90ms; }
-    .product-item:nth-child(3),
     .value-card:nth-child(3),
     .trust-card:nth-child(3) { --reveal-delay: 180ms; }
     .plan:nth-child(2) { --reveal-delay: 120ms; }
@@ -937,8 +1042,11 @@
       .step { min-height: auto; }
       .step + .step { border-top: 1px solid var(--line); border-left: 0; }
       .step-number { margin-bottom: 24px; }
-      .product-grid { grid-template-columns: 1fr; }
-      .product-copy .section-intro { margin-bottom: 12px; }
+      .showcase-heading { grid-template-columns: 1fr; }
+      .showcase-heading .section-heading { margin-bottom: 12px; }
+      .showcase-heading .section-intro { margin-bottom: 0; }
+      .reel-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reel-card:nth-child(even) { padding-top: 34px; }
       .value-grid { grid-template-columns: 1fr; }
       .value-copy .section-intro { margin-bottom: 16px; }
       .trust-card { padding-inline: 0; }
@@ -952,20 +1060,53 @@
       .nav-inner { min-height: 66px; }
       .nav-cta { min-height: 40px; padding-inline: 13px; }
       .hero { padding-top: 58px; }
+      .hero-grid { gap: 30px; }
       h1 { font-size: clamp(47px, 15.5vw, 68px); }
       .hero-copy { font-size: 17px; }
       .hero-actions .button { width: 100%; }
       .hero-actions .button-secondary { width: auto; }
-      .proof-row { display: grid; gap: 8px; }
-      .proof-pill + .proof-pill::before { content: none; }
+      .proof-row { display: none; }
       .hero::before { right: -32rem; }
       .hero-visual-note { right: -2px; bottom: 4%; font-size: 10px; }
-      .signal-track { gap: 18px; padding-block: 14px; }
+      .signal-track { padding-block: 14px; }
+      .signal-group { gap: 18px; padding-right: 18px; }
       section { padding-block: 80px; }
       .section-intro { margin-bottom: 34px; font-size: 16px; }
       .step { padding: 26px 0; }
-      .product-grid { gap: 34px; }
-      .product-item { grid-template-columns: 48px minmax(0, 1fr); gap: 12px; }
+      .showcase-heading { gap: 18px; margin-bottom: 40px; }
+      .poster-grid {
+        grid-template-columns: none;
+        grid-auto-columns: min(82vw, 420px);
+        grid-auto-flow: column;
+        gap: 18px;
+        width: calc(100vw - 14px);
+        padding: 8px 16vw 34px 0;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+      .poster-grid::-webkit-scrollbar,
+      .reel-track::-webkit-scrollbar { display: none; }
+      .poster-card { scroll-snap-align: start; }
+      .poster-card:nth-child(2) { padding-top: 0; }
+      .poster-visual { aspect-ratio: 0.58; border-radius: 24px; }
+      .poster-caption { grid-template-columns: 34px minmax(0, 1fr); }
+      .screen-reel { margin-top: 88px; }
+      .reel-heading { display: block; margin-bottom: 26px; }
+      .reel-heading p { margin-top: 12px; }
+      .reel-track {
+        grid-template-columns: none;
+        grid-auto-columns: 72vw;
+        grid-auto-flow: column;
+        gap: 16px;
+        width: calc(100vw - 14px);
+        padding: 6px 20vw 32px 0;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+      .reel-card { scroll-snap-align: start; }
+      .reel-card:nth-child(even) { padding-top: 0; }
       .plan-grid { grid-template-columns: 1fr; }
       .plan { padding-inline: 0; }
       .plan:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -1075,9 +1216,9 @@
         <div class="hero-visual reveal">
           <div class="hero-glow" aria-hidden="true"></div>
           <div class="phone">
-            <img src="/screenshots/readgate-screen-reading.png" alt="Instagram is paused while Readgate presents a short reading gate" width="744" height="1617" fetchpriority="high" />
+            <img src="/screenshots/readgate-reading-solar.png" alt="Readgate presents a short article about solar energy before the selected app unlocks" width="900" height="1956" fetchpriority="high" decoding="async" />
           </div>
-          <p class="hero-visual-note" aria-hidden="true">The Gate · 45–90 sec</p>
+          <p class="hero-visual-note" aria-hidden="true">A live reading Gate · ~1 min</p>
         </div>
       </div>
     </header>
@@ -1128,35 +1269,78 @@
     </section>
 
     <section class="product-section" id="product">
-      <div class="shell product-grid">
-        <div class="product-copy reveal">
-          <p class="section-kicker">The product</p>
-          <h2 class="section-heading">Useful by design. Quiet on purpose.</h2>
-          <p class="section-intro">Readgate does not compete for more attention. It gives one automatic choice a better next step.</p>
+      <div class="shell showcase-heading">
+        <div class="reveal">
+          <p class="section-kicker">Inside Readgate</p>
+          <h2 class="section-heading">A learning loop you can see.</h2>
         </div>
-        <ol class="product-list">
-          <li class="product-item reveal">
-            <span class="product-number" aria-hidden="true">01</span>
-            <div>
-              <h3>One useful idea</h3>
-              <p>A short read that is focused enough to finish and worthwhile enough to remember.</p>
+        <p class="section-intro reveal">Real product screens and campaign visuals, adapted into one continuous story: notice the impulse, read something useful, then continue by choice.</p>
+      </div>
+
+      <div class="shell poster-grid" aria-label="Readgate campaign visuals">
+        <figure class="poster-card reveal">
+          <div class="poster-visual" data-parallax="0.028">
+            <img src="/screenshots/readgate-poster-learning.png" alt="Readgate campaign visual showing the learning app that opens itself" width="853" height="1844" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="poster-caption">
+            <span aria-hidden="true">01</span>
+            <div><strong>The promise</strong><p>Your scroll impulse becomes one useful reading moment.</p></div>
+          </figcaption>
+        </figure>
+        <figure class="poster-card reveal">
+          <div class="poster-visual" data-parallax="-0.022">
+            <img src="/screenshots/readgate-poster-unlock.png" alt="Readgate campaign visual showing one article before an app unlocks" width="853" height="1844" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="poster-caption">
+            <span aria-hidden="true">02</span>
+            <div><strong>The payoff</strong><p>Finish one article, then unlock the app without guilt.</p></div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="shell screen-reel">
+        <div class="reel-heading reveal">
+          <h3>From first promise to finished read.</h3>
+          <p>Swipe on mobile or move through the real product journey below.</p>
+        </div>
+        <div class="reel-track" aria-label="Readgate product screens">
+          <figure class="reel-card reveal">
+            <div class="reel-visual">
+              <img src="/screenshots/readgate-onboarding-intro.png" alt="Readgate onboarding screen introducing Read before you scroll" width="900" height="1956" loading="lazy" decoding="async" />
             </div>
-          </li>
-          <li class="product-item reveal">
-            <span class="product-number" aria-hidden="true">02</span>
-            <div>
-              <h3>A focused unlock</h3>
-              <p>Continue into the app for the window you choose — without another lecture from your phone.</p>
+            <figcaption class="reel-caption">
+              <span aria-hidden="true">01</span>
+              <div><strong>Start with the promise</strong><p>One clear idea before the first setup choice.</p></div>
+            </figcaption>
+          </figure>
+          <figure class="reel-card reveal">
+            <div class="reel-visual">
+              <img src="/screenshots/readgate-onboarding-intent.png" alt="Readgate onboarding asks what the user wants each scroll impulse to become" width="900" height="1956" loading="lazy" decoding="async" />
             </div>
-          </li>
-          <li class="product-item reveal">
-            <span class="product-number" aria-hidden="true">03</span>
-            <div>
-              <h3>A record that matters</h3>
-              <p>Track what you read and learn, not how many times an app told you no.</p>
+            <figcaption class="reel-caption">
+              <span aria-hidden="true">02</span>
+              <div><strong>Choose the intention</strong><p>Set what you want your phone to give back.</p></div>
+            </figcaption>
+          </figure>
+          <figure class="reel-card reveal">
+            <div class="reel-visual">
+              <img src="/screenshots/readgate-onboarding-flow.png" alt="Readgate onboarding explains the reach, short read, and app unlock flow" width="900" height="1956" loading="lazy" decoding="async" />
             </div>
-          </li>
-        </ol>
+            <figcaption class="reel-caption">
+              <span aria-hidden="true">03</span>
+              <div><strong>Understand the loop</strong><p>The reach, one short read, then access.</p></div>
+            </figcaption>
+          </figure>
+          <figure class="reel-card reveal">
+            <div class="reel-visual">
+              <img src="/screenshots/readgate-reading-solar.png" alt="Readgate reading Gate with a short article about solar energy" width="900" height="1956" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="reel-caption">
+              <span aria-hidden="true">04</span>
+              <div><strong>Finish one useful read</strong><p>A focused article replaces an empty tap.</p></div>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -1321,6 +1505,7 @@
       const root = document.documentElement;
       const heroVisual = document.querySelector('.hero-visual');
       const phone = document.querySelector('.phone');
+      const parallaxMedia = document.querySelectorAll('[data-parallax]');
       let scrollFrame = 0;
 
       const updatePageMotion = () => {
@@ -1330,6 +1515,15 @@
         root.style.setProperty('--scroll-progress', `${Math.min(100, (window.scrollY / scrollable) * 100)}%`);
         if (!reduceMotion && phone) {
           phone.style.setProperty('--parallax-y', `${Math.max(-30, window.scrollY * -0.035)}px`);
+        }
+        if (!reduceMotion) {
+          parallaxMedia.forEach((item) => {
+            const bounds = item.getBoundingClientRect();
+            const speed = Number(item.dataset.parallax) || 0;
+            const distance = window.innerHeight * 0.5 - (bounds.top + bounds.height * 0.5);
+            const offset = Math.max(-34, Math.min(34, distance * speed));
+            item.style.setProperty('--media-y', `${offset}px`);
+          });
         }
       };
       const requestPageMotion = () => {
