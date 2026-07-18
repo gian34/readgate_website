@@ -65,9 +65,6 @@
     :root {
       --bg: #080b10;
       --bg-soft: #0d1118;
-      --surface: #111720;
-      --surface-high: #18212d;
-      --surface-brand: #17182d;
       --line: rgba(255, 255, 255, 0.1);
       --line-strong: rgba(255, 255, 255, 0.17);
       --text: #f7f7fa;
@@ -79,9 +76,6 @@
       --brand-button-hover: #6568f0;
       --success: #8eddb0;
       --max: 1160px;
-      --radius-lg: 28px;
-      --radius-md: 20px;
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
     }
 
     * { box-sizing: border-box; }
@@ -91,14 +85,12 @@
       min-width: 320px;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at 75% 7%, rgba(99, 102, 241, 0.18), transparent 26rem),
-        radial-gradient(circle at 15% 38%, rgba(139, 92, 246, 0.08), transparent 24rem),
+        radial-gradient(circle at 76% 5%, rgba(99, 102, 241, 0.12), transparent 29rem),
         var(--bg);
       color: var(--text);
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-    body.modal-open { overflow: hidden; }
     a { color: inherit; }
     img { display: block; max-width: 100%; height: auto; }
     button, a { -webkit-tap-highlight-color: transparent; }
@@ -184,28 +176,26 @@
       gap: 8px;
       padding: 0 19px;
       border: 1px solid transparent;
-      border-radius: 14px;
+      border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
       font-size: 15px;
       font-weight: 700;
       letter-spacing: -0.01em;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+      transition: background 160ms ease, border-color 160ms ease;
     }
-    .button:hover { transform: translateY(-2px); }
     .button-primary {
       color: #fff;
-      background: linear-gradient(135deg, var(--brand-button), #7048da);
-      box-shadow: 0 12px 36px rgba(85, 88, 232, 0.28);
+      background: var(--brand-button);
     }
-    .button-primary:hover { background: linear-gradient(135deg, var(--brand-button-hover), #7e55e8); }
+    .button-primary:hover { background: var(--brand-button-hover); }
     .button-secondary {
       color: var(--text);
       border-color: var(--line-strong);
       background: rgba(255, 255, 255, 0.05);
     }
     .button-secondary:hover { background: rgba(255, 255, 255, 0.09); }
-    .nav-cta { min-height: 42px; padding-inline: 15px; border-radius: 12px; font-size: 14px; }
+    .nav-cta { min-height: 42px; padding-inline: 15px; border-radius: 9px; font-size: 14px; }
 
     .hero {
       padding: clamp(64px, 9vw, 124px) 0 clamp(88px, 11vw, 150px);
@@ -228,27 +218,22 @@
       text-transform: uppercase;
     }
     .eyebrow::before {
-      width: 7px;
-      height: 7px;
-      border-radius: 99px;
+      width: 22px;
+      height: 1px;
       background: var(--brand);
-      box-shadow: 0 0 22px var(--brand);
       content: "";
     }
     h1, h2, h3, p { margin-top: 0; }
     h1 {
       max-width: 760px;
       margin-bottom: 24px;
-      font-size: clamp(52px, 7.1vw, 92px);
-      line-height: 0.98;
+      font-size: clamp(52px, 6.6vw, 84px);
+      line-height: 1;
       letter-spacing: -0.065em;
       font-weight: 800;
     }
     .gradient-text {
-      color: transparent;
-      background: linear-gradient(120deg, #a9aaff 5%, #9f7df4 65%, #d08af2);
-      -webkit-background-clip: text;
-      background-clip: text;
+      color: #9fa1ff;
     }
     .hero-copy {
       max-width: 620px;
@@ -274,17 +259,19 @@
     .proof-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
+      gap: 0;
       margin-top: 32px;
     }
     .proof-pill {
-      padding: 8px 11px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
+      padding: 0;
       color: var(--muted);
-      background: rgba(255, 255, 255, 0.035);
       font-size: 12px;
       font-weight: 600;
+    }
+    .proof-pill + .proof-pill::before {
+      margin: 0 10px;
+      color: #656a76;
+      content: "•";
     }
 
     .hero-visual {
@@ -294,55 +281,24 @@
       isolation: isolate;
     }
     .hero-glow {
-      position: absolute;
-      inset: 13% -12% 4%;
-      z-index: -1;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.42), rgba(99, 102, 241, 0) 68%);
-      filter: blur(18px);
+      display: none;
     }
     .phone {
       position: relative;
-      width: min(100%, 337px);
-      padding: 9px;
+      width: min(100%, 330px);
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.19);
-      border-radius: 49px;
-      background: #17191e;
-      box-shadow: var(--shadow);
-      transform: rotate(2.2deg);
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      background: #030407;
     }
     .phone::after {
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      width: 34%;
-      height: 25px;
-      border-radius: 99px;
-      background: #030406;
-      content: "";
-      transform: translateX(-50%);
+      content: none;
     }
     .phone img {
       width: 100%;
-      border-radius: 40px;
+      border-radius: 19px;
       background: #090b0f;
     }
-    .hero-card {
-      position: absolute;
-      right: -22px;
-      bottom: 12%;
-      width: 205px;
-      padding: 15px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 16px;
-      background: rgba(19, 25, 35, 0.92);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.36);
-      backdrop-filter: blur(16px);
-      transform: rotate(-2deg);
-    }
-    .hero-card strong { display: block; margin-bottom: 4px; font-size: 14px; }
-    .hero-card span { color: var(--muted); font-size: 12px; line-height: 1.45; }
 
     section { padding: clamp(78px, 10vw, 136px) 0; }
     .section-kicker {
@@ -371,38 +327,27 @@
     }
 
     .how-wrap {
-      padding: clamp(26px, 4vw, 44px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(135deg, rgba(99, 102, 241, 0.08), transparent 45%),
-        var(--surface);
+      padding: 0;
     }
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 0;
+      border-block: 1px solid var(--line);
     }
     .step {
       position: relative;
-      min-height: 210px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.025);
+      min-height: 224px;
+      padding: 32px;
     }
+    .step + .step { border-left: 1px solid var(--line); }
     .step-number {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
+      display: block;
       margin-bottom: 34px;
-      border: 1px solid rgba(167, 169, 255, 0.35);
-      border-radius: 11px;
       color: #c7c8ff;
-      background: rgba(99, 102, 241, 0.12);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
+      letter-spacing: 0.08em;
     }
     .step h3 {
       margin-bottom: 10px;
@@ -416,52 +361,49 @@
       line-height: 1.62;
     }
 
-    .screens-section { border-block: 1px solid var(--line); background: var(--bg-soft); }
-    .screens-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 52px;
+    .product-section {
+      border-block: 1px solid var(--line);
+      background: var(--bg-soft);
     }
-    .screens-heading .section-intro { margin-bottom: 0; }
-    .screen-grid {
+    .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(18px, 3vw, 34px);
-      align-items: end;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+      gap: clamp(52px, 9vw, 122px);
+      align-items: start;
     }
-    .screen-item {
-      width: 100%;
+    .product-copy .section-intro { margin-bottom: 0; }
+    .product-list {
+      margin: 0;
       padding: 0;
-      border: 0;
-      color: inherit;
-      background: transparent;
-      cursor: zoom-in;
-      text-align: left;
+      border-top: 1px solid var(--line);
+      list-style: none;
     }
-    .screen-device {
-      padding: 8px;
-      border: 1px solid var(--line-strong);
-      border-radius: 42px;
-      background: #17191e;
-      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.28);
-      transition: transform 200ms ease, border-color 200ms ease;
+    .product-item {
+      display: grid;
+      grid-template-columns: 62px minmax(0, 1fr);
+      gap: 18px;
+      padding: 27px 0;
+      border-bottom: 1px solid var(--line);
     }
-    .screen-item:hover .screen-device {
-      border-color: rgba(167, 169, 255, 0.5);
-      transform: translateY(-8px);
+    .product-number {
+      padding-top: 3px;
+      color: #9fa1ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
     }
-    .screen-device img { width: 100%; border-radius: 34px; }
-    .screen-meta { padding: 18px 5px 0; }
-    .screen-meta strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 16px;
-      letter-spacing: -0.02em;
+    .product-item h3 {
+      margin-bottom: 7px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
     }
-    .screen-meta span { color: var(--muted); font-size: 13px; line-height: 1.5; }
-    .screen-item:nth-child(2) { transform: translateY(-22px); }
+    .product-item p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
 
     .value-grid {
       display: grid;
@@ -469,66 +411,55 @@
       gap: clamp(44px, 8vw, 100px);
       align-items: center;
     }
-    .value-list { display: grid; gap: 15px; }
+    .value-list {
+      display: grid;
+      border-top: 1px solid var(--line);
+    }
     .value-card {
       display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 16px;
-      padding: 21px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--surface);
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
     }
     .value-icon {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
+      padding-top: 3px;
       color: #c9caff;
-      background: rgba(99, 102, 241, 0.13);
-      font-size: 19px;
+      font-size: 12px;
       font-weight: 800;
+      letter-spacing: 0.08em;
     }
     .value-card h3 { margin: 1px 0 7px; font-size: 17px; }
     .value-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.58; }
 
     .plans-section {
       border-block: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.12), transparent 28rem),
-        var(--bg-soft);
+      background: var(--bg-soft);
     }
     .plan-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      gap: 0;
+      border-block: 1px solid var(--line);
     }
     .plan {
-      padding: clamp(26px, 4vw, 40px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: var(--surface);
+      padding: clamp(34px, 5vw, 54px);
     }
+    .plan:first-child { padding-left: 0; border-right: 1px solid var(--line); }
+    .plan:last-child { padding-right: 0; }
     .plan-featured {
-      border-color: rgba(147, 149, 255, 0.46);
-      background:
-        linear-gradient(145deg, rgba(99, 102, 241, 0.14), transparent 52%),
-        var(--surface-brand);
+      background: transparent;
     }
     .plan-label {
-      display: inline-flex;
+      display: block;
       margin-bottom: 26px;
-      padding: 6px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
       color: var(--muted);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .plan-featured .plan-label { color: #c9caff; border-color: rgba(167, 169, 255, 0.3); }
+    .plan-featured .plan-label { color: #c9caff; }
     .plan h3 { margin-bottom: 10px; font-size: 30px; letter-spacing: -0.04em; }
     .plan > p { min-height: 52px; color: var(--muted); line-height: 1.58; }
     .feature-list { display: grid; gap: 14px; margin: 28px 0 0; padding: 0; list-style: none; }
@@ -552,22 +483,22 @@
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 0;
+      border-block: 1px solid var(--line);
     }
     .trust-card {
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.025);
+      padding: 30px;
     }
-    .trust-card::before {
+    .trust-card:first-child { padding-left: 0; }
+    .trust-card:last-child { padding-right: 0; }
+    .trust-card + .trust-card { border-left: 1px solid var(--line); }
+    .trust-index {
       display: block;
-      width: 9px;
-      height: 9px;
       margin-bottom: 32px;
-      border: 3px solid var(--brand);
-      border-radius: 50%;
-      content: "";
+      color: #9fa1ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
     }
     .trust-card h3 { margin-bottom: 10px; font-size: 18px; }
     .trust-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.64; }
@@ -612,31 +543,16 @@
       line-height: 1.72;
     }
 
-    .final-cta { padding-top: 30px; }
+    .final-cta {
+      padding-block: clamp(72px, 9vw, 118px);
+      border-top: 1px solid rgba(167, 169, 255, 0.25);
+      background: #181a44;
+    }
     .cta-panel {
-      position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 40px;
       align-items: center;
-      padding: clamp(34px, 6vw, 70px);
-      overflow: hidden;
-      border: 1px solid rgba(167, 169, 255, 0.36);
-      border-radius: 32px;
-      background:
-        radial-gradient(circle at 90% 15%, rgba(177, 128, 255, 0.3), transparent 19rem),
-        linear-gradient(135deg, #292c78, #181b43 62%, #15162c);
-      box-shadow: var(--shadow);
-    }
-    .cta-panel::after {
-      position: absolute;
-      right: -60px;
-      bottom: -100px;
-      width: 260px;
-      height: 260px;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 50%;
-      content: "";
     }
     .cta-panel h2 {
       max-width: 630px;
@@ -647,8 +563,6 @@
     }
     .cta-panel p { max-width: 580px; margin: 0; color: #d6d6eb; font-size: 17px; line-height: 1.6; }
     .cta-actions {
-      position: relative;
-      z-index: 1;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -675,53 +589,6 @@
     .footer-links a { color: var(--muted); text-decoration: none; }
     .footer-links a:hover { color: var(--text); }
 
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 150;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 26px;
-      background: rgba(2, 3, 5, 0.91);
-      backdrop-filter: blur(16px);
-    }
-    .lightbox.open { display: flex; }
-    .lightbox-content {
-      position: relative;
-      display: grid;
-      grid-template-columns: 46px minmax(0, 390px) 46px;
-      align-items: center;
-      gap: 18px;
-    }
-    .lightbox-figure { margin: 0; }
-    .lightbox-img {
-      max-height: 80vh;
-      width: auto;
-      margin: auto;
-      border: 8px solid #17191e;
-      border-radius: 40px;
-      box-shadow: 0 30px 90px #000;
-    }
-    .lightbox-label { margin: 14px 0 0; color: var(--muted); text-align: center; font-size: 13px; }
-    .lightbox-control {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line-strong);
-      border-radius: 50%;
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.07);
-      cursor: pointer;
-      font-size: 25px;
-    }
-    .lightbox-close {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-    }
-
     .mobile-cta {
       position: fixed;
       left: 14px;
@@ -733,9 +600,9 @@
       align-items: center;
       justify-content: center;
       border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 16px;
+      border-radius: 10px;
       color: #fff;
-      background: linear-gradient(135deg, rgba(85, 88, 232, 0.97), rgba(112, 72, 218, 0.97));
+      background: rgba(85, 88, 232, 0.97);
       box-shadow: 0 18px 48px rgba(0, 0, 0, 0.46);
       text-decoration: none;
       font-size: 15px;
@@ -749,8 +616,8 @@
     .reveal { opacity: 1; transform: none; }
     .js .reveal {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 650ms ease, transform 650ms cubic-bezier(.22, 1, .36, 1);
+      transform: translateY(8px);
+      transition: opacity 380ms ease, transform 380ms cubic-bezier(.22, 1, .36, 1);
     }
     .js .reveal.in { opacity: 1; transform: translateY(0); }
 
@@ -759,13 +626,17 @@
       .hero-grid { grid-template-columns: 1fr; }
       .hero-copy { max-width: 680px; }
       .hero-visual { margin-top: 8px; }
-      .phone { width: min(82vw, 355px); transform: rotate(1deg); }
-      .hero-card { right: max(0px, calc(50% - 255px)); }
+      .phone { width: min(82vw, 330px); }
       .steps, .trust-grid { grid-template-columns: 1fr; }
       .step { min-height: auto; }
+      .step + .step { border-top: 1px solid var(--line); border-left: 0; }
       .step-number { margin-bottom: 24px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product-copy .section-intro { margin-bottom: 12px; }
       .value-grid { grid-template-columns: 1fr; }
       .value-copy .section-intro { margin-bottom: 16px; }
+      .trust-card { padding-inline: 0; }
+      .trust-card + .trust-card { border-top: 1px solid var(--line); border-left: 0; }
       .cta-panel { grid-template-columns: 1fr; }
       .cta-actions { justify-content: flex-start; }
     }
@@ -779,46 +650,21 @@
       .hero-copy { font-size: 17px; }
       .hero-actions .button { width: 100%; }
       .hero-actions .button-secondary { width: auto; }
-      .hero-card { right: -4px; bottom: 10%; width: 185px; }
+      .proof-row { display: grid; gap: 8px; }
+      .proof-pill + .proof-pill::before { content: none; }
       section { padding-block: 80px; }
       .section-intro { margin-bottom: 34px; font-size: 16px; }
-      .how-wrap { padding: 14px; border-radius: 22px; }
-      .steps { gap: 12px; }
-      .step { padding: 20px; }
-      .screens-heading { display: block; }
-      .screen-grid {
-        grid-template-columns: 76vw 76vw 76vw;
-        gap: 18px;
-        width: calc(100vw - 14px);
-        margin-left: 0;
-        padding: 16px 16vw 26px 0;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-      }
-      .screen-grid::-webkit-scrollbar { display: none; }
-      .screen-item { scroll-snap-align: start; }
-      .screen-item:nth-child(2) { transform: none; }
-      .screen-device { border-radius: 37px; }
-      .screen-device img { border-radius: 30px; }
+      .step { padding: 26px 0; }
+      .product-grid { gap: 34px; }
+      .product-item { grid-template-columns: 48px minmax(0, 1fr); gap: 12px; }
       .plan-grid { grid-template-columns: 1fr; }
+      .plan { padding-inline: 0; }
+      .plan:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
       .plan > p { min-height: auto; }
-      .trust-card::before { margin-bottom: 24px; }
-      .cta-panel { padding: 32px 23px; border-radius: 24px; }
       .cta-panel h2 { font-size: 38px; }
       .cta-qr { display: none; }
       .cta-actions .button { width: 100%; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
-      .lightbox { padding: 18px; }
-      .lightbox-content { grid-template-columns: 1fr; }
-      .lightbox-control:not(.lightbox-close) {
-        position: fixed;
-        top: 50%;
-        z-index: 2;
-      }
-      .lightbox-prev { left: 12px; }
-      .lightbox-next { right: 12px; }
-      .lightbox-img { max-width: 78vw; max-height: 76vh; }
       .mobile-cta { display: flex; }
       footer { padding-bottom: 110px; }
     }
@@ -918,10 +764,6 @@
           <div class="phone">
             <img src="/screenshots/readgate-screen-reading.png" alt="Instagram is paused while Readgate presents a short reading gate" width="744" height="1617" fetchpriority="high" />
           </div>
-          <div class="hero-card" aria-hidden="true">
-            <strong>One useful idea first.</strong>
-            <span>Finish the read. Unlock the scroll with intention.</span>
-          </div>
         </div>
       </div>
     </header>
@@ -951,30 +793,36 @@
       </div>
     </section>
 
-    <section class="screens-section" id="product">
-      <div class="shell">
-        <div class="screens-heading reveal">
-          <div>
-            <p class="section-kicker">The real product</p>
-            <h2 class="section-heading">From impulse to intention.</h2>
-          </div>
-          <p class="section-intro">These screens come from the current Readgate build — not a marketing mockup.</p>
+    <section class="product-section" id="product">
+      <div class="shell product-grid">
+        <div class="product-copy reveal">
+          <p class="section-kicker">The product</p>
+          <h2 class="section-heading">Useful by design. Quiet on purpose.</h2>
+          <p class="section-intro">Readgate does not compete for more attention. It gives one automatic choice a better next step.</p>
         </div>
-
-        <div class="screen-grid">
-          <button class="screen-item reveal" type="button" data-screen="0" aria-label="Open Home screenshot">
-            <span class="screen-device"><img src="/screenshots/readgate-screen-home.png" alt="Readgate home with today's Gate and reading impact" width="744" height="1617" loading="lazy" /></span>
-            <span class="screen-meta"><strong>Your reading rhythm</strong><span>See today’s Gate, streak, and learning impact.</span></span>
-          </button>
-          <button class="screen-item reveal" type="button" data-screen="1" aria-label="Open Reading Gate screenshot">
-            <span class="screen-device"><img src="/screenshots/readgate-screen-reading.png" alt="Readgate presents a short article before Instagram unlocks" width="744" height="1617" loading="lazy" /></span>
-            <span class="screen-meta"><strong>The Gate</strong><span>One useful idea between impulse and scroll.</span></span>
-          </button>
-          <button class="screen-item reveal" type="button" data-screen="2" aria-label="Open Gate controls screenshot">
-            <span class="screen-device"><img src="/screenshots/readgate-screen-settings.png" alt="Readgate Gate settings with app and category selection" width="744" height="1617" loading="lazy" /></span>
-            <span class="screen-meta"><strong>Your rules</strong><span>Choose what to protect and when the Gate runs.</span></span>
-          </button>
-        </div>
+        <ol class="product-list">
+          <li class="product-item reveal">
+            <span class="product-number" aria-hidden="true">01</span>
+            <div>
+              <h3>One useful idea</h3>
+              <p>A short read that is focused enough to finish and worthwhile enough to remember.</p>
+            </div>
+          </li>
+          <li class="product-item reveal">
+            <span class="product-number" aria-hidden="true">02</span>
+            <div>
+              <h3>A focused unlock</h3>
+              <p>Continue into the app for the window you choose — without another lecture from your phone.</p>
+            </div>
+          </li>
+          <li class="product-item reveal">
+            <span class="product-number" aria-hidden="true">03</span>
+            <div>
+              <h3>A record that matters</h3>
+              <p>Track what you read and learn, not how many times an app told you no.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -987,15 +835,15 @@
         </div>
         <div class="value-list">
           <article class="value-card reveal">
-            <span class="value-icon" aria-hidden="true">↯</span>
+            <span class="value-icon" aria-hidden="true">01</span>
             <div><h3>Interrupt the reflex</h3><p>A calm pause creates just enough space to notice what your thumb was doing.</p></div>
           </article>
           <article class="value-card reveal">
-            <span class="value-icon" aria-hidden="true">A</span>
+            <span class="value-icon" aria-hidden="true">02</span>
             <div><h3>Replace it with something useful</h3><p>Short reads across science, history, ideas, culture, technology, and more.</p></div>
           </article>
           <article class="value-card reveal">
-            <span class="value-icon" aria-hidden="true">✓</span>
+            <span class="value-icon" aria-hidden="true">03</span>
             <div><h3>Keep the choice yours</h3><p>Finish the read, unlock the app, and decide with a little more intention.</p></div>
           </article>
         </div>
@@ -1048,14 +896,17 @@
         </div>
         <div class="trust-grid">
           <article class="trust-card reveal">
+            <span class="trust-index" aria-hidden="true">01</span>
             <h3>No account or email</h3>
             <p>Start using Readgate without creating a profile or handing over your identity.</p>
           </article>
           <article class="trust-card reveal">
+            <span class="trust-index" aria-hidden="true">02</span>
             <h3>Protected choices stay private</h3>
             <p>Protected app names and website domains are not intentionally sent to Readgate servers or analytics.</p>
           </article>
           <article class="trust-card reveal">
+            <span class="trust-index" aria-hidden="true">03</span>
             <h3>No ad tracking</h3>
             <p>Readgate does not use advertising identifiers or analytics data for third-party ad targeting.</p>
           </article>
@@ -1128,18 +979,6 @@
 
   <a class="mobile-cta" href="https://apps.apple.com/app/id6761989769" aria-label="Get Readgate free on the App Store" aria-hidden="true" tabindex="-1">Get Readgate — free</a>
 
-  <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Readgate product screenshots">
-    <button class="lightbox-control lightbox-close" type="button" aria-label="Close screenshots">×</button>
-    <div class="lightbox-content">
-      <button class="lightbox-control lightbox-prev" type="button" aria-label="Previous screenshot">‹</button>
-      <figure class="lightbox-figure">
-        <img class="lightbox-img" src="" alt="" />
-        <figcaption class="lightbox-label"></figcaption>
-      </figure>
-      <button class="lightbox-control lightbox-next" type="button" aria-label="Next screenshot">›</button>
-    </div>
-  </div>
-
   <script>
     (() => {
       const nav = document.querySelector('.site-nav');
@@ -1185,75 +1024,6 @@
           updateSticky();
         }, { threshold: 0.1 }).observe(finalCta);
       }
-
-      const screenshots = [
-        { src: '/screenshots/readgate-screen-home.png', alt: "Readgate home with today's Gate and reading impact", label: 'Your reading rhythm' },
-        { src: '/screenshots/readgate-screen-reading.png', alt: 'Readgate presents a short article before Instagram unlocks', label: 'The Gate' },
-        { src: '/screenshots/readgate-screen-settings.png', alt: 'Readgate Gate settings with app and category selection', label: 'Your rules' }
-      ];
-      const lightbox = document.querySelector('.lightbox');
-      const lightboxImg = document.querySelector('.lightbox-img');
-      const lightboxLabel = document.querySelector('.lightbox-label');
-      const closeButton = document.querySelector('.lightbox-close');
-      const prevButton = document.querySelector('.lightbox-prev');
-      const nextButton = document.querySelector('.lightbox-next');
-      const screenButtons = document.querySelectorAll('[data-screen]');
-      let activeIndex = 0;
-      let lastTrigger = null;
-
-      const renderScreen = () => {
-        const screen = screenshots[activeIndex];
-        lightboxImg.src = screen.src;
-        lightboxImg.alt = screen.alt;
-        lightboxLabel.textContent = `${screen.label} · ${activeIndex + 1} of ${screenshots.length}`;
-      };
-      const openLightbox = (index, trigger) => {
-        activeIndex = index;
-        lastTrigger = trigger;
-        renderScreen();
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('modal-open');
-        closeButton.focus();
-      };
-      const closeLightbox = () => {
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('modal-open');
-        lightboxImg.src = '';
-        if (lastTrigger) lastTrigger.focus();
-      };
-      const changeScreen = (direction) => {
-        activeIndex = (activeIndex + direction + screenshots.length) % screenshots.length;
-        renderScreen();
-      };
-
-      screenButtons.forEach((button) => {
-        button.addEventListener('click', () => openLightbox(Number(button.dataset.screen), button));
-      });
-      closeButton.addEventListener('click', closeLightbox);
-      prevButton.addEventListener('click', () => changeScreen(-1));
-      nextButton.addEventListener('click', () => changeScreen(1));
-      lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) closeLightbox();
-      });
-      document.addEventListener('keydown', (event) => {
-        if (!lightbox.classList.contains('open')) return;
-        if (event.key === 'Escape') closeLightbox();
-        if (event.key === 'ArrowLeft') changeScreen(-1);
-        if (event.key === 'ArrowRight') changeScreen(1);
-        if (event.key === 'Tab') {
-          const controls = [closeButton, prevButton, nextButton];
-          const current = controls.indexOf(document.activeElement);
-          if (event.shiftKey && current <= 0) {
-            event.preventDefault();
-            nextButton.focus();
-          } else if (!event.shiftKey && current === controls.length - 1) {
-            event.preventDefault();
-            closeButton.focus();
-          }
-        }
-      });
     })();
   </script>
 </body>
