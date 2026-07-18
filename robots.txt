@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /screenshots/
+
+Sitemap: https://readgateapp.com/sitemap.xml

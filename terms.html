@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-itunes-app" content="app-id=6761989769" />
   <title>Terms of Service — Readgate</title>
-  <link rel="icon" type="image/png" href="/icon.png?v=indigo" />
-  <link rel="apple-touch-icon" href="/icon.png?v=indigo" />
+  <meta name="description" content="Readgate Terms of Service, including free and Pro features, subscriptions, acceptable use, and service limitations." />
+  <link rel="canonical" href="https://readgateapp.com/terms" />
+  <link rel="icon" type="image/png" href="/icon-128.png" />
+  <link rel="apple-touch-icon" href="/icon-180.png" />
   <meta property="og:image" content="https://readgateapp.com/og-image.png" />
   <meta property="og:image:secure_url" content="https://readgateapp.com/og-image.png" />
   <meta property="og:image:type" content="image/png" />
@@ -17,10 +19,11 @@
   <meta name="twitter:image" content="https://readgateapp.com/og-image.png" />
   <meta name="twitter:image:alt" content="Readgate logo" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <style>
+    @font-face { font-family: "Inter"; src: url("/fonts/Inter-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("/fonts/Inter-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("/fonts/Inter-ExtraBold.woff2") format("woff2"); font-weight: 700 900; font-style: normal; font-display: swap; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -31,8 +34,8 @@
       --ink-faint:  #A39E92;
       --line:       rgba(22,20,15,0.10);
       --brand:      #6366F1;
-      --serif:      'Instrument Serif', Georgia, serif;
-      --sans:       'Hanken Grotesk', -apple-system, system-ui, sans-serif;
+      --serif:      "Inter", Georgia, serif;
+      --sans:       "Inter", -apple-system, system-ui, sans-serif;
     }
 
     body {
@@ -54,7 +57,7 @@
     .logo img { width: 28px; height: 28px; border-radius: 8px; }
 
     h1 {
-      font-family: var(--serif); font-weight: 400; color: var(--ink);
+      font-family: var(--sans); font-weight: 800; color: var(--ink);
       font-size: clamp(40px, 7vw, 66px); line-height: 0.98;
       letter-spacing: -0.01em; margin-bottom: 14px;
     }
@@ -155,7 +158,7 @@
     <p>For questions about these Terms or your subscription, contact <a href="mailto:hello@readgateapp.com">hello@readgateapp.com</a>.</p>
 
     <div class="footer">
-      &copy; 2026 Readgate &middot; <a href="https://apps.apple.com/de/app/readgate/id6761989769">App Store</a> &middot; <a href="/support">Support</a> &middot; <a href="/faq">FAQ</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
+      &copy; 2026 Readgate &middot; <a href="https://apps.apple.com/app/id6761989769">App Store</a> &middot; <a href="/support">Support</a> &middot; <a href="/faq">FAQ</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
     </div>
   </div>
 </body>
