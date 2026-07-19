@@ -372,39 +372,88 @@
       position: relative;
       z-index: 1;
       width: min(100%, 344px);
-      overflow: hidden;
-      border: 1px solid rgba(207, 208, 255, 0.28);
-      border-radius: 34px;
-      background: #030407;
+      padding: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 49px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.48), rgba(64, 68, 80, 0.76) 14%, rgba(8, 10, 15, 0.99) 46%, rgba(163, 168, 184, 0.5));
       box-shadow:
-        var(--shadow),
-        0 0 0 1px rgba(255, 255, 255, 0.025) inset,
-        0 0 80px rgba(91, 95, 240, 0.13);
+        0 50px 120px rgba(0, 0, 0, 0.62),
+        0 0 0 1px rgba(0, 0, 0, 0.72),
+        0 0 100px rgba(91, 95, 240, 0.19);
       transform:
+        perspective(1200px)
         translate3d(0, var(--parallax-y), 0)
         rotateX(var(--tilt-x))
         rotateY(var(--tilt-y))
-        rotate(1.5deg);
+        rotateZ(1.5deg);
       transform-style: preserve-3d;
-      transition: transform 520ms var(--ease-premium), border-color 220ms ease;
+      transition:
+        transform 620ms var(--ease-premium),
+        border-color 220ms ease,
+        box-shadow 420ms ease;
+      will-change: transform;
+    }
+    .phone::before {
+      position: absolute;
+      inset: 6px;
+      z-index: 3;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 43px;
+      content: "";
+      pointer-events: none;
     }
     .phone::after {
       position: absolute;
-      inset: 0;
-      z-index: 2;
+      inset: 7px;
+      z-index: 3;
+      border-radius: 42px;
       background: linear-gradient(118deg, rgba(255, 255, 255, 0.1), transparent 19%, transparent 70%, rgba(132, 107, 255, 0.08));
       content: "";
       pointer-events: none;
     }
+    .phone:hover {
+      box-shadow:
+        0 58px 140px rgba(0, 0, 0, 0.68),
+        0 0 0 1px rgba(0, 0, 0, 0.72),
+        0 0 120px rgba(91, 95, 240, 0.25);
+    }
+    .phone-screen {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 42px;
+      background: #090b0f;
+    }
     .phone img {
       width: 100%;
-      border-radius: 33px;
       background: #090b0f;
+    }
+    .phone-control {
+      position: absolute;
+      z-index: 0;
+      width: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: linear-gradient(180deg, #5a5f6b, #14171e 30%, #41454f);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.55);
+    }
+    .phone-control-volume {
+      top: 23%;
+      left: -5px;
+      height: 76px;
+      border-radius: 3px 0 0 3px;
+    }
+    .phone-control-power {
+      top: 29%;
+      right: -5px;
+      height: 88px;
+      border-radius: 0 3px 3px 0;
     }
     .hero-visual-note {
       position: absolute;
-      right: -18px;
-      bottom: 6%;
+      right: auto;
+      bottom: -38px;
+      left: 50%;
       z-index: 3;
       display: flex;
       align-items: center;
@@ -415,7 +464,8 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      transform: rotate(-1deg);
+      white-space: nowrap;
+      transform: translateX(-50%);
     }
     .hero-visual-note::before {
       width: 36px;
@@ -722,43 +772,6 @@
       opacity: 1;
       filter: saturate(1) brightness(1);
       transform: scale(1) translateY(0);
-    }
-    .stage-meta {
-      position: absolute;
-      z-index: 5;
-      right: 7%;
-      bottom: 7%;
-      left: 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      pointer-events: none;
-    }
-    .stage-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .stage-label::before {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #9c9eff;
-      box-shadow: 0 0 12px rgba(156, 158, 255, 0.9);
-      content: "";
-      animation: stage-pulse 2.4s ease-in-out infinite;
-    }
-    .stage-count {
-      min-width: 45px;
-      color: rgba(255, 255, 255, 0.88);
-      font-variant-numeric: tabular-nums;
-      text-align: right;
     }
     .story-copy {
       position: relative;
@@ -1148,10 +1161,6 @@
       from { transform: translate3d(-28px, 24px, 0) scale(0.75); opacity: 0.55; }
       to { transform: translate3d(14px, -18px, 0) scale(1.15); opacity: 1; }
     }
-    @keyframes stage-pulse {
-      0%, 100% { opacity: 0.6; transform: scale(0.82); }
-      50% { opacity: 1; transform: scale(1.18); }
-    }
     @keyframes cta-breathe {
       from { background-position: 0% 35%; }
       to { background-position: 100% 65%; }
@@ -1196,7 +1205,7 @@
       .hero-copy { max-width: 680px; }
       .hero-visual { margin-top: 8px; }
       .phone { width: min(82vw, 344px); }
-      .hero-visual-note { right: max(0px, calc(50% - 245px)); }
+      .hero-visual-note { right: auto; bottom: -34px; left: 50%; }
       .steps, .trust-grid { grid-template-columns: 1fr; }
       .step { min-height: auto; }
       .step + .step { border-top: 1px solid var(--line); border-left: 0; }
@@ -1260,7 +1269,7 @@
       .hero-actions .button-secondary { width: auto; }
       .proof-row { display: none; }
       .hero::before { right: -32rem; }
-      .hero-visual-note { right: -2px; bottom: 4%; font-size: 10px; }
+      .hero-visual-note { right: auto; bottom: -30px; left: 50%; font-size: 10px; }
       .signal-track { padding-block: 14px; }
       .signal-group { gap: 18px; padding-right: 18px; }
       section { padding-block: 80px; }
@@ -1284,12 +1293,6 @@
       }
       .product-device::before { border-radius: 36px; }
       .product-device-screen { border-radius: 35px; }
-      .stage-meta {
-        right: 1%;
-        bottom: 2%;
-        left: 1%;
-        font-size: 9px;
-      }
       .stage-orbit-dot { top: 11%; right: 4%; }
       .story-copy {
         grid-template-columns: none;
@@ -1422,7 +1425,11 @@
         <div class="hero-visual reveal">
           <div class="hero-glow" aria-hidden="true"></div>
           <div class="phone">
-            <img src="/screenshots/readgate-reading-solar.png" alt="Readgate presents a short article about solar energy before the selected app unlocks" width="900" height="1956" fetchpriority="high" decoding="async" />
+            <span class="phone-control phone-control-volume" aria-hidden="true"></span>
+            <span class="phone-control phone-control-power" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <img src="/screenshots/readgate-reading-solar.png" alt="Readgate presents a short article about solar energy before the selected app unlocks" width="900" height="1956" fetchpriority="high" decoding="async" />
+            </div>
           </div>
           <p class="hero-visual-note" aria-hidden="true">A live reading Gate · ~1 min</p>
         </div>
@@ -1490,14 +1497,10 @@
             <span class="device-control device-control-volume" aria-hidden="true"></span>
             <span class="device-control device-control-power" aria-hidden="true"></span>
             <div class="product-device-screen">
-              <img class="product-screen is-active" id="product-screen-0" src="/screenshots/readgate-onboarding-intro.png" alt="Readgate explains that you read before you scroll" width="900" height="1956" loading="lazy" decoding="async" aria-hidden="false" />
+              <img class="product-screen is-active" id="product-screen-0" src="/screenshots/readgate-onboarding-intro.png" alt="Readgate explains that you read before you scroll" width="900" height="1956" loading="eager" decoding="async" aria-hidden="false" />
               <img class="product-screen" id="product-screen-1" src="/screenshots/readgate-onboarding-intent.png" alt="Readgate lets you choose what you want to get from your phone" width="900" height="1956" loading="lazy" decoding="async" aria-hidden="true" />
               <img class="product-screen" id="product-screen-2" src="/screenshots/readgate-reading-solar.png" alt="Readgate shows a short article before the selected app opens" width="900" height="1956" loading="lazy" decoding="async" aria-hidden="true" />
             </div>
-          </div>
-          <div class="stage-meta" aria-hidden="true">
-            <span class="stage-label">Real product flow</span>
-            <span class="stage-count" data-story-count>01 / 03</span>
           </div>
         </div>
 
@@ -1689,10 +1692,26 @@
       const storyCopy = productStory?.querySelector('.story-copy');
       const storySteps = [...document.querySelectorAll('[data-story-step]')];
       const storyScreens = [...document.querySelectorAll('.product-screen')];
-      const storyCount = productStory?.querySelector('[data-story-count]');
       let activeStoryIndex = 0;
+      let visibleStoryIndex = 0;
       let scrollFrame = 0;
       let storyScrollFrame = 0;
+
+      const showStoryScreen = (index) => {
+        const nextScreen = storyScreens[index];
+        if (!nextScreen) return;
+        const revealScreen = () => {
+          if (activeStoryIndex !== index) return;
+          visibleStoryIndex = index;
+          storyScreens.forEach((screen, screenIndex) => {
+            const active = screenIndex === visibleStoryIndex;
+            screen.classList.toggle('is-active', active);
+            screen.setAttribute('aria-hidden', String(!active));
+          });
+        };
+        if (nextScreen.complete && nextScreen.naturalWidth) revealScreen();
+        else nextScreen.addEventListener('load', revealScreen, { once: true });
+      };
 
       const activateStory = (index) => {
         if (!storySteps.length || index === activeStoryIndex && storyScreens[index]?.classList.contains('is-active')) return;
@@ -1702,12 +1721,7 @@
           step.classList.toggle('is-active', active);
           step.setAttribute('aria-pressed', String(active));
         });
-        storyScreens.forEach((screen, screenIndex) => {
-          const active = screenIndex === activeStoryIndex;
-          screen.classList.toggle('is-active', active);
-          screen.setAttribute('aria-hidden', String(!active));
-        });
-        if (storyCount) storyCount.textContent = `${String(activeStoryIndex + 1).padStart(2, '0')} / ${String(storySteps.length).padStart(2, '0')}`;
+        showStoryScreen(activeStoryIndex);
         if (productStory) {
           const progress = storySteps.length > 1 ? (activeStoryIndex / (storySteps.length - 1)) * 100 : 100;
           productStory.style.setProperty('--story-progress', `${progress}%`);
