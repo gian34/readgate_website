@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-itunes-app" content="app-id=6761989769" />
   <title>Privacy Policy — Readgate App Blocker</title>
-  <meta name="description" content="Readgate Privacy Policy: what stays on your device and how articles, purchases, anonymous analytics, and crash reporting are handled." />
+  <meta name="description" content="Readgate Privacy Policy: on-device data, content requests, subscriptions, analytics, crash reporting, retention, and privacy rights." />
   <link rel="canonical" href="https://readgateapp.com/privacy" />
   <link rel="icon" type="image/png" href="/icon-128.png" />
   <link rel="apple-touch-icon" href="/icon-180.png" />
@@ -84,75 +84,83 @@
     <a class="logo" href="/"><img src="/icon.png" alt="" />Readgate</a>
 
     <h1>Privacy Policy</h1>
-    <p class="meta">For the current Readgate iPhone build. Last updated: May 11, 2026.</p>
+    <p class="meta">For the current Readgate iPhone build and website. Last updated: July 22, 2026.</p>
 
-    <p>Readgate is designed to help users create a short reading pause before opening selected apps. This policy explains what the app stores, what it sends over the network, and how to contact us.</p>
+    <p>Readgate is designed to place a short learning moment before selected apps and websites. This policy explains which information stays on your iPhone, which limited information is processed by service providers, and the choices available to you.</p>
 
-    <h2>1. Information stored on your device</h2>
-    <p>Readgate stores the following information locally on your device:</p>
+    <h2>1. Scope and contact</h2>
+    <p>This policy applies to the Readgate iPhone app, its iOS extensions, readgateapp.com, and support requests sent to us. Readgate is responsible for the processing described here unless a provider acts independently under its own terms. Privacy questions and requests can be sent to <a href="mailto:hello@readgateapp.com">hello@readgateapp.com</a>.</p>
+    <p>Readgate does not require an account. It does not use advertising identifiers, sell personal information, or use data for third-party advertising targeting.</p>
+
+    <h2>2. Information stored on your device</h2>
+    <p>The app stores the information needed to run and personalize Readgate locally, including:</p>
     <ul>
-      <li>Your selected blocked apps.</li>
-      <li>Your onboarding and setup status.</li>
-      <li>Your reading session history, including article title, article URL, reading time, unlock count, and related usage statistics.</li>
-      <li>Shared local app state used by the iOS Family Controls extensions to hand off blocked apps into Readgate and keep the unlock window in sync.</li>
+      <li>Your Family Controls selection of protected apps, websites, and categories. The selection is shared locally with Readgate's iOS extensions so iOS can apply and remove gates.</li>
+      <li>Onboarding answers, goals, topic choices, reading preferences, reactions, and setup or permission status.</li>
+      <li>Gate settings such as schedules, unlock duration, gate delay, daily cap, current unlock state, and local notification state.</li>
+      <li>Up to 500 recent reading sessions, which may include content title, source URL, categories, timestamps, reading time, completion and unlock status, and related progress statistics.</li>
+      <li>Downloaded or bundled content, content queues, and first-party configuration caches used for faster loading and offline availability.</li>
+    </ul>
+    <p>Readgate does not receive your general Screen Time history. Protected app names and website domains are not intentionally sent to Readgate servers, product analytics, or crash reporting.</p>
+
+    <h2>3. Content and first-party network requests</h2>
+    <p>Many Insight Cards and Readgate Originals are bundled with the app and do not require a content request. When network content is used, Readgate may request curated pages directly from Wikipedia, Wikivoyage, or other Wikimedia services. Those providers receive normal connection data such as IP address, user agent, requested page, and request time under the <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">Wikimedia Privacy Policy</a>.</p>
+    <p>The app also requests a curated title index and configuration from readgateapp.com. These requests may expose normal server log data such as IP address, app version or user agent, requested file, and request time. Readgate does not include your protected app selection or reading history in those requests.</p>
+
+    <h2>4. Purchases and subscriptions</h2>
+    <p>Apple processes App Store payments. Readgate uses <a href="https://www.revenuecat.com/privacy-policy">RevenueCat</a> to show the Pro paywall, validate purchases, restore purchases, provide subscription management, and determine whether Pro is active.</p>
+    <p>RevenueCat may process an automatically generated app user identifier, Apple receipt and purchase history, product and entitlement identifiers, subscription dates and status, device and app information, country or currency information, and limited paywall context such as where the paywall or a benefit code action was opened. Readgate does not set an email address or named account identifier in RevenueCat.</p>
+
+    <h2>5. Anonymous product analytics</h2>
+    <p>Readgate uses <a href="https://posthog.com/privacy">PostHog</a>, configured with its EU endpoint, to understand whether onboarding, reading gates, and subscription screens work. PostHog assigns an anonymous installation identifier and may receive technical app and device metadata.</p>
+    <p>Events may include onboarding step and selected goal, profession, feeling or topic labels; authorization result; counts of selected apps, categories, and websites; paywall source and outcome; content category and type; mood band; read or skip time; unlock source and outcome; selected intervention style; topic detail counts; shield handoff path; and technical exception type or message.</p>
+    <p>Readgate does not intentionally send protected app names, website domains, content titles, support messages, email addresses, Apple IDs, or advertising identifiers to PostHog. Person profiles, surveys, feature flags, remote configuration, and automatic lifecycle event capture are disabled.</p>
+
+    <h2>6. Error and crash reporting</h2>
+    <p>Readgate uses <a href="https://sentry.io/privacy/">Sentry</a> through its EU ingest endpoint to diagnose crashes and unexpected failures. Reports may include app and OS version, device model, stack trace, error message, recent technical breadcrumbs, app session status, and the anonymous PostHog identifier so the same technical failure can be correlated across the two systems.</p>
+    <p>Sentry is configured with default personal information disabled, screenshots disabled, and performance tracing disabled. Readgate also applies client-side scrubbing to email-like text, selection tokens, content URLs, and app or article context before events are sent. No scrubber can guarantee removal of every unexpected value, so reports are limited to diagnosing the app.</p>
+
+    <h2>7. Notifications, website, and support</h2>
+    <p>Readgate requests optional notification permission for local notifications that return you from the iOS shield and warn shortly before an unlock ends. The current app does not register for marketing push notifications or upload a push token.</p>
+    <p>The current website does not set advertising or analytics cookies. Its hosting infrastructure may process standard access logs needed to deliver and secure the site.</p>
+    <p>If you email support, we receive your email address, message, and anything you choose to attach, such as screenshots, a screen recording, device model, iOS version, or app version. Do not include information that is not needed to investigate your request.</p>
+
+    <h2>8. Information not intentionally collected</h2>
+    <ul>
+      <li>No Readgate account profile, name, phone number, or mailing address is required.</li>
+      <li>No precise location, contacts, photos library, camera, microphone, health, or fitness data.</li>
+      <li>No advertising identifier, cross-app tracking, or third-party advertising data.</li>
+      <li>No general Screen Time history or list of apps outside the selection you make in Apple's picker.</li>
     </ul>
 
-    <h2>2. Information sent over the network</h2>
-    <p>When Readgate fetches a reading challenge, it requests article content from Wikipedia's public REST API. These requests are made from your device to Wikimedia servers and may include technical request data such as your IP address, user agent, and request timing under Wikimedia's own policies.</p>
-    <p>Readgate may also fetch a first-party curated article-title index from readgateapp.com so the app can keep its reading pool fresh without requiring an app update.</p>
-    <p>Readgate uses RevenueCat to present the Pro paywall and manage subscription status. RevenueCat may receive purchase and subscription information, an anonymous RevenueCat app user identifier, product identifiers, app and device information needed to process purchases, and limited paywall context such as where the paywall was opened. Payments are processed by Apple through the App Store.</p>
-    <p>Readgate uses PostHog for anonymous product analytics so we can understand onboarding completion, paywall conversion, and whether reading challenges are working. PostHog events may include onboarding step names, selected topic labels, paywall source, challenge category, read time, unlock/manual source, and conversion method. Readgate does not send protected app names, website domains, article titles, free-form text, email, Apple ID, or advertising identifiers to PostHog.</p>
-    <p>Readgate does not require account creation and does not use analytics data for advertising targeting.</p>
+    <h2>9. Purposes and legal bases</h2>
+    <p>Where the GDPR, UK GDPR, or similar law applies, Readgate processes information as necessary to provide the app and subscriptions you request, to comply with legal obligations, and for legitimate interests in securing the service, fixing failures, preventing purchase fraud, and understanding whether core product flows work. These interests are balanced against the limited and pseudonymous nature of the data. Where consent is legally required, it will be requested separately and may be withdrawn.</p>
 
-    <h2>3. Crash reporting</h2>
-    <p>To improve app quality and reliability, Readgate uses one third-party crash reporting service:</p>
-    <ul>
-      <li><strong>Sentry</strong> (crash reporting): captures crash logs and error traces when the app encounters an unexpected failure. Logs include device model, OS version, app version, and a stack trace. Readgate configures Sentry without default PII and scrubs app/article context from events where possible. Data is retained for 90 days.</li>
-    </ul>
-    <p>Readgate does not send your name, email address, Apple ID, or advertising identifier to Sentry.</p>
+    <h2>10. Sharing and international processing</h2>
+    <p>Information is shared only with the providers described above as needed for their function: Apple and RevenueCat for purchases; PostHog for product analytics; Sentry for diagnostics; Wikimedia services for network content; the website host for delivery and security; and the email provider for support. We may also disclose information when required by law or necessary to protect users, Readgate, or the public.</p>
+    <p>PostHog and Sentry are configured to use EU endpoints. Some providers or their subprocessors may nevertheless process information outside your country or the EEA. Their own privacy terms describe the safeguards they use for international transfers.</p>
 
-    <h2>4. Information we do not intentionally collect</h2>
+    <h2>11. Retention and deletion</h2>
     <ul>
-      <li>No name, email address, or account profile is required to use the app.</li>
-      <li>No precise location data.</li>
-      <li>No contacts, photos, microphone recordings, or camera data.</li>
-      <li>No advertising identifier for cross-app tracking.</li>
-      <li>No app or website selection names are intentionally sent to Readgate servers.</li>
+      <li>Local app data remains until it is replaced, reaches an app-specific limit, or you delete Readgate or clear its data. Deleting the app does not delete purchase records held by Apple or RevenueCat.</li>
+      <li>Sentry crash reports are retained for 90 days under the current project setting.</li>
+      <li>PostHog events are retained according to the active Readgate project retention setting and are deleted or aggregated when no longer needed for product analysis.</li>
+      <li>Apple and RevenueCat retain purchase records as needed for subscriptions, accounting, fraud prevention, refunds, and legal obligations.</li>
+      <li>Support emails and hosting logs are retained only as long as needed to answer requests, operate and secure the service, resolve disputes, and meet legal obligations.</li>
     </ul>
 
-    <h2>5. How information is used</h2>
-    <p>Information stored by Readgate is used only to:</p>
-    <ul>
-      <li>Remember which apps you want to gate behind a reading challenge.</li>
-      <li>Track whether you completed a reading session and whether a short unlock window is active.</li>
-      <li>Display local usage history and reading statistics inside the app.</li>
-      <li>Fetch article content needed to run the reading challenge.</li>
-      <li>Verify whether your Apple ID has an active Readgate Pro subscription.</li>
-      <li>Understand anonymous onboarding, paywall, and challenge completion funnels.</li>
-      <li>Diagnose crashes.</li>
-    </ul>
+    <h2>12. Your privacy rights</h2>
+    <p>Depending on where you live, you may have rights to access, correct, delete, restrict, or object to processing, receive a portable copy of certain information, withdraw consent, and complain to a data protection authority. Contact <a href="mailto:hello@readgateapp.com">hello@readgateapp.com</a> to make a request.</p>
+    <p>Because Readgate has no account and most data stays only on your device, we may be unable to identify a particular analytics, diagnostic, or purchase record unless you provide the relevant anonymous identifier or purchase information. You can delete local history by deleting the app. You can manage notification permission and Screen Time access in iPhone Settings.</p>
 
-    <h2>6. Sharing</h2>
-    <p>We do not sell your personal information. The app communicates externally with: Wikipedia/Wikimedia for reading content; readgateapp.com for a curated article-title index; Apple for App Store purchases; RevenueCat for subscription management; PostHog for anonymous product analytics; and Sentry for crash reporting.</p>
-    <p>RevenueCat is used only to support purchases, restore purchases, subscription status, and paywall presentation. Readgate does not use RevenueCat data for third-party advertising tracking.</p>
-    <p>PostHog is used only to understand product funnels and app quality. Readgate does not use PostHog data for third-party advertising tracking.</p>
+    <h2>13. Children's privacy</h2>
+    <p>Readgate is not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided information through support or another channel, contact us so it can be reviewed and deleted where appropriate.</p>
 
-    <h2>7. Retention and deletion</h2>
-    <p>Data stored by the app remains on your device until you delete it by uninstalling the app or clearing the app's local data through device-level tools, if available.</p>
-    <p>Subscription records are retained by Apple and RevenueCat as needed to process purchases, renewals, cancellations, refunds, and restore requests.</p>
-    <p>Crash logs are retained by Sentry for 90 days. Readgate does not intentionally send personally identifiable information to Sentry.</p>
+    <h2>14. Content rights and attribution</h2>
+    <p>Readgate includes original, editorial, public-domain, and open-knowledge material. Content from <a href="https://www.wikipedia.org">Wikipedia</a>, <a href="https://www.wikivoyage.org">Wikivoyage</a>, or other Wikimedia projects is available under the license identified by the source, commonly <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source links are shown where applicable. Readgate is not affiliated with or endorsed by the Wikimedia Foundation.</p>
 
-    <h2>8. Children's privacy</h2>
-    <p>Readgate is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
-
-    <h2>9. Changes</h2>
-    <p>If Readgate's data practices change, this Privacy Policy will be updated and the effective date above will change accordingly.</p>
-
-    <h2>10. Wikipedia content attribution</h2>
-    <p>Reading challenge content is sourced from <a href="https://www.wikipedia.org">Wikipedia</a>, the free encyclopedia. Wikipedia content is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license or as indicated in each article's history. Each article links to its original Wikipedia source. Readgate is not affiliated with or endorsed by the Wikimedia Foundation.</p>
-
-    <h2>11. Contact</h2>
-    <p>If you have privacy questions, contact <a href="mailto:hello@readgateapp.com">hello@readgateapp.com</a>.</p>
+    <h2>15. Changes and contact</h2>
+    <p>If Readgate's data practices change, this policy and its date will be updated. Material changes will be communicated where required. For privacy questions or requests, contact <a href="mailto:hello@readgateapp.com">hello@readgateapp.com</a>.</p>
 
     <div class="footer">
       &copy; 2026 Readgate &middot; <a href="/support">Support</a> &middot; <a href="/faq">FAQ</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
