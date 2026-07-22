@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-itunes-app" content="app-id=6761989769" />
-  <title>FAQ — Readgate App Blocker & Screen Time</title>
-  <meta name="description" content="Frequently asked questions about Readgate — app blocker, screen time, privacy, blocking, reading habits, and troubleshooting." />
+  <title>FAQ — Readgate App Blocker &amp; Screen Time</title>
+  <meta name="description" content="Readgate FAQ: Screen Time access, privacy, reading sources, troubleshooting, notifications, Free, Pro, and subscriptions." />
   <link rel="canonical" href="https://readgateapp.com/faq" />
   <link rel="icon" type="image/png" href="/icon-128.png" />
   <link rel="apple-touch-icon" href="/icon-180.png" />
@@ -28,82 +28,67 @@
       {
         "@type": "Question",
         "name": "Why does Readgate need Screen Time access?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Readgate uses Screen Time permission to protect the apps you choose and show a reading prompt before they open. iOS manages this permission, and you can change it in Settings at any time."
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": "Readgate uses Apple's Family Controls and Managed Settings frameworks to place a reading gate on the apps, websites, or categories you choose. Readgate does not receive your general Screen Time history. You can revoke access in iPhone Settings at any time, but the gates will stop working." }
       },
       {
         "@type": "Question",
-        "name": "Does Readgate collect personal data?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Readgate does not require an account. Your selected apps, sessions, and streak stay on your device. We use limited service providers for articles, purchases, diagnostics, and privacy-conscious analytics. See the Privacy Policy for details."
-        }
+        "name": "Can Readgate see which apps or websites I protect?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Your selection is stored on your device and shared locally with Readgate's iOS extensions so the gate can work. Protected app names and website domains are not intentionally sent to Readgate servers, product analytics, or crash reporting." }
       },
       {
         "@type": "Question",
-        "name": "I finished reading but the app is still blocked. Why?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Every blocker holds its own lock. If you also use ScreenZen, Opal, one sec, or an Apple Screen Time limit on the same app, that lock stays even after your read — Readgate can only lift its own gate. Remove the app from the other blocker and the unlock will work as expected."
-        }
+        "name": "What data leaves my device?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Readgate has no account and no advertising tracking. It uses limited service providers for open knowledge content, purchases, anonymous product analytics, and privacy scrubbed crash reporting. The Privacy Policy lists the services and event fields in detail." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do the reads come from?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Readgate mixes bundled Insight Cards and Readgate Originals with curated open knowledge from sources such as Wikipedia and Wikivoyage. Network content is fetched directly from the relevant source when needed, and source links are shown where applicable. Bundled content remains available offline." }
+      },
+      {
+        "@type": "Question",
+        "name": "I finished reading but the app still does not open. Why?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Every blocker holds its own lock. If ScreenZen, Opal, one sec, or an Apple Screen Time limit also protects the same app, that lock remains after Readgate lifts its gate. Remove the app from the other blocker or limit and try again." }
       },
       {
         "@type": "Question",
         "name": "How long is the unlock window?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A completed read opens a short break window. Pro users can customize the duration in Settings. When the window ends, the gate returns automatically."
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": "Free unlocks last 10 minutes. Pro lets you set a default from 1 to 60 minutes and choose a shorter window after each completed read. The gate returns automatically when the window ends." }
       },
       {
         "@type": "Question",
-        "name": "Can I change which apps are blocked?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Open Readgate, go to Settings, and update the apps, websites, or categories protected by Readgate. Changes apply after saving."
-        }
+        "name": "Can I change which apps start with a read?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Go to Settings, then Manage Gates. Free protects one app or website at a time, so a new choice replaces the current one. Pro can protect multiple apps, websites, and categories." }
       },
       {
         "@type": "Question",
-        "name": "My streak disappeared. What happened?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your streak is based on completed reads on this device. It can reset after a missed day, reinstall, or cleared app data."
-        }
+        "name": "The reading gate does not appear when I open an app.",
+        "acceptedAnswer": { "@type": "Answer", "text": "Confirm that Readgate has Screen Time access and that the app is in Manage Gates. If you use a Pro schedule, check that the current time is inside it. In Settings, tap Repair when the Reading Gates status says it needs attention." }
       },
       {
         "@type": "Question",
-        "name": "The shield doesn't appear when I open a blocked app.",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Make sure Screen Time access is enabled for Readgate and the app is included in your protected list. Readgate's app-gating flow is designed for iPhone and depends on Apple's Screen Time availability."
-        }
+        "name": "Are notifications required?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Readgate uses optional local notifications to return you from the iOS shield and to warn you one minute before a longer unlock ends. Readgate does not register for marketing push notifications. If notifications are off, open Readgate manually after tapping the shield." }
       },
       {
         "@type": "Question",
-        "name": "What happens if I close the article before finishing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No unlock is granted until the read is finished. Start a new read to open the app."
-        }
+        "name": "What happens if I skip or close a read before finishing?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The protected app stays gated. Finish a read to receive an unlock window." }
       },
       {
         "@type": "Question",
-        "name": "Can I read more than one article per session?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Bonus reads can continue after a completed unlock and count toward your reading activity."
-        }
+        "name": "Why did my history or streak disappear?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Reading history, streaks, and learning progress are stored on this device. A missed day can reset a streak, and deleting Readgate or clearing its data can remove local progress. Restoring a purchase restores Pro access, not local reading history." }
       },
       {
         "@type": "Question",
         "name": "What's the difference between Free and Pro?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Free includes the core reading gate for a limited setup. Pro expands app protection, customization, and progress insights."
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": "Free protects one app or website with unlimited reading unlocks, a 10 minute window, reading history, and weekly stats. Pro adds unlimited gates, schedules, flexible unlock timing, gate delay options, an optional daily cap, the full Learning Profile, and full Readgate Originals." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I manage or restore Readgate Pro?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Open Settings and choose Manage Subscription to view or cancel through Apple. Use Restore Purchases after reinstalling or changing devices. Readgate has no separate login, so Pro access follows the Apple ID used for the purchase." }
       }
     ]
   }
@@ -203,82 +188,110 @@
     <a class="logo" href="/"><img src="/icon.png" alt="" />Readgate</a>
 
     <h1>FAQ</h1>
-    <p class="meta">Common questions about Readgate. Can't find an answer? <a href="mailto:hello@readgateapp.com">Contact support.</a></p>
+    <p class="meta">Updated July 22, 2026. Can't find an answer? <a href="mailto:hello@readgateapp.com">Contact support.</a></p>
 
     <div class="faq-list">
 
       <details>
         <summary>Why does Readgate need Screen Time access?</summary>
         <div class="faq-answer">
-          <p>Readgate uses Screen Time permission to protect the apps you choose and show a reading prompt before they open.</p>
-          <p>iOS manages this permission, and you can change it in Settings at any time.</p>
+          <p>Readgate uses Apple's Family Controls and Managed Settings frameworks to place a reading gate on the apps, websites, or categories you choose.</p>
+          <p>Readgate does not receive your general Screen Time history. You can revoke access in iPhone Settings at any time, but the gates will stop working.</p>
         </div>
       </details>
 
       <details>
-        <summary>Does Readgate collect personal data?</summary>
+        <summary>Can Readgate see which apps or websites I protect?</summary>
         <div class="faq-answer">
-          <p>Readgate does not require an account. Your selected apps, sessions, and streak stay on your device.</p>
-          <p>We use limited service providers for articles, purchases, diagnostics, and privacy-conscious analytics. See the <a href="/privacy">Privacy Policy</a> for details.</p>
+          <p>Your selection is stored on your device and shared locally with Readgate's iOS extensions so the gate can work.</p>
+          <p>Protected app names and website domains are not intentionally sent to Readgate servers, product analytics, or crash reporting.</p>
         </div>
       </details>
 
       <details>
-        <summary>I finished reading but the app is still blocked. Why?</summary>
+        <summary>What data leaves my device?</summary>
         <div class="faq-answer">
-          <p>Every blocker holds its own lock. If you also use ScreenZen, Opal, one sec, or an Apple Screen Time limit on the same app, that lock stays even after your read — Readgate can only lift its own gate.</p>
-          <p>Remove the app from the other blocker and the unlock will work as expected.</p>
+          <p>Readgate has no account and no advertising tracking. It uses limited service providers for open knowledge content, purchases, anonymous product analytics, and privacy scrubbed crash reporting.</p>
+          <p>The <a href="/privacy">Privacy Policy</a> lists the services and event fields in detail.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Where do the reads come from?</summary>
+        <div class="faq-answer">
+          <p>Readgate mixes bundled Insight Cards and Readgate Originals with curated open knowledge from sources such as Wikipedia and Wikivoyage.</p>
+          <p>Network content is fetched directly from the relevant source when needed, and source links are shown where applicable. Bundled content remains available offline.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>I finished reading but the app still does not open. Why?</summary>
+        <div class="faq-answer">
+          <p>Every blocker holds its own lock. If ScreenZen, Opal, one sec, or an Apple Screen Time limit also protects the same app, that lock remains after Readgate lifts its gate.</p>
+          <p>Remove the app from the other blocker or limit and try again.</p>
         </div>
       </details>
 
       <details>
         <summary>How long is the unlock window?</summary>
         <div class="faq-answer">
-          <p>A completed read opens a short break window. Pro users can customize the duration in Settings. When the window ends, the gate returns automatically.</p>
+          <p>Free unlocks last 10 minutes. Pro lets you set a default from 1 to 60 minutes and choose a shorter window after each completed read.</p>
+          <p>The gate returns automatically when the window ends.</p>
         </div>
       </details>
 
       <details>
-        <summary>Can I change which apps are blocked?</summary>
+        <summary>Can I change which apps start with a read?</summary>
         <div class="faq-answer">
-          <p>Yes. Open Readgate, go to Settings, and update the apps, websites, or categories protected by Readgate. Changes apply after saving.</p>
+          <p>Yes. Go to Settings, then Manage Gates. Free protects one app or website at a time, so a new choice replaces the current one.</p>
+          <p>Pro can protect multiple apps, websites, and categories.</p>
         </div>
       </details>
 
       <details>
-        <summary>My streak disappeared. What happened?</summary>
+        <summary>The reading gate does not appear when I open an app.</summary>
         <div class="faq-answer">
-          <p>Your streak is based on completed reads on this device. It can reset after a missed day, reinstall, or cleared app data.</p>
+          <p>Confirm that Readgate has Screen Time access and that the app is in Manage Gates. If you use a Pro schedule, check that the current time is inside it.</p>
+          <p>In Settings, tap Repair when the Reading Gates status says it needs attention.</p>
         </div>
       </details>
 
       <details>
-        <summary>The shield doesn't appear when I open a blocked app.</summary>
+        <summary>Are notifications required?</summary>
         <div class="faq-answer">
-          <p>Make sure Screen Time access is enabled for Readgate and the app is included in your protected list.</p>
-          <p>Readgate's app-gating flow is designed for iPhone and depends on Apple's Screen Time availability.</p>
+          <p>No. Readgate uses optional local notifications to return you from the iOS shield and to warn you one minute before a longer unlock ends.</p>
+          <p>Readgate does not register for marketing push notifications. If notifications are off, open Readgate manually after tapping the shield.</p>
         </div>
       </details>
 
       <details>
-        <summary>What happens if I close the article before finishing?</summary>
+        <summary>What happens if I skip or close a read before finishing?</summary>
         <div class="faq-answer">
-          <p>No unlock is granted until the read is finished. Start a new read to open the app.</p>
+          <p>The protected app stays gated. Finish a read to receive an unlock window.</p>
         </div>
       </details>
 
       <details>
-        <summary>Can I read more than one article per session?</summary>
+        <summary>Why did my history or streak disappear?</summary>
         <div class="faq-answer">
-          <p>Yes. Bonus reads can continue after a completed unlock and count toward your reading activity.</p>
+          <p>Reading history, streaks, and learning progress are stored on this device. A missed day can reset a streak, and deleting Readgate or clearing its data can remove local progress.</p>
+          <p>Restoring a purchase restores Pro access, not local reading history.</p>
         </div>
       </details>
 
       <details>
         <summary>What's the difference between Free and Pro?</summary>
         <div class="faq-answer">
-          <p>Free includes the core reading gate for a limited setup.</p>
-          <p>Pro expands app protection, customization, and progress insights.</p>
+          <p>Free protects one app or website with unlimited reading unlocks, a 10 minute window, reading history, and weekly stats.</p>
+          <p>Pro adds unlimited gates, schedules, flexible unlock timing, gate delay options, an optional daily cap, the full Learning Profile, and full Readgate Originals.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I manage or restore Readgate Pro?</summary>
+        <div class="faq-answer">
+          <p>Open Settings and choose Manage Subscription to view or cancel through Apple. Use Restore Purchases after reinstalling or changing devices.</p>
+          <p>Readgate has no separate login, so Pro access follows the Apple ID used for the purchase.</p>
         </div>
       </details>
 
