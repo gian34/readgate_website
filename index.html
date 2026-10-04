@@ -3,1859 +3,628 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#080b10" />
-  <meta name="description" content="Readgate turns the apps you open on autopilot into a short reading moment. Read one useful idea, then unlock the scroll." />
+  <meta name="theme-color" content="#fafafa" />
+  <meta name="apple-itunes-app" content="app-id=6761989769" />
+  <meta name="description" content="Readgate turns the apps you open on autopilot into a short reading moment. Read one useful idea, then unlock the scroll. Free for iPhone." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://readgateapp.com/" />
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Readgate" />
   <meta property="og:title" content="Readgate · Read before you scroll" />
-  <meta property="og:description" content="Open a time sink. Read one useful idea. Then unlock it." />
+  <meta property="og:description" content="Read a short article before opening the apps you use on autopilot. Free for iPhone." />
   <meta property="og:url" content="https://readgateapp.com/" />
   <meta property="og:image" content="https://readgateapp.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <title>Readgate · Read before you scroll</title>
-  <link rel="icon" href="/icon-128.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/icon.png" />
-  <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/Inter-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
-  <script>document.documentElement.classList.add('js');</script>
-
+  <link rel="icon" href="icon-128.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
   <style>
-    @font-face {
-      font-family: "Inter";
-      src: url("/fonts/Inter-Regular.woff2") format("woff2");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("/fonts/Inter-Medium.woff2") format("woff2");
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("/fonts/Inter-Bold.woff2") format("woff2");
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Inter";
-      src: url("/fonts/Inter-ExtraBold.woff2") format("woff2");
-      font-weight: 800;
-      font-style: normal;
-      font-display: swap;
-    }
-
     :root {
-      --bg: #080b10;
-      --bg-soft: #0d1118;
-      --line: rgba(255, 255, 255, 0.1);
-      --line-strong: rgba(255, 255, 255, 0.17);
-      --text: #f7f7fa;
-      --muted: #b5b7c0;
-      --faint: #9296a3;
-      --brand: #7779ff;
-      --brand-bright: #9a83ff;
-      --brand-button: #5558e8;
-      --brand-button-hover: #6568f0;
-      --success: #8eddb0;
-      --max: 1160px;
-      --shadow: 0 34px 100px rgba(0, 0, 0, 0.5);
-      --ease-premium: cubic-bezier(.22, 1, .36, 1);
-      --scroll-progress: 0%;
+      --paper: #fafafa;
+      --soft: #f2f2f5;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: #dcdce1;
+      --brand: #5856e8;
+      --brand-hover: #4543d0;
+      --stage: #0c0d14;
+      --width: 1120px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
     }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-width: 320px;
-      overflow-x: hidden;
-      background:
-        radial-gradient(circle at 82% 4%, rgba(99, 102, 241, 0.18), transparent 32rem),
-        radial-gradient(circle at 12% 46%, rgba(139, 92, 246, 0.07), transparent 28rem),
-        var(--bg);
-      color: var(--text);
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; }
-    img { display: block; max-width: 100%; height: auto; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
     button, a { -webkit-tap-highlight-color: transparent; }
     button { font: inherit; }
-    :focus-visible {
-      outline: 3px solid #b8b9ff;
-      outline-offset: 4px;
-    }
-
-    .scroll-progress {
-      position: fixed;
-      inset: 0 auto auto 0;
-      z-index: 220;
-      width: var(--scroll-progress);
-      height: 2px;
-      background: linear-gradient(90deg, #6f72ff, #a779ff, #e19be9);
-      box-shadow: 0 0 18px rgba(154, 131, 255, 0.8);
-      pointer-events: none;
-    }
-
-    .skip-link {
-      position: fixed;
-      left: 18px;
-      top: 14px;
-      z-index: 200;
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: #fff;
-      color: #0a0d12;
-      font-weight: 700;
-      transform: translateY(-150%);
-      transition: transform 160ms ease;
-    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid var(--brand); outline-offset: 5px; }
+    .shell { width: min(calc(100% - 48px), var(--width)); margin-inline: auto; }
+    .skip-link { position: absolute; top: 10px; left: 16px; z-index: 100; padding: 12px 16px; background: white; color: var(--ink); transform: translateY(-160%); }
     .skip-link:focus { transform: translateY(0); }
-
-    .shell {
-      width: min(calc(100% - 40px), var(--max));
-      margin-inline: auto;
-    }
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 80;
-      border-bottom: 1px solid transparent;
-      background: rgba(8, 11, 16, 0.72);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      transition: border-color 180ms ease, background 180ms ease;
-    }
-    .site-nav.scrolled {
-      border-color: var(--line);
-      background: rgba(8, 11, 16, 0.92);
-    }
-    .nav-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-    .brand img {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-    .nav-link {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .nav-link:hover { color: var(--text); }
-
-    .button {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0 19px;
-      border: 1px solid transparent;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      transition:
-        transform 220ms var(--ease-premium),
-        background 220ms ease,
-        border-color 220ms ease,
-        box-shadow 220ms ease;
-    }
-    .button:hover { transform: translateY(-3px); }
-    .button-primary {
-      position: relative;
-      overflow: hidden;
-      color: #fff;
-      background: linear-gradient(135deg, #5b5ff0 0%, #7448dc 100%);
-      box-shadow: 0 14px 42px rgba(85, 88, 232, 0.3);
-    }
-    .button-primary::after {
-      position: absolute;
-      inset: -40% auto -40% -50%;
-      width: 34%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      content: "";
-      transform: skewX(-18deg) translateX(-220%);
-      transition: transform 650ms var(--ease-premium);
-      pointer-events: none;
-    }
-    .button-primary:hover::after { transform: skewX(-18deg) translateX(620%); }
-    .button-primary:hover {
-      background: linear-gradient(135deg, #6b6ef7 0%, #8555e8 100%);
-      box-shadow: 0 18px 54px rgba(97, 83, 239, 0.42);
-    }
-    .button-secondary {
-      color: var(--text);
-      border-color: var(--line-strong);
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-    .button-secondary:hover { background: rgba(255, 255, 255, 0.09); }
-    .nav-cta { min-height: 42px; padding-inline: 15px; border-radius: 9px; font-size: 14px; }
-
-    .hero {
-      position: relative;
-      padding: clamp(64px, 9vw, 124px) 0 clamp(88px, 11vw, 150px);
-      overflow: hidden;
-      isolation: isolate;
-    }
-    .hero::before,
-    .hero::after {
-      position: absolute;
-      z-index: -2;
-      border-radius: 50%;
-      content: "";
-      pointer-events: none;
-      filter: blur(4px);
-    }
-    .hero::before {
-      top: -26rem;
-      right: -18rem;
-      width: 58rem;
-      height: 58rem;
-      background: radial-gradient(circle, rgba(85, 88, 232, 0.24), rgba(85, 88, 232, 0) 68%);
-      animation: ambient-drift 13s ease-in-out infinite alternate;
-    }
-    .hero::after {
-      bottom: -24rem;
-      left: 16%;
-      width: 44rem;
-      height: 44rem;
-      background: radial-gradient(circle, rgba(160, 86, 235, 0.1), rgba(160, 86, 235, 0) 70%);
-      animation: ambient-drift 17s ease-in-out -5s infinite alternate-reverse;
-    }
-    .hero-grid {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.06fr) minmax(330px, 0.7fr);
-      align-items: center;
-      gap: clamp(50px, 8vw, 110px);
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 0 20px;
-      color: #c0c1ff;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before {
-      width: 22px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--brand), rgba(119, 121, 255, 0));
-      content: "";
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      max-width: 760px;
-      margin-bottom: 24px;
-      font-size: clamp(52px, 6.6vw, 84px);
-      line-height: 1;
-      letter-spacing: -0.065em;
-      font-weight: 800;
-    }
-    .gradient-text {
-      color: transparent;
-      background: linear-gradient(110deg, #aeb0ff 0%, #8878f3 45%, #c07ae7 78%, #aeb0ff 100%);
-      background-size: 220% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: gradient-shift 7s ease-in-out infinite;
-    }
-    .hero-copy {
-      max-width: 620px;
-      margin-bottom: 30px;
-      color: var(--muted);
-      font-size: clamp(18px, 2vw, 21px);
-      line-height: 1.58;
-      letter-spacing: -0.02em;
-    }
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .hero-note {
-      margin: 0;
-      color: var(--faint);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .proof-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      margin-top: 32px;
-    }
-    .proof-pill {
-      padding: 0;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .proof-pill + .proof-pill::before {
-      margin: 0 10px;
-      color: #656a76;
-      content: "•";
-    }
-
-    .hero-visual {
-      position: relative;
-      display: grid;
-      place-items: center;
-      isolation: isolate;
-      perspective: 1200px;
-    }
-    .hero-glow {
-      position: absolute;
-      inset: 8% -24% 1%;
-      z-index: -1;
-      border-radius: 48%;
-      background:
-        radial-gradient(circle at 50% 45%, rgba(99, 102, 241, 0.48), rgba(99, 102, 241, 0.08) 44%, transparent 70%);
-      filter: blur(24px);
-      opacity: 0.78;
-      animation: glow-pulse 6s ease-in-out infinite;
-    }
-    .phone {
-      --tilt-x: 0deg;
-      --tilt-y: 0deg;
-      --parallax-y: 0px;
-      position: relative;
-      z-index: 1;
-      width: min(100%, 344px);
-      padding: 7px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 49px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.48), rgba(64, 68, 80, 0.76) 14%, rgba(8, 10, 15, 0.99) 46%, rgba(163, 168, 184, 0.5));
-      box-shadow:
-        0 50px 120px rgba(0, 0, 0, 0.62),
-        0 0 0 1px rgba(0, 0, 0, 0.72),
-        0 0 100px rgba(91, 95, 240, 0.19);
-      transform:
-        perspective(1200px)
-        translate3d(0, var(--parallax-y), 0)
-        rotateX(var(--tilt-x))
-        rotateY(var(--tilt-y))
-        rotateZ(1.5deg);
-      transform-style: preserve-3d;
-      transition:
-        transform 620ms var(--ease-premium),
-        border-color 220ms ease,
-        box-shadow 420ms ease;
-      will-change: transform;
-    }
-    .phone::before {
-      position: absolute;
-      inset: 6px;
-      z-index: 3;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 43px;
-      content: "";
-      pointer-events: none;
-    }
-    .phone::after {
-      position: absolute;
-      inset: 7px;
-      z-index: 3;
-      border-radius: 42px;
-      background: linear-gradient(118deg, rgba(255, 255, 255, 0.1), transparent 19%, transparent 70%, rgba(132, 107, 255, 0.08));
-      content: "";
-      pointer-events: none;
-    }
-    .phone:hover {
-      box-shadow:
-        0 58px 140px rgba(0, 0, 0, 0.68),
-        0 0 0 1px rgba(0, 0, 0, 0.72),
-        0 0 120px rgba(91, 95, 240, 0.25);
-    }
-    .phone-screen {
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-      border-radius: 42px;
-      background: #090b0f;
-    }
-    .phone img {
-      width: 100%;
-      background: #090b0f;
-    }
-    .phone-control {
-      position: absolute;
-      z-index: 0;
-      width: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: linear-gradient(180deg, #5a5f6b, #14171e 30%, #41454f);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.55);
-    }
-    .phone-control-volume {
-      top: 23%;
-      left: -5px;
-      height: 76px;
-      border-radius: 3px 0 0 3px;
-    }
-    .phone-control-power {
-      top: 29%;
-      right: -5px;
-      height: 88px;
-      border-radius: 0 3px 3px 0;
-    }
-    .hero-visual-note {
-      position: absolute;
-      right: auto;
-      bottom: -38px;
-      left: 50%;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0;
-      color: #d5d6e6;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      transform: translateX(-50%);
-    }
-    .hero-visual-note::before {
-      width: 36px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #9fa1ff);
-      content: "";
-    }
-
-    .signal-strip {
-      position: relative;
-      overflow: hidden;
-      border-block: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.018);
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    }
-    .signal-track {
-      width: max-content;
-      display: flex;
-      align-items: center;
-      padding: 17px 0;
-      color: #777b89;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      animation: signal-slide 34s linear infinite;
-    }
-    .signal-group {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      padding-right: 24px;
-      white-space: nowrap;
-    }
-    .signal-track strong { color: #d4d5ff; font-weight: 700; }
-    .signal-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: #7779ff;
-      box-shadow: 0 0 14px rgba(119, 121, 255, 0.9);
-    }
-
-    section { padding: clamp(78px, 10vw, 136px) 0; }
-    .section-kicker {
-      margin-bottom: 14px;
-      color: #b7b8ff;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 18px;
-      font-size: clamp(35px, 5vw, 60px);
-      line-height: 1.04;
-      letter-spacing: -0.052em;
-      font-weight: 800;
-      text-wrap: balance;
-    }
-    .section-intro {
-      max-width: 660px;
-      margin-bottom: 48px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.65;
-      letter-spacing: -0.015em;
-    }
-
-    .how-wrap {
-      padding: 0;
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border-block: 1px solid var(--line);
-    }
-    .step {
-      position: relative;
-      min-height: 224px;
-      padding: 32px;
-      overflow: hidden;
-      transition: background 360ms ease, transform 360ms var(--ease-premium);
-    }
-    .step::after {
-      position: absolute;
-      inset: auto 0 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #7779ff, transparent);
-      content: "";
-      opacity: 0;
-      transform: scaleX(0.25);
-      transition: opacity 360ms ease, transform 460ms var(--ease-premium);
-    }
-    .step:hover {
-      background: linear-gradient(180deg, rgba(119, 121, 255, 0.07), transparent 70%);
-      transform: translateY(-4px);
-    }
-    .step:hover::after { opacity: 1; transform: scaleX(1); }
-    .step + .step { border-left: 1px solid var(--line); }
-    .step-number {
-      display: block;
-      margin-bottom: 34px;
-      color: #c7c8ff;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-    }
-    .step h3 {
-      margin-bottom: 10px;
-      font-size: 19px;
-      letter-spacing: -0.025em;
-    }
-    .step p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.62;
-    }
-
-    .product-section {
-      position: relative;
-      border-block: 1px solid var(--line);
-      overflow: visible;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.1), transparent 25rem),
-        var(--bg-soft);
-    }
-    .product-section::after {
-      position: absolute;
-      top: 10%;
-      right: -12rem;
-      width: 28rem;
-      height: 28rem;
-      border: 1px solid rgba(164, 166, 255, 0.1);
-      border-radius: 50%;
-      content: "";
-      box-shadow:
-        0 0 0 4rem rgba(119, 121, 255, 0.018),
-        0 0 0 9rem rgba(119, 121, 255, 0.01);
-      animation: orbit-drift 14s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-    .showcase-heading {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
-      gap: clamp(40px, 8vw, 100px);
-      align-items: end;
-      margin-bottom: clamp(62px, 9vw, 110px);
-    }
-    .showcase-heading .section-heading { margin-bottom: 0; }
-    .showcase-heading .section-intro { margin-bottom: 4px; }
-    .product-story {
-      --story-progress: 0%;
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(300px, 0.78fr) minmax(400px, 1.12fr);
-      gap: clamp(60px, 9vw, 130px);
-      align-items: start;
-    }
-    .product-stage {
-      position: sticky;
-      top: 88px;
-      grid-column: 2;
-      grid-row: 1;
-      display: grid;
-      place-items: center;
-      height: calc(100vh - 112px);
-      min-height: 650px;
-      isolation: isolate;
-    }
-    .product-stage::before,
-    .product-stage::after {
-      position: absolute;
-      z-index: -2;
-      width: min(48vw, 570px);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      content: "";
-      pointer-events: none;
-    }
-    .product-stage::before {
-      border: 1px solid rgba(149, 151, 255, 0.13);
-      box-shadow:
-        0 0 0 4.7rem rgba(119, 121, 255, 0.026),
-        0 0 0 9.4rem rgba(119, 121, 255, 0.012);
-      animation: stage-orbit 16s linear infinite;
-    }
-    .product-stage::after {
-      z-index: -3;
-      background: radial-gradient(circle, rgba(92, 95, 235, 0.27), rgba(129, 90, 226, 0.09) 42%, transparent 70%);
-      filter: blur(8px);
-      transform: scale(1.28);
-      animation: stage-breathe 7s ease-in-out infinite alternate;
-    }
-    .stage-orbit-dot {
-      position: absolute;
-      z-index: -1;
-      top: 15%;
-      right: 9%;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: #aaa7ff;
-      box-shadow: 0 0 26px rgba(170, 167, 255, 0.9);
-      animation: orbit-dot 9s ease-in-out infinite alternate;
-    }
-    .product-device {
-      --story-tilt-x: 1.5deg;
-      --story-tilt-y: -4deg;
-      position: relative;
-      width: min(31vw, 350px);
-      aspect-ratio: 900 / 1956;
-      padding: 7px;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 52px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.4), rgba(63, 67, 78, 0.72) 15%, rgba(9, 11, 16, 0.98) 46%, rgba(157, 161, 178, 0.45));
-      box-shadow:
-        0 50px 120px rgba(0, 0, 0, 0.62),
-        0 0 0 1px rgba(0, 0, 0, 0.72),
-        0 0 90px rgba(92, 95, 235, 0.15);
-      transform: perspective(1200px) rotateX(var(--story-tilt-x)) rotateY(var(--story-tilt-y));
-      transition: transform 750ms var(--ease-premium), box-shadow 750ms ease;
-      will-change: transform;
-    }
-    .product-device::before {
-      position: absolute;
-      inset: 6px;
-      z-index: 3;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 46px;
-      content: "";
-      pointer-events: none;
-    }
-    .product-device::after {
-      position: absolute;
-      inset: 8px auto 8px 9px;
-      z-index: 4;
-      width: 1px;
-      border-radius: 1px;
-      background: linear-gradient(transparent 6%, rgba(255, 255, 255, 0.32) 18%, transparent 45%);
-      content: "";
-      pointer-events: none;
-    }
-    .product-device:hover {
-      box-shadow:
-        0 58px 140px rgba(0, 0, 0, 0.68),
-        0 0 0 1px rgba(0, 0, 0, 0.72),
-        0 0 110px rgba(92, 95, 235, 0.21);
-      transform: perspective(1200px) rotateX(var(--story-tilt-x)) rotateY(var(--story-tilt-y)) translateY(-7px);
-    }
-    .device-control {
-      position: absolute;
-      z-index: -1;
-      width: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: linear-gradient(180deg, #555a66, #13161d 30%, #3b3f49);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
-      content: "";
-    }
-    .device-control-volume {
-      top: 24%;
-      left: -5px;
-      height: 72px;
-      border-radius: 3px 0 0 3px;
-    }
-    .device-control-power {
-      top: 29%;
-      right: -5px;
-      height: 86px;
-      border-radius: 0 3px 3px 0;
-    }
-    .product-device-screen {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      border-radius: 45px;
-      background: #05070b;
-    }
-    .product-screen {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      filter: saturate(0.84) brightness(0.78);
-      transform: scale(1.035) translateY(10px);
-      transition:
-        opacity 540ms ease,
-        filter 760ms ease,
-        transform 820ms var(--ease-premium);
-    }
-    .product-screen.is-active {
-      z-index: 1;
-      opacity: 1;
-      filter: saturate(1) brightness(1);
-      transform: scale(1) translateY(0);
-    }
-    .story-copy {
-      position: relative;
-      grid-column: 1;
-      grid-row: 1;
-      padding-bottom: clamp(100px, 18vh, 180px);
-    }
-    .story-copy::before {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 1px;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(148, 150, 255, 0.92) 0,
-          rgba(148, 150, 255, 0.92) var(--story-progress),
-          rgba(255, 255, 255, 0.1) var(--story-progress),
-          rgba(255, 255, 255, 0.1) 100%
-        );
-      content: "";
-      transition: background 520ms ease;
-    }
-    .story-step {
-      position: relative;
-      display: flex;
-      width: 100%;
-      min-height: 62vh;
-      padding: clamp(48px, 8vh, 86px) 0 clamp(48px, 8vh, 86px) clamp(28px, 3.5vw, 48px);
-      border: 0;
-      border-top: 1px solid var(--line);
-      background: none;
-      color: inherit;
-      cursor: pointer;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-      opacity: 0.34;
-      transform: translateX(-8px);
-      transition:
-        opacity 480ms ease,
-        transform 650ms var(--ease-premium),
-        border-color 360ms ease;
-    }
-    .story-step:last-child { border-bottom: 1px solid var(--line); }
-    .story-step::before {
-      position: absolute;
-      top: 50%;
-      left: -4px;
-      width: 9px;
-      height: 9px;
-      border: 2px solid var(--bg-soft);
-      border-radius: 50%;
-      background: #4a4d59;
-      content: "";
-      transform: translateY(-50%);
-      transition:
-        background 360ms ease,
-        box-shadow 360ms ease,
-        transform 500ms var(--ease-premium);
-    }
-    .story-step:hover { opacity: 0.72; transform: translateX(0); }
-    .story-step.is-active {
-      border-color: rgba(156, 158, 255, 0.3);
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .story-step.is-active::before {
-      background: #9c9eff;
-      box-shadow: 0 0 18px rgba(156, 158, 255, 0.9);
-      transform: translateY(-50%) scale(1.18);
-    }
-    .story-number {
-      margin-bottom: 18px;
-      color: #9fa1ff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-    .story-title {
-      display: block;
-      max-width: 470px;
-      margin-bottom: 16px;
-      font-size: clamp(32px, 3.6vw, 50px);
-      line-height: 1.04;
-      letter-spacing: -0.052em;
-    }
-    .story-description {
-      display: block;
-      max-width: 440px;
-      color: var(--muted);
-      font-size: clamp(15px, 1.6vw, 18px);
-      line-height: 1.65;
-      letter-spacing: -0.015em;
-    }
-    .story-mobile-hint {
-      display: none;
-      margin: 18px 0 0;
-      color: var(--faint);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .value-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: clamp(44px, 8vw, 100px);
-      align-items: center;
-    }
-    .value-list {
-      display: grid;
-      border-top: 1px solid var(--line);
-    }
-    .value-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 18px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-      transition: padding 360ms var(--ease-premium), background 360ms ease;
-    }
-    .value-card:hover { padding-left: 12px; background: linear-gradient(90deg, rgba(119, 121, 255, 0.05), transparent 72%); }
-    .value-icon {
-      padding-top: 3px;
-      color: #c9caff;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-    }
-    .value-card h3 { margin: 1px 0 7px; font-size: 17px; }
-    .value-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.58; }
-
-    .plans-section {
-      border-block: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 82% 38%, rgba(99, 102, 241, 0.14), transparent 28rem),
-        var(--bg-soft);
-    }
-    .plan-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      border-block: 1px solid var(--line);
-    }
-    .plan {
-      padding: clamp(34px, 5vw, 54px);
-      transition: background 420ms ease;
-    }
-    .plan:first-child { padding-left: 0; border-right: 1px solid var(--line); }
-    .plan:last-child { padding-right: 0; }
-    .plan-featured {
-      background: linear-gradient(145deg, rgba(119, 121, 255, 0.07), transparent 58%);
-    }
-    .plan-label {
-      display: block;
-      margin-bottom: 26px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .plan-featured .plan-label { color: #c9caff; }
-    .plan h3 { margin-bottom: 10px; font-size: 30px; letter-spacing: -0.04em; }
-    .plan > p { min-height: 52px; color: var(--muted); line-height: 1.58; }
-    .feature-list { display: grid; gap: 14px; margin: 28px 0 0; padding: 0; list-style: none; }
-    .feature-list li {
-      position: relative;
-      padding-left: 27px;
-      color: #d8dae1;
-      font-size: 14px;
-      line-height: 1.55;
-    }
-    .feature-list li::before {
-      position: absolute;
-      left: 0;
-      top: 1px;
-      color: var(--success);
-      content: "✓";
-      font-weight: 800;
-    }
-    .plan-footnote { margin: 24px 0 0; color: var(--faint); font-size: 12px; }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border-block: 1px solid var(--line);
-    }
-    .trust-card {
-      padding: 30px;
-      transition: background 360ms ease, transform 360ms var(--ease-premium);
-    }
-    .trust-card:hover { background: linear-gradient(180deg, rgba(119, 121, 255, 0.055), transparent); transform: translateY(-4px); }
-    .trust-card:first-child { padding-left: 0; }
-    .trust-card:last-child { padding-right: 0; }
-    .trust-card + .trust-card { border-left: 1px solid var(--line); }
-    .trust-index {
-      display: block;
-      margin-bottom: 32px;
-      color: #9fa1ff;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-    }
-    .trust-card h3 { margin-bottom: 10px; font-size: 18px; }
-    .trust-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.64; }
-    .trust-note {
-      margin-top: 24px;
-      color: var(--faint);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-    .trust-note a { color: #c5c6ff; font-weight: 600; }
-
-    .faq-list {
-      max-width: 820px;
-      border-top: 1px solid var(--line);
-    }
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(250,250,250,.86); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(29,29,31,.07); }
+    .nav-inner { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 20px; font-weight: 650; letter-spacing: -.045em; }
+    .brand img { width: 28px; height: 28px; border-radius: 8px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link { min-height: 44px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; text-decoration: none; color: #49494e; }
+    .nav-link:hover { color: var(--brand); }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: -.02em; background: var(--brand); color: #fff; transition: background 180ms, transform 180ms var(--ease); }
+    .button:hover { background: var(--brand-hover); transform: translateY(-2px); }
+    .nav .button { min-height: 44px; padding: 9px 18px; font-size: 12px; }
+    .text-link { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; color: var(--brand); text-decoration: none; font-size: 16px; font-weight: 500; }
+    .text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .chevron { width: 8px; height: 8px; border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor; transform: rotate(45deg); }
+    .hero { text-align: center; overflow: hidden; padding: 72px 0 0; }
+    .hero-label { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 14px; font-size: 20px; font-weight: 600; letter-spacing: -.035em; }
+    h1 { margin: 0; font-size: clamp(56px, 7.2vw, 96px); line-height: 1.04; font-weight: 650; letter-spacing: -.065em; }
+    h1 span { color: var(--brand); }
+    .hero-copy { max-width: 510px; margin: 24px auto 0; font-size: 21px; line-height: 1.45; letter-spacing: -.025em; color: var(--muted); }
+    .hero-download { display: flex; align-items: center; justify-content: center; gap: 28px; margin: 28px 0 0; }
+    .hero-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px; }
+    .hero-qr { display: none; margin: 0; }
+    .hero-qr .download-qr { padding: 6px; border-radius: 12px; }
+    .hero-qr .download-qr img { width: 96px; height: 96px; }
+    .hero-qr figcaption { margin-top: 6px; color: var(--muted); font-size: 10px; }
+    .hero-note { margin: 20px 0 0; font-size: 12px; line-height: 1.6; color: var(--muted); }
+    .hero-stage { --spread: 0; position: relative; width: min(100%, 990px); height: 660px; margin: 58px auto 0; }
+    .device { position: relative; width: 254px; padding: 7px; border: 1px solid #63636a; border-radius: 40px; background: #141419; box-shadow: inset 0 0 0 2px #303035, 0 22px 45px rgba(26,26,43,.14); }
+    .device img { width: 100%; aspect-ratio: 1206 / 2622; object-fit: cover; border-radius: 32px; background: var(--stage); }
+    .hero-device { position: absolute; left: 50%; will-change: transform; box-shadow: inset 0 0 0 2px #303035, 0 12px 24px rgba(26,26,43,.10); }
+    .hero-device-center { z-index: 3; width: 274px; top: 0; transform: translateX(-50%); }
+    .hero-device-left { z-index: 2; top: 74px; transform: translateX(calc(-50% - 234px - var(--spread) * 26px)) rotate(-8deg); }
+    .hero-device-right { z-index: 1; top: 74px; transform: translateX(calc(-50% + 234px + var(--spread) * 26px)) rotate(8deg); }
+    .hero-device-center img { aspect-ratio: 1206 / 2622; }
+    .hero-caption { position: relative; z-index: 5; margin: 15px 0 0; padding-bottom: 48px; color: var(--muted); font-size: 12px; }
+    .benefit-strip { background: #fff; border-top: 1px solid #eeeef0; border-bottom: 1px solid #eeeef0; }
+    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 25px 0; font-size: 14px; font-weight: 500; text-align: center; }
+    .benefits p { margin: 0; }
+    .benefits p + p { border-left: 1px solid var(--line); }
+    .section { padding: 112px 0; }
+    .section-label { margin: 0 0 14px; color: var(--muted); font-size: 17px; font-weight: 600; letter-spacing: -.025em; }
+    .section-title { margin: 0; max-width: 820px; font-size: clamp(38px, 4.7vw, 64px); font-weight: 650; line-height: 1.08; letter-spacing: -.055em; }
+    .section-title .muted { color: #86868b; }
+    .section-copy { max-width: 580px; margin: 22px 0 0; font-size: 19px; line-height: 1.55; letter-spacing: -.02em; color: var(--muted); }
+    .gate-symbol { --gate-open: 0; display: inline-block; position: relative; width: 34px; height: 34px; flex-shrink: 0; color: var(--brand); }
+    .gate-symbol::before, .gate-symbol::after { content: ""; position: absolute; top: 4px; bottom: 4px; width: 12px; border: 2px solid currentColor; border-radius: 3px; transition: transform 450ms var(--ease); }
+    .gate-symbol::before { left: 4px; transform: translateX(calc(var(--gate-open) * -6px)) rotate(calc(var(--gate-open) * -10deg)); }
+    .gate-symbol::after { right: 4px; transform: translateX(calc(var(--gate-open) * 6px)) rotate(calc(var(--gate-open) * 10deg)); }
+    .hero-label .gate-symbol { width: 27px; height: 27px; }
+    .hero-label .gate-symbol::before, .hero-label .gate-symbol::after { width: 9px; }
+    .demo { --reading-progress: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; margin-top: 44px; padding: 48px; border-radius: 32px; background: #eeedf9; }
+    .demo-phone { width: min(304px, 100%); justify-self: center; padding: 8px; border: 1px solid #63636a; border-radius: 44px; background: #141419; box-shadow: inset 0 0 0 2px #303035, 0 22px 45px rgba(26,26,43,.12); }
+    .demo-screen { height: 568px; overflow: hidden; border-radius: 36px; background: #fafafa; color: var(--ink); }
+    .demo-view { display: flex; flex-direction: column; height: 100%; min-height: 0; padding: 23px; animation: panel-in 380ms var(--ease) both; }
+    .demo-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 24px; margin-bottom: 20px; font-size: 12px; color: var(--muted); flex-shrink: 0; }
+    .demo-tag { padding: 4px 8px; border-radius: 12px; font-size: 10px; background: #eeedf9; color: var(--brand); }
+    .demo-launch { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; text-align: center; }
+    .demo-app-launch { display: flex; flex-direction: column; align-items: center; gap: 13px; padding: 18px; border: 0; border-radius: 20px; background: transparent; color: var(--ink); font-size: 15px; cursor: pointer; transition: transform 180ms var(--ease); }
+    .demo-app-launch:hover { transform: translateY(-4px); }
+    .demo-app-launch:disabled { cursor: default; }
+    .demo-app-icon { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 21px; color: #fff; background: var(--brand); box-shadow: 0 10px 25px rgba(88,86,232,.18); }
+    .demo-app-icon svg { width: 32px; height: 32px; }
+    .demo-launch p { max-width: 190px; margin: 16px 0 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
+    .demo-footnote { margin: 20px 0 0; text-align: center; font-size: 11px; line-height: 1.5; color: var(--muted); }
+    .demo-read-brand { display: flex; align-items: center; gap: 7px; font-weight: 600; color: var(--ink); }
+    .demo-read-brand img { width: 20px; height: 20px; border-radius: 5px; }
+    .demo-reset { display: inline-flex; align-items: center; min-height: 44px; padding: 0 3px; border: 0; background: transparent; color: var(--muted); font-size: 11px; cursor: pointer; }
+    .demo-article { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 0 12px 12px 2px; scrollbar-width: thin; scrollbar-color: #c4c2dc transparent; }
+    .demo-article:focus-visible { outline-offset: 0; border-radius: 4px; }
+    .demo-category { margin: 0 0 11px; color: var(--brand); font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .demo-article h3 { margin: 0 0 16px; font-size: 29px; line-height: 1.1; font-weight: 650; letter-spacing: -.045em; }
+    .demo-article p { margin: 0 0 16px; font-size: 15px; line-height: 1.65; color: #55555c; }
+    .demo-article .demo-hook { color: var(--ink); font-weight: 500; }
+    .demo-article blockquote { margin: 20px 0; border-left: 2px solid var(--brand); padding-left: 13px; font-size: 16px; line-height: 1.5; letter-spacing: -.02em; color: var(--ink); }
+    .demo-article .demo-source { font-size: 11px; }
+    .demo-source a { color: var(--brand); text-underline-offset: 3px; }
+    .demo-read-footer { margin-top: 16px; flex-shrink: 0; }
+    .demo-progress-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; font-size: 11px; color: var(--muted); }
+    .demo-progress-label .gate-symbol { --gate-open: var(--reading-progress); width: 23px; height: 23px; }
+    .demo-progress-label .gate-symbol::before, .demo-progress-label .gate-symbol::after { width: 7px; }
+    .demo-progress { display: block; appearance: none; -webkit-appearance: none; width: 100%; height: 4px; border: 0; border-radius: 8px; overflow: hidden; background: #e4e3ec; }
+    .demo-progress::-webkit-progress-bar { background: #e4e3ec; }
+    .demo-progress::-webkit-progress-value { background: var(--brand); }
+    .demo-progress::-moz-progress-bar { background: var(--brand); }
+    .demo-button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; width: 100%; margin-top: 16px; padding: 11px 14px; border: 0; border-radius: 24px; background: var(--brand); color: #fff; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 180ms; }
+    .demo-button:hover { background: var(--brand-hover); }
+    .demo-button:disabled { background: #e9e8ef; color: #77757f; cursor: default; }
+    .demo-success { justify-content: center; align-items: center; text-align: center; }
+    .demo-success .gate-symbol { --gate-open: 1; width: 64px; height: 64px; margin-bottom: 28px; }
+    .demo-success .gate-symbol::before, .demo-success .gate-symbol::after { width: 24px; border-width: 3px; }
+    .demo-success h3 { margin: 0 0 16px; font-size: 33px; line-height: 1.12; letter-spacing: -.045em; font-weight: 650; }
+    .demo-success p { margin: 0 0 20px; font-size: 14px; line-height: 1.6; color: var(--muted); }
+    .demo-success .demo-tag { margin-bottom: 12px; font-size: 11px; }
+    .demo-guide { max-width: 360px; }
+    .demo-guide h3 { margin: 0; font-size: 36px; line-height: 1.12; font-weight: 650; letter-spacing: -.045em; }
+    .demo-steps { list-style: none; margin: 32px 0 0; padding: 0; }
+    .demo-step { display: grid; grid-template-columns: 32px 1fr; gap: 14px; padding: 17px 0; border-bottom: 1px solid rgba(29,29,31,.1); }
+    .demo-step-number { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #dedced; color: #666473; font-size: 12px; transition: background 180ms, color 180ms; }
+    .demo-step[aria-current="step"] .demo-step-number, .demo-step[data-complete="true"] .demo-step-number { background: var(--brand); color: #fff; }
+    .demo-step h4 { margin: 2px 0 7px; font-size: 16px; font-weight: 600; letter-spacing: -.02em; }
+    .demo-step p { margin: 0; color: #666473; font-size: 14px; line-height: 1.55; }
+    .demo-status { min-height: 46px; margin: 24px 0 0; color: var(--brand); font-size: 13px; line-height: 1.6; }
+    .demo-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .tour-section { background: var(--soft); padding: 104px 0; }
+    .tour-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 48px; }
+    .tour-heading .section-title { max-width: 600px; }
+    .tour-heading .section-copy { max-width: 300px; margin: 0; font-size: 16px; }
+    .tour { background: var(--stage); border-radius: 32px; overflow: hidden; color: #f5f3f8; padding: 0 60px 30px; }
+    .tour-panel { min-height: 660px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 90px; padding-top: 48px; animation: panel-in 380ms var(--ease) both; }
+    .tour-device { justify-self: center; width: 258px; box-shadow: inset 0 0 0 2px #303035, 0 22px 50px rgba(0,0,0,.4); }
+    .tour-copy { max-width: 380px; }
+    .tour-copy .section-label { color: #a6a4b2; font-size: 14px; }
+    .tour-copy h3 { margin: 0; font-size: 44px; font-weight: 600; line-height: 1.09; letter-spacing: -.045em; }
+    .tour-copy p { font-size: 18px; line-height: 1.6; color: #adaeba; margin: 22px 0 0; }
+    .tour-tabs { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin: 27px auto 0; width: fit-content; padding: 5px; border: 1px solid #33343f; border-radius: 28px; background: #1b1d27; }
+    .tour-tabs button { border: 0; background: transparent; color: #b5b7c7; min-height: 44px; padding: 11px 22px; border-radius: 22px; font-size: 13px; cursor: pointer; transition: color 180ms, background 180ms; }
+    .tour-tabs button[aria-selected="true"] { background: #f5f3f8; color: #20212b; }
+    .tour-tabs button:hover:not([aria-selected="true"]) { color: #fff; }
+    .privacy { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: start; padding-top: 20px; }
+    .privacy .section-title { max-width: 450px; }
+    .privacy-content { padding-top: 8px; }
+    .privacy-content p { margin: 0 0 24px; font-size: 18px; line-height: 1.6; color: var(--muted); }
+    .privacy-content strong { color: var(--ink); font-weight: 600; }
+    .privacy-content .privacy-detail { font-size: 13px; line-height: 1.7; }
+    .plans-section { background: #fff; }
+    .plans-heading { text-align: center; }
+    .plans-heading .section-title, .plans-heading .section-copy { margin-inline: auto; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 940px; margin: 60px auto 0; }
+    .plan { padding: 8px 52px; }
+    .plan + .plan { border-left: 1px solid var(--line); }
+    .plan-label { color: var(--muted); font-size: 13px; font-weight: 500; }
+    .plan h3 { margin: 12px 0 16px; font-size: 36px; font-weight: 600; letter-spacing: -.045em; }
+    .plan h3 span { color: var(--brand); }
+    .plan p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
+    .feature-list { list-style: none; margin: 28px 0 0; padding: 0; }
+    .feature-list li { position: relative; font-size: 14px; line-height: 1.6; margin: 16px 0; padding-left: 24px; }
+    .feature-list li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 600; }
+    .plan .plan-note { font-size: 12px; margin-top: 25px; }
+    .faq-shell { max-width: 900px; }
+    .faq-list { margin-top: 44px; border-top: 1px solid var(--line); }
     details { border-bottom: 1px solid var(--line); }
-    summary {
-      position: relative;
-      padding: 23px 48px 23px 0;
-      cursor: pointer;
-      list-style: none;
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      transition: color 220ms ease, padding-left 320ms var(--ease-premium);
-    }
-    summary:hover { padding-left: 10px; color: #c7c8ff; }
+    summary { position: relative; cursor: pointer; padding: 26px 36px 26px 0; font-size: 19px; font-weight: 500; list-style: none; letter-spacing: -.02em; }
     summary::-webkit-details-marker { display: none; }
-    summary::after {
-      position: absolute;
-      right: 8px;
-      top: 21px;
-      color: #b9baff;
-      content: "+";
-      font-size: 23px;
-      font-weight: 500;
-      transition: transform 300ms var(--ease-premium), color 220ms ease;
-    }
-    details[open] summary::after { color: #fff; content: "−"; transform: rotate(180deg); }
-    details p {
-      max-width: 710px;
-      margin: -3px 0 24px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.72;
-    }
-
-    .final-cta {
-      position: relative;
-      padding-block: clamp(72px, 9vw, 118px);
-      border-top: 1px solid rgba(167, 169, 255, 0.25);
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 86% 18%, rgba(191, 112, 255, 0.31), transparent 22rem),
-        radial-gradient(circle at 8% 100%, rgba(74, 107, 255, 0.2), transparent 26rem),
-        linear-gradient(135deg, #292c78, #181b43 58%, #15162c);
-      background-size: 110% 110%;
-      animation: cta-breathe 9s ease-in-out infinite alternate;
-    }
-    .final-cta::before,
-    .final-cta::after {
-      position: absolute;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 50%;
-      content: "";
-      pointer-events: none;
-    }
-    .final-cta::before {
-      right: -6rem;
-      bottom: -10rem;
-      width: 24rem;
-      height: 24rem;
-      animation: orbit-drift 11s ease-in-out infinite alternate-reverse;
-    }
-    .final-cta::after {
-      right: 4rem;
-      bottom: -6rem;
-      width: 14rem;
-      height: 14rem;
-    }
-    .cta-panel {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 40px;
-      align-items: center;
-    }
-    .cta-panel h2 {
-      max-width: 630px;
-      margin-bottom: 15px;
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.04;
-      letter-spacing: -0.052em;
-    }
-    .cta-panel p { max-width: 580px; margin: 0; color: #d6d6eb; font-size: 17px; line-height: 1.6; }
-    .cta-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .cta-qr {
-      width: 94px;
-      padding: 7px;
-      border-radius: 13px;
-      background: #fff;
-    }
-
-    footer { padding: 48px 0 96px; }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-      color: var(--faint);
-      font-size: 13px;
-    }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
-    .footer-links a { color: var(--muted); text-decoration: none; }
-    .footer-links a:hover { color: var(--text); }
-
-    .mobile-cta {
-      position: fixed;
-      left: 14px;
-      right: 14px;
-      bottom: max(14px, env(safe-area-inset-bottom));
-      z-index: 90;
-      display: none;
-      min-height: 56px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      color: #fff;
-      background: rgba(85, 88, 232, 0.97);
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.46);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 800;
-      backdrop-filter: blur(16px);
-      transform: translateY(130%);
-      transition: transform 220ms ease;
-    }
-    .mobile-cta.visible { transform: translateY(0); }
-
-    @keyframes ambient-drift {
-      0% { transform: translate3d(-2%, -1%, 0) scale(0.96); opacity: 0.72; }
-      100% { transform: translate3d(3%, 3%, 0) scale(1.06); opacity: 1; }
-    }
-    @keyframes gradient-shift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    @keyframes glow-pulse {
-      0%, 100% { opacity: 0.62; transform: scale(0.94); }
-      50% { opacity: 0.92; transform: scale(1.04); }
-    }
-    @keyframes signal-slide {
-      from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(-33.333%, 0, 0); }
-    }
-    @keyframes orbit-drift {
-      from { transform: translate3d(-2%, 0, 0) rotate(0deg); }
-      to { transform: translate3d(4%, 4%, 0) rotate(12deg); }
-    }
-    @keyframes stage-orbit {
-      from { transform: rotate(0deg) scale(0.98); }
-      50% { transform: rotate(180deg) scale(1.03); }
-      to { transform: rotate(360deg) scale(0.98); }
-    }
-    @keyframes stage-breathe {
-      from { opacity: 0.62; transform: scale(1.2) translate3d(-2%, 1%, 0); }
-      to { opacity: 1; transform: scale(1.34) translate3d(2%, -1%, 0); }
-    }
-    @keyframes orbit-dot {
-      from { transform: translate3d(-28px, 24px, 0) scale(0.75); opacity: 0.55; }
-      to { transform: translate3d(14px, -18px, 0) scale(1.15); opacity: 1; }
-    }
-    @keyframes cta-breathe {
-      from { background-position: 0% 35%; }
-      to { background-position: 100% 65%; }
-    }
-
+    summary::after { content: "+"; position: absolute; right: 3px; top: 24px; font-size: 25px; color: var(--muted); font-weight: 400; }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 740px; margin: 0 32px 28px 0; font-size: 16px; line-height: 1.7; color: var(--muted); }
+    .faq-more { margin: 25px 0 0; }
+    .download { text-align: center; background: #eeedf9; padding: 88px 24px 92px; }
+    .download-icon { width: 68px; height: 68px; border-radius: 17px; margin: 0 auto 24px; box-shadow: 0 12px 30px rgba(74,60,130,.12); }
+    .download h2 { max-width: 650px; margin: 0 auto; font-size: clamp(38px, 4.8vw, 66px); font-weight: 650; letter-spacing: -.055em; line-height: 1.07; }
+    .download p { font-size: 18px; color: var(--muted); margin: 22px auto 28px; }
+    .download-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px; }
+    .download-qr-block { margin: 0; }
+    .download-qr { display: block; padding: 10px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+    .download-qr img { width: 112px; height: 112px; }
+    .download .download-scan { font-size: 12px; margin: 12px 0 0; }
+    .download .download-note { font-size: 12px; margin: 20px 0 0; }
+    footer { background: #f2f2f5; padding: 28px 0; color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-links a { min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
     .reveal { opacity: 1; transform: none; }
-    .js .reveal {
-      opacity: 0;
-      filter: blur(5px);
-      transform: translateY(28px) scale(0.992);
-      transition:
-        opacity 720ms ease,
-        filter 720ms ease,
-        transform 720ms var(--ease-premium);
-      transition-delay: var(--reveal-delay, 0ms);
-    }
-    .js .reveal.in { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
-    .js .how-wrap .step {
-      opacity: 0;
-      transform: translateY(20px);
-      transition:
-        opacity 620ms ease,
-        transform 620ms var(--ease-premium),
-        background 360ms ease;
-    }
-    .js .how-wrap.in .step { opacity: 1; transform: translateY(0); }
-    .js .how-wrap.in .step:hover { transform: translateY(-4px); }
-    .js .how-wrap.in .step:nth-child(1) { transition-delay: 120ms; }
-    .js .how-wrap.in .step:nth-child(2) { transition-delay: 220ms; }
-    .js .how-wrap.in .step:nth-child(3) { transition-delay: 320ms; }
-    .value-card:nth-child(2),
-    .trust-card:nth-child(2) { --reveal-delay: 90ms; }
-    .value-card:nth-child(3),
-    .trust-card:nth-child(3) { --reveal-delay: 180ms; }
-    .plan:nth-child(2) { --reveal-delay: 120ms; }
-    .js .trust-card.reveal.in:hover { transform: translateY(-4px); }
-
+    .motion-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+    .motion-ready .reveal.in { opacity: 1; transform: none; }
+    @keyframes panel-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @media (min-width: 901px) { .hero-content { animation: panel-in 800ms var(--ease) both; } .hero-qr { display: block; } }
     @media (max-width: 900px) {
-      .nav-links .nav-link { display: none; }
-      .product-section { overflow: hidden; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-copy { max-width: 680px; }
-      .hero-visual { margin-top: 8px; }
-      .phone { width: min(82vw, 344px); }
-      .hero-visual-note { right: auto; bottom: -34px; left: 50%; }
-      .steps, .trust-grid { grid-template-columns: 1fr; }
-      .step { min-height: auto; }
-      .step + .step { border-top: 1px solid var(--line); border-left: 0; }
-      .step-number { margin-bottom: 24px; }
-      .showcase-heading { grid-template-columns: 1fr; }
-      .showcase-heading .section-heading { margin-bottom: 12px; }
-      .showcase-heading .section-intro { margin-bottom: 0; }
-      .product-story { display: block; }
-      .product-stage {
-        position: relative;
-        top: auto;
-        height: min(86vh, 700px);
-        min-height: 590px;
-      }
-      .product-stage::before,
-      .product-stage::after { width: min(64vw, 520px); }
-      .product-device { width: min(42vw, 320px); }
-      .story-copy {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        margin-top: 30px;
-        padding-bottom: 0;
-        border-bottom: 1px solid var(--line);
-      }
-      .story-copy::before { display: none; }
-      .story-step {
-        min-height: auto;
-        padding: 30px 24px 34px;
-        border-top: 1px solid var(--line);
-        border-right: 1px solid var(--line);
-        opacity: 0.48;
-        transform: none;
-      }
-      .story-step:last-child {
-        border-right: 0;
-        border-bottom: 0;
-      }
-      .story-step::before { display: none; }
-      .story-step.is-active {
-        background: linear-gradient(180deg, rgba(119, 121, 255, 0.08), transparent 78%);
-      }
-      .story-title { font-size: clamp(24px, 4vw, 33px); }
-      .story-description { font-size: 15px; }
-      .value-grid { grid-template-columns: 1fr; }
-      .value-copy .section-intro { margin-bottom: 16px; }
-      .trust-card { padding-inline: 0; }
-      .trust-card + .trust-card { border-top: 1px solid var(--line); border-left: 0; }
-      .cta-panel { grid-template-columns: 1fr; }
-      .cta-actions { justify-content: flex-start; }
+      .hero { padding-top: 55px; }
+      .demo { padding: 36px; gap: 36px; }
+      .tour { padding-inline: 32px; }
+      .tour-panel { gap: 40px; }
+      .tour-copy h3 { font-size: 37px; }
+      .tour-heading { display: block; }
+      .tour-heading .section-copy { max-width: 500px; margin-top: 20px; }
+      .privacy { gap: 44px; }
+      .plan { padding-inline: 32px; }
     }
-
     @media (max-width: 680px) {
-      .shell { width: min(calc(100% - 28px), var(--max)); }
-      .nav-inner { min-height: 66px; }
-      .nav-cta { min-height: 40px; padding-inline: 13px; }
-      .hero { padding-top: 58px; }
-      .hero-grid { gap: 30px; }
-      h1 { font-size: clamp(47px, 15.5vw, 68px); }
-      .hero-copy { font-size: 17px; }
-      .hero-actions .button { width: 100%; }
-      .hero-actions .button-secondary { width: auto; }
-      .proof-row { display: none; }
-      .hero::before { right: -32rem; }
-      .hero-visual-note { right: auto; bottom: -30px; left: 50%; font-size: 10px; }
-      .signal-track { padding-block: 14px; }
-      .signal-group { gap: 18px; padding-right: 18px; }
-      section { padding-block: 80px; }
-      .section-intro { margin-bottom: 34px; font-size: 16px; }
-      .step { padding: 26px 0; }
-      .showcase-heading { gap: 18px; margin-bottom: 40px; }
-      .product-stage {
-        height: min(132vw, 590px);
-        min-height: 500px;
-      }
-      .product-stage::before,
-      .product-stage::after { width: 88vw; }
-      .product-stage::before {
-        box-shadow:
-          0 0 0 3.2rem rgba(119, 121, 255, 0.026),
-          0 0 0 6.4rem rgba(119, 121, 255, 0.012);
-      }
-      .product-device {
-        width: min(59vw, 270px);
-        border-radius: 42px;
-      }
-      .product-device::before { border-radius: 36px; }
-      .product-device-screen { border-radius: 35px; }
-      .stage-orbit-dot { top: 11%; right: 4%; }
-      .story-copy {
-        grid-template-columns: none;
-        grid-auto-columns: min(82vw, 390px);
-        grid-auto-flow: column;
-        gap: 0;
-        width: calc(100vw - 14px);
-        margin-top: 18px;
-        padding: 0 16vw 18px 0;
-        border-bottom: 0;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-      }
-      .story-copy::-webkit-scrollbar { display: none; }
-      .story-step {
-        min-height: 270px;
-        padding: 28px 26px 34px;
-        scroll-snap-align: start;
-      }
-      .story-step:last-child { border-right: 1px solid var(--line); }
-      .story-title { font-size: 29px; }
-      .story-mobile-hint { display: block; }
-      .plan-grid { grid-template-columns: 1fr; }
-      .plan { padding-inline: 0; }
-      .plan:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
-      .plan-featured { background: linear-gradient(180deg, rgba(119, 121, 255, 0.07), transparent 58%); }
-      .plan > p { min-height: auto; }
-      .cta-panel h2 { font-size: 38px; }
-      .cta-qr { display: none; }
-      .cta-actions .button { width: 100%; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
-      .mobile-cta { display: flex; }
-      footer { padding-bottom: 110px; }
+      html { scroll-padding-top: 72px; }
+      .shell { width: calc(100% - 40px); }
+      .nav-inner { min-height: 62px; gap: 12px; }
+      .brand { font-size: 18px; }
+      .brand img { width: 25px; height: 25px; border-radius: 7px; }
+      .nav-links { gap: 14px; }
+      .nav-links .nav-link { display: none; }
+      .nav .button { min-height: 44px; padding-inline: 16px; }
+      .hero { padding-top: 47px; }
+      .hero-label { font-size: 17px; }
+      h1 { font-size: clamp(47px, 10.5vw, 68px); }
+      .hero-copy { max-width: 370px; margin-top: 20px; font-size: 18px; }
+      .hero-download { margin-top: 24px; }
+      .hero-actions { gap: 14px 20px; }
+      .button, .text-link { font-size: 14px; }
+      .hero-note { max-width: 280px; margin: 17px auto 0; font-size: 11px; }
+      .hero-stage { height: 480px; margin-top: 40px; }
+      .hero-device-center { width: 192px; }
+      .hero-device-left, .hero-device-right { width: 174px; top: 56px; }
+      .hero-device-left { transform: translateX(calc(-50% - 153px - var(--spread) * 12px)) rotate(-8deg); }
+      .hero-device-right { transform: translateX(calc(-50% + 153px + var(--spread) * 12px)) rotate(8deg); }
+      .device { padding: 5px; border-radius: 29px; }
+      .device img { border-radius: 23px; }
+      .hero-caption { margin-top: 12px; padding-bottom: 28px; font-size: 11px; }
+      .benefits { gap: 10px; padding-block: 23px; font-size: 11px; line-height: 1.5; }
+      .benefits p { padding-inline: 6px; }
+      .section, .tour-section { padding: 72px 0; }
+      .section-label { font-size: 15px; margin-bottom: 12px; }
+      .section-copy { font-size: 17px; margin-top: 20px; }
+      .demo { grid-template-columns: 1fr; gap: 30px; margin-top: 30px; padding: 28px 16px; border-radius: 24px; }
+      .demo-guide { grid-row: 1; max-width: none; padding: 0 8px; }
+      .demo-guide h3 { font-size: 29px; }
+      .demo-steps { margin-top: 20px; }
+      .demo-step { padding-block: 12px; }
+      .demo-step p { font-size: 13px; }
+      .demo-status { min-height: 0; margin-top: 18px; }
+      .demo-screen { height: 536px; }
+      .demo-view { padding: 20px; }
+      .tour-heading { margin-bottom: 30px; }
+      .tour { padding: 30px 20px 22px; border-radius: 24px; }
+      .tour-panel { grid-template-columns: 1fr; gap: 30px; padding-top: 0; min-height: 750px; align-content: start; }
+      .tour-copy { grid-row: 1; max-width: 350px; }
+      .tour-copy h3 { font-size: 32px; }
+      .tour-copy p { font-size: 15px; margin-top: 16px; }
+      .tour-device { width: 216px; border-radius: 33px; }
+      .tour-device img { border-radius: 27px; }
+      .tour-tabs { margin-top: 16px; gap: 2px; width: 100%; }
+      .tour-tabs button { flex: 1; padding: 10px 7px; font-size: 11px; }
+      .privacy { grid-template-columns: 1fr; gap: 25px; padding-top: 0; }
+      .privacy-content p { font-size: 16px; }
+      .plans { grid-template-columns: 1fr; margin-top: 42px; }
+      .plan { padding: 0 12px 36px; }
+      .plan + .plan { border-left: 0; border-top: 1px solid var(--line); padding-top: 36px; padding-bottom: 0; }
+      .plans-heading { text-align: left; }
+      .plan h3 { font-size: 33px; }
+      summary { padding-block: 22px; font-size: 17px; }
+      summary::after { top: 20px; }
+      details p { font-size: 15px; margin-right: 15px; }
+      .download { padding: 65px 24px; }
+      .download p { font-size: 16px; line-height: 1.5; }
+      .download-actions { flex-direction: column; }
+      .download-actions > .button { order: -1; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .footer-links { gap: 10px 23px; }
     }
-
+    @media (max-width: 370px) {
+      h1 { font-size: 44px; }
+      .hero-copy { font-size: 17px; }
+      .hero-actions { gap: 10px; }
+      .hero-stage { height: 450px; }
+      .hero-device-center { width: 178px; }
+      .hero-device-left, .hero-device-right { width: 158px; }
+      .hero-device-left { transform: translateX(-218px) rotate(-8deg); }
+      .hero-device-right { transform: translateX(60px) rotate(8deg); }
+      .tour-panel { min-height: 770px; }
+      .tour-tabs button { padding-inline: 5px; font-size: 10px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .js .reveal { opacity: 1; filter: none; transform: none; }
-      .js .how-wrap .step { opacity: 1; transform: none; }
-      .signal-track { animation: none; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .motion-ready .reveal { opacity: 1; transform: none; }
+      .hero-stage { --spread: 0 !important; }
+      .hero-device { will-change: auto; }
+      .button:hover { transform: none; }
     }
   </style>
-
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Readgate",
-      "applicationCategory": "ProductivityApplication",
-      "operatingSystem": "iOS",
-      "description": "Read one short, useful article before opening the apps you use on autopilot.",
-      "url": "https://readgateapp.com/",
-      "downloadUrl": "https://apps.apple.com/app/id6761989769",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How does Readgate unlock an app?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Choose an app or website to protect. When you try to open it, Readgate gives you one short read. Finish it and Readgate lifts its gate for a limited unlock window." }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Readgate free?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Free includes one protected app or website, unlimited reading unlocks, a 10 minute window, reading history, and weekly stats. Pro adds unlimited gates, schedules, flexible timing, and full Readgate Originals." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Readgate see which apps I protect?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Your selection stays on your device and is shared locally with Readgate's iOS extensions. Protected app names and website domains are not intentionally sent to Readgate servers, product analytics, or crash reporting." }
-        }
-      ]
-    }
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Readgate","applicationCategory":"ProductivityApplication","operatingSystem":"iOS 18 or later","description":"Read one short, useful article before opening the apps you use on autopilot.","url":"https://readgateapp.com/","downloadUrl":"https://apps.apple.com/app/id6761989769","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"></div>
-
-  <nav class="site-nav" aria-label="Main navigation">
+  <nav class="nav" aria-label="Main navigation">
     <div class="shell nav-inner">
-      <a class="brand" href="/" aria-label="Readgate home">
-        <img src="/icon-128.png" alt="" width="32" height="32" />
-        <span>Readgate</span>
-      </a>
+      <a class="brand" href="./" aria-label="Readgate home"><img src="icon-128.png" alt="" width="28" height="28" /><span>Readgate</span></a>
       <div class="nav-links">
         <a class="nav-link" href="#how">How it works</a>
         <a class="nav-link" href="#plans">Free &amp; Pro</a>
-        <a class="nav-link" href="/faq">FAQ</a>
-        <a class="button button-primary nav-cta" href="https://apps.apple.com/app/id6761989769">Get the app</a>
+        <a class="nav-link" href="faq/">FAQ</a>
+        <a class="button" href="https://apps.apple.com/app/id6761989769">Get the app</a>
       </div>
     </div>
   </nav>
-
   <main id="main">
     <header class="hero">
-      <div class="shell hero-grid">
-        <div class="hero-content reveal">
-          <p class="eyebrow">An intentional pause for iPhone</p>
-          <h1>Read before you <span class="gradient-text">scroll.</span></h1>
-          <p class="hero-copy">Open a time sink. Read one useful idea. Then the app unlocks. No guilt, no locking you out for the whole day.</p>
+      <div class="shell hero-content">
+        <p class="hero-label"><span class="gate-symbol" aria-hidden="true"></span>Readgate for iPhone</p>
+        <h1>Read before<br />you <span>scroll.</span></h1>
+        <p class="hero-copy">Read a short article before opening the apps you use on autopilot.</p>
+        <div class="hero-download">
           <div class="hero-actions">
-            <a class="button button-primary hero-store-link" href="https://apps.apple.com/app/id6761989769">Get Readgate free</a>
-            <a class="button button-secondary" href="#how">See how it works</a>
+            <a class="button" href="https://apps.apple.com/app/id6761989769">Get Readgate free</a>
+            <a class="text-link" href="#how">Try the demo <span class="chevron" aria-hidden="true"></span></a>
           </div>
-          <p class="hero-note">Free to start · Optional Pro · iOS 15.1+ · No account</p>
-          <div class="proof-row" aria-label="Product highlights">
-            <span class="proof-pill">Built with Apple Screen Time</span>
-            <span class="proof-pill">No VPN</span>
-            <span class="proof-pill">Protected app names stay private</span>
-          </div>
+          <figure class="hero-qr">
+            <a class="download-qr" href="https://apps.apple.com/app/id6761989769" aria-label="Download Readgate on the App Store">
+              <img src="qr-app-store.png" alt="QR code to download Readgate on the App Store" width="240" height="240" decoding="async" />
+            </a>
+            <figcaption>Scan with your iPhone</figcaption>
+          </figure>
         </div>
-
-        <div class="hero-visual reveal">
-          <div class="hero-glow" aria-hidden="true"></div>
-          <div class="phone">
-            <span class="phone-control phone-control-volume" aria-hidden="true"></span>
-            <span class="phone-control phone-control-power" aria-hidden="true"></span>
-            <div class="phone-screen">
-              <img src="/screenshots/readgate-reading-solar.png" alt="Readgate presents a short article about solar energy before the selected app unlocks" width="900" height="1956" fetchpriority="high" decoding="async" />
-            </div>
-          </div>
-          <p class="hero-visual-note" aria-hidden="true">A live reading Gate · ~1 min</p>
-        </div>
+        <p class="hero-note">Free to start · Optional Pro · iOS 18+ · No account needed</p>
       </div>
+      <div class="hero-stage" aria-label="Readgate app screens">
+        <div class="device hero-device hero-device-left" aria-hidden="true"><img src="screenshots/readgate-home-2026-10-04.png" alt="" width="1206" height="2622" decoding="async" /></div>
+        <div class="device hero-device hero-device-center"><img src="screenshots/readgate-reading-2026-10-04.png" alt="Readgate's current reader showing a short article about the Fermi Paradox" width="1206" height="2622" fetchpriority="high" decoding="async" /></div>
+        <div class="device hero-device hero-device-right" aria-hidden="true"><img src="screenshots/readgate-unlocked-2026-10-04.png" alt="" width="1206" height="2622" decoding="async" /></div>
+      </div>
+      <p class="hero-caption">Real app screens. One useful idea at a time.</p>
     </header>
-
-    <div class="signal-strip" aria-hidden="true">
-      <div class="signal-track">
-        <div class="signal-group">
-          <span><strong>Pause</strong> the impulse</span><span class="signal-dot"></span>
-          <span><strong>Read</strong> one useful idea</span><span class="signal-dot"></span>
-          <span><strong>Unlock</strong> with intention</span><span class="signal-dot"></span>
-        </div>
-        <div class="signal-group">
-          <span><strong>Pause</strong> the impulse</span><span class="signal-dot"></span>
-          <span><strong>Read</strong> one useful idea</span><span class="signal-dot"></span>
-          <span><strong>Unlock</strong> with intention</span><span class="signal-dot"></span>
-        </div>
-        <div class="signal-group">
-          <span><strong>Pause</strong> the impulse</span><span class="signal-dot"></span>
-          <span><strong>Read</strong> one useful idea</span><span class="signal-dot"></span>
-          <span><strong>Unlock</strong> with intention</span><span class="signal-dot"></span>
-        </div>
-      </div>
+    <div class="benefit-strip">
+      <div class="shell benefits"><p>Built with Apple Screen Time</p><p>Reading, before scrolling</p><p>No account needed</p></div>
     </div>
-
-    <section id="how">
-      <div class="shell how-wrap reveal">
-        <p class="section-kicker">How it works</p>
-        <h2 class="section-heading">A speed bump for your thumb.</h2>
-        <p class="section-intro">Readgate catches the reflex without turning your phone into a punishment.</p>
-        <div class="steps">
-          <article class="step">
-            <span class="step-number" aria-hidden="true">01</span>
-            <h3>Choose the pull</h3>
-            <p>Pick the app or website that most often turns into autopilot scrolling.</p>
-          </article>
-          <article class="step">
-            <span class="step-number" aria-hidden="true">02</span>
-            <h3>Read one idea</h3>
-            <p>Readgate opens a short, curated article. Usually around a minute.</p>
-          </article>
-          <article class="step">
-            <span class="step-number" aria-hidden="true">03</span>
-            <h3>Unlock on purpose</h3>
-            <p>Finish the read, then continue into the app for a focused break.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section" id="product">
-      <div class="shell showcase-heading">
-        <div class="reveal">
-          <p class="section-kicker">See Readgate in action</p>
-          <h2 class="section-heading">Less empty scrolling. More useful moments.</h2>
-        </div>
-        <p class="section-intro reveal">Readgate pauses the apps that pull you in. Read one short article, then the app opens. No hard bans. No guilt.</p>
-      </div>
-
-      <div class="shell product-story reveal" data-product-story>
-        <div class="product-stage" aria-label="Interactive Readgate product walkthrough">
-          <span class="stage-orbit-dot" aria-hidden="true"></span>
-          <div class="product-device" data-story-device>
-            <span class="device-control device-control-volume" aria-hidden="true"></span>
-            <span class="device-control device-control-power" aria-hidden="true"></span>
-            <div class="product-device-screen">
-              <img class="product-screen is-active" id="product-screen-0" src="/screenshots/readgate-onboarding-intro.png" alt="Readgate explains that you read before you scroll" width="900" height="1956" loading="eager" decoding="async" aria-hidden="false" />
-              <img class="product-screen" id="product-screen-1" src="/screenshots/readgate-onboarding-intent.png" alt="Readgate lets you choose what you want to get from your phone" width="900" height="1956" loading="lazy" decoding="async" aria-hidden="true" />
-              <img class="product-screen" id="product-screen-2" src="/screenshots/readgate-reading-solar.png" alt="Readgate shows a short article before the selected app opens" width="900" height="1956" loading="lazy" decoding="async" aria-hidden="true" />
+    <section class="section" id="how">
+      <div class="shell">
+        <div class="reveal"><p class="section-label">How it works</p><h2 class="section-title">Your next tap.<br /><span class="muted">With a thought in between.</span></h2><p class="section-copy">Choose an app to protect. When you reach for it, read one useful idea before unlocking a break. Try the flow below.</p></div>
+        <div class="demo reveal" id="reading-demo" data-state="idle">
+          <div class="demo-phone">
+            <div class="demo-screen" role="group" aria-label="Interactive Readgate website demo">
+              <div class="demo-view" id="demo-idle">
+                <div class="demo-top"><span>Your phone</span><span class="demo-tag">Website demo</span></div>
+                <div class="demo-launch">
+                  <button class="demo-app-launch" id="demo-start" type="button" aria-label="Open the social app in the demo" disabled>
+                    <span class="demo-app-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="5" y="5" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="2"/><circle cx="23" cy="9" r="1.5" fill="currentColor"/></svg></span>
+                    <span>Social app</span>
+                  </button>
+                  <p>That familiar tap.<br />Give it a new beginning.</p>
+                </div>
+                <p class="demo-footnote">Tap the app to try a reading gate.</p>
+              </div>
+              <div class="demo-view" id="demo-reading" hidden>
+                <div class="demo-top"><span class="demo-read-brand"><img src="icon-128.png" alt="" width="20" height="20" />Readgate</span><button class="demo-reset" id="demo-back" type="button">Start over</button></div>
+                <article class="demo-article" id="demo-article" tabindex="0" aria-label="Sample Insight Card. Scroll to read to the end.">
+                  <p class="demo-category">Nature · Insight Card</p>
+                  <h3>What trees are really made of</h3>
+                  <p class="demo-hook">Plants build themselves largely out of air.</p>
+                  <p>It is easy to assume a tree comes mostly from soil. In fact, most of its mass comes from the air. Through photosynthesis, a plant pulls carbon dioxide from the air around it. Using sunlight as energy, it combines that gas with water. The result is sugar, the plant's basic fuel.</p>
+                  <p>From that sugar, the plant builds wood, bark, and leaves. Soil still matters, but mainly for water and minerals. The bulk of the tree itself is captured carbon. A tall trunk in a forest is, in a real sense, captured air. It got turned solid by nothing more than sunlight and time.</p>
+                  <blockquote>A towering tree is largely thin air, caught and made solid by sunlight.</blockquote>
+                  <p class="demo-source">From Readgate's reading library.<br /><a href="https://en.wikipedia.org/wiki/Photosynthesis" target="_blank" rel="noopener noreferrer">Explore the source</a></p>
+                </article>
+                <div class="demo-read-footer">
+                  <div class="demo-progress-label"><label for="demo-progress" id="demo-progress-text">Read to the end</label><span class="gate-symbol" aria-hidden="true"></span></div>
+                  <progress class="demo-progress" id="demo-progress" max="100" value="0">0%</progress>
+                  <button class="demo-button" id="demo-unlock" type="button" disabled>Read to the end to unlock</button>
+                </div>
+              </div>
+              <div class="demo-view demo-success" id="demo-unlocked" hidden>
+                <span class="gate-symbol" aria-hidden="true"></span>
+                <span class="demo-tag">Social app unlocked</span>
+                <h3>One idea richer.<br />Carry on.</h3>
+                <p>In Readgate, your app is now available for a 10 minute break on Free.</p>
+                <button class="demo-button" id="demo-replay" type="button">Try again</button>
+                <p class="demo-footnote">Preview complete · Try a reading gate on your iPhone with Readgate.</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="story-copy" aria-label="Three benefits of Readgate">
-          <button class="story-step is-active" type="button" data-story-step="0" aria-controls="product-screen-0" aria-pressed="true">
-            <span class="story-number">01 · Pause</span>
-            <strong class="story-title">Stop before autopilot takes over.</strong>
-            <span class="story-description">When you open a distracting app, Readgate steps in for a moment. You get time to choose instead of scrolling without thinking.</span>
-          </button>
-          <button class="story-step" type="button" data-story-step="1" aria-controls="product-screen-1" aria-pressed="false">
-            <span class="story-number">02 · Learn</span>
-            <strong class="story-title">Learn something in about a minute.</strong>
-            <span class="story-description">Choose what you want to learn. Readgate gives you one short article that fits into the time you already spend on your phone.</span>
-          </button>
-          <button class="story-step" type="button" data-story-step="2" aria-controls="product-screen-2" aria-pressed="false">
-            <span class="story-number">03 · Choose</span>
-            <strong class="story-title">Open the app and stay in control.</strong>
-            <span class="story-description">Finish the article and the app opens for a set break. You decide what happens next, but the tap has already given you something back.</span>
-          </button>
-        </div>
-        <p class="story-mobile-hint" aria-hidden="true">Swipe to see all three benefits →</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="shell value-grid">
-        <div class="value-copy reveal">
-          <p class="section-kicker">Why it feels different</p>
-          <h2 class="section-heading">Smarter, not stricter.</h2>
-          <p class="section-intro">Most blockers say no. Readgate gives the impulse somewhere better to go.</p>
-        </div>
-        <div class="value-list">
-          <article class="value-card reveal">
-            <span class="value-icon" aria-hidden="true">01</span>
-            <div><h3>Interrupt the reflex</h3><p>A calm pause creates just enough space to notice what your thumb was doing.</p></div>
-          </article>
-          <article class="value-card reveal">
-            <span class="value-icon" aria-hidden="true">02</span>
-            <div><h3>Replace it with something useful</h3><p>Short reads across science, history, ideas, culture, technology, and more.</p></div>
-          </article>
-          <article class="value-card reveal">
-            <span class="value-icon" aria-hidden="true">03</span>
-            <div><h3>Keep the choice yours</h3><p>Finish the read, unlock the app, and decide with a little more intention.</p></div>
-          </article>
+          <div class="demo-guide">
+            <h3>A reading gate.<br />In three steps.</h3>
+            <ol class="demo-steps">
+              <li class="demo-step" aria-current="step"><span class="demo-step-number" aria-hidden="true">1</span><div><h4>Open your app.</h4><p>Readgate catches the tap on an app you chose to protect.</p></div></li>
+              <li class="demo-step"><span class="demo-step-number" aria-hidden="true">2</span><div><h4>Read one useful idea.</h4><p>A short read puts something new between you and the scroll.</p></div></li>
+              <li class="demo-step"><span class="demo-step-number" aria-hidden="true">3</span><div><h4>Unlock a break.</h4><p>Your app opens for a limited window. When it ends, the gate returns.</p></div></li>
+            </ol>
+            <p class="demo-status" id="demo-status" role="status" aria-live="polite" aria-atomic="true">Tap the social app in the preview to begin.</p>
+            <p class="demo-note">Interactive website demo · A real Readgate Insight Card</p>
+            <noscript><p class="demo-note">Get Readgate to try a reading gate on your iPhone.</p></noscript>
+          </div>
         </div>
       </div>
     </section>
-
-    <section class="plans-section" id="plans">
+    <section class="tour-section" id="product">
       <div class="shell">
-        <div class="reveal">
-          <p class="section-kicker">Free &amp; Pro</p>
-          <h2 class="section-heading">Bring the habit to your whole phone.</h2>
-          <p class="section-intro">Free turns one scroll reflex into reading. Pro extends reading gates across your phone and adds your timing, your rules, and a deeper view of what you learn.</p>
-        </div>
-        <div class="plan-grid">
-          <article class="plan reveal">
-            <span class="plan-label">Included free</span>
-            <h3>Readgate Free</h3>
-            <p>Everything you need to turn one recurring scroll habit into a reading habit.</p>
-            <ul class="feature-list">
-              <li>Protect 1 app or website</li>
-              <li>Unlimited reading unlocks every day</li>
-              <li>Nearly 800 curated reads across 12+ topics</li>
-              <li>Reading streaks and weekly stats</li>
-              <li>Works offline with articles saved ahead of time</li>
-            </ul>
-          </article>
-          <article class="plan plan-featured reveal">
-            <span class="plan-label">Optional subscription</span>
-            <h3>Readgate Pro</h3>
-            <p>Protect every distraction, shape each reading gate, and see what your attention is building.</p>
-            <ul class="feature-list">
-              <li>Protect unlimited apps, websites, and categories</li>
-              <li>Choose each unlock window or set 1 to 60 minutes</li>
-              <li>Schedule reading gates across your week</li>
-              <li>Choose read first or a 2, 3, 5, or 10 minute delay, plus an optional daily cap</li>
-              <li>Read every Readgate Original</li>
-            </ul>
-            <p class="plan-footnote">Monthly and annual plans. Your local price appears before purchase. Cancel anytime in Apple Settings.</p>
-          </article>
+        <div class="tour-heading reveal"><div><p class="section-label">Inside Readgate</p><h2 class="section-title">Topics you choose.<br />Rules that fit.</h2></div><p class="section-copy">Explore your reading, see your progress, and shape how reading gates fit into your day.</p></div>
+        <div class="tour reveal">
+          <div id="tour-home" class="tour-panel" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
+            <div class="device tour-device"><img src="screenshots/readgate-home-2026-10-04.png" alt="Readgate Home with the next read, Fermi Paradox, and Reading series and Surprise me options" width="1206" height="2622" loading="lazy" decoding="async" /></div>
+            <div class="tour-copy"><p class="section-label">Your day</p><h3>Give the next tap<br />a better beginning.</h3><p>Your next read is ready when you open Readgate. Follow a reading series or let Surprise me choose something new. Visit Progress to see what those small moments add up to.</p></div>
+          </div>
+          <div id="tour-reading" class="tour-panel" role="tabpanel" aria-labelledby="tab-reading" tabindex="0" hidden>
+            <div class="device tour-device"><img src="screenshots/readgate-reading-2026-10-04.png" alt="A Readgate reading moment about the Fermi Paradox with a photograph, reading progress and article text" width="1206" height="2622" loading="lazy" decoding="async" /></div>
+            <div class="tour-copy"><p class="section-label">Your reading moment</p><h3>A useful idea.<br />Right when you need a pause.</h3><p>Explore science, history, psychology, culture, and more. Short reads fit into the moments you already spend on your phone.</p></div>
+          </div>
+          <div id="tour-settings" class="tour-panel" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" hidden>
+            <div class="device tour-device"><img src="screenshots/readgate-settings-2026-10-04.png" alt="Readgate Settings with reading gate setup, reading topics and Pro controls for break length, schedule and daily cap" width="1206" height="2622" loading="lazy" decoding="async" /></div>
+            <div class="tour-copy"><p class="section-label">Your rules</p><h3>Your phone.<br />Your kind of pause.</h3><p>Choose your reading topics. With Pro, shape your unlock timing, set a schedule, and bring reading gates to more of your apps.</p></div>
+          </div>
+          <div class="tour-tabs" role="tablist" aria-label="Explore Readgate">
+            <button id="tab-home" type="button" role="tab" aria-controls="tour-home" aria-selected="true">Your day</button>
+            <button id="tab-reading" type="button" role="tab" aria-controls="tour-reading" aria-selected="false" tabindex="-1">Reading moment</button>
+            <button id="tab-settings" type="button" role="tab" aria-controls="tour-settings" aria-selected="false" tabindex="-1">Your rules</button>
+          </div>
         </div>
       </div>
     </section>
-
-    <section id="privacy">
-      <div class="shell">
-        <div class="reveal">
-          <p class="section-kicker">Privacy by design</p>
-          <h2 class="section-heading">Your Gate is personal. It stays that way.</h2>
-          <p class="section-intro">Readgate uses the access it needs to run the Gate, without building an advertising profile around you.</p>
+    <section class="section" id="privacy">
+      <div class="shell privacy"><div class="reveal"><p class="section-label">Personal, by design.</p><h2 class="section-title">Your attention.<br />Your business.</h2></div><div class="privacy-content reveal"><p><strong>No account or email needed.</strong> Start without creating a profile. Your protected app selection stays on your device and is shared locally with Readgate's iOS extensions.</p><p><strong>No advertising profile.</strong> Protected app names and website domains are not intentionally sent to Readgate servers, product analytics, or crash reporting.</p><p class="privacy-detail">Readgate uses limited product analytics, subscription services, and crash reporting with privacy scrubbing. See the <a href="privacy/">Privacy Policy</a> for the services and fields involved.</p></div></div>
+    </section>
+    <section class="section plans-section" id="plans">
+      <div class="shell"><div class="plans-heading reveal"><p class="section-label">Start with one app. Go further with Pro.</p><h2 class="section-title">A better habit.<br />Free to begin.</h2><p class="section-copy">Everything you need to try a reading gate. More flexibility when you want it.</p></div>
+        <div class="plans">
+          <article class="plan reveal"><span class="plan-label">Included free</span><h3>Readgate</h3><p>Turn one recurring scroll habit into a reading habit.</p><ul class="feature-list"><li>Protect one app or website</li><li>Unlimited reading unlocks every day</li><li>A 10 minute break after each reading unlock</li><li>Curated reads across a range of topics</li><li>Reading history and weekly stats</li><li>Bundled content and saved articles offline</li></ul></article>
+          <article class="plan reveal"><span class="plan-label">Optional subscription</span><h3>Readgate <span>Pro</span></h3><p>A little more flexibility for your whole phone.</p><ul class="feature-list"><li>Protect unlimited apps, websites, and categories</li><li>Choose your unlock timing</li><li>Schedule reading gates across your week</li><li>Set an optional daily unlock cap</li><li>Read every Readgate Original</li></ul><p class="plan-note">Monthly and annual plans. Your local price appears before purchase. Cancel anytime in Apple Settings.</p></article>
         </div>
-        <div class="trust-grid">
-          <article class="trust-card reveal">
-            <span class="trust-index" aria-hidden="true">01</span>
-            <h3>No account or email</h3>
-            <p>Start using Readgate without creating a profile or handing over your identity.</p>
-          </article>
-          <article class="trust-card reveal">
-            <span class="trust-index" aria-hidden="true">02</span>
-            <h3>Protected choices stay private</h3>
-            <p>Protected app names and website domains are not intentionally sent to Readgate servers or analytics.</p>
-          </article>
-          <article class="trust-card reveal">
-            <span class="trust-index" aria-hidden="true">03</span>
-            <h3>No ad tracking</h3>
-            <p>Readgate does not use advertising identifiers or analytics data to target ads for other companies.</p>
-          </article>
-        </div>
-        <p class="trust-note reveal">Readgate uses limited anonymous product analytics, subscription infrastructure, and crash reporting with privacy scrubbing. The exact services and fields are documented in the <a href="/privacy">Privacy Policy</a>.</p>
       </div>
     </section>
-
-    <section id="faq">
-      <div class="shell">
-        <div class="reveal">
-          <p class="section-kicker">Questions</p>
-          <h2 class="section-heading">Good to know.</h2>
-        </div>
+    <section class="section" id="faq">
+      <div class="shell faq-shell"><div class="reveal"><p class="section-label">A few things to know.</p><h2 class="section-title">Good questions.<br />Simple answers.</h2></div>
         <div class="faq-list reveal">
-          <details>
-            <summary>How does Readgate actually block an app?</summary>
-            <p>Readgate uses Apple’s Family Controls and Managed Settings frameworks. Choose a target, and iOS shows Readgate’s Gate when you try to open it. Readgate does not receive your general Screen Time history.</p>
-          </details>
-          <details>
-            <summary>Do I have to pay to use the Gate?</summary>
-            <p>No. Free includes one protected app or website, unlimited reading unlocks, a 10 minute window, reading history, and weekly stats. Pro brings reading gates to your whole phone, adds your timing and rules, and unlocks full Readgate Originals.</p>
-          </details>
-          <details>
-            <summary>Where do the articles come from?</summary>
-            <p>Readgate mixes bundled Insight Cards and Readgate Originals with curated open knowledge from sources such as Wikipedia and Wikivoyage. Source links are shown where applicable, and bundled content remains available offline.</p>
-          </details>
-          <details>
-            <summary>Can Readgate see the apps I choose?</summary>
-            <p>Your selection stays on your device and is shared locally with Readgate’s iOS extensions. Protected app names and website domains are not intentionally sent to Readgate servers, product analytics, or crash reporting.</p>
-          </details>
-          <details>
-            <summary>Which devices are supported?</summary>
-            <p>Readgate is designed for iPhone and supports iOS 15.1 or later.</p>
-          </details>
-        </div>
-        <p class="trust-note reveal"><a href="/faq">See all frequently asked questions →</a></p>
+          <details><summary>How does Readgate protect an app?</summary><p>Readgate uses Apple's Family Controls and Managed Settings frameworks. Choose a target, and iOS shows Readgate's reading gate when you try to open it. Readgate does not receive your general Screen Time history.</p></details>
+          <details><summary>Can I use Readgate for free?</summary><p>Yes. Free includes one protected app or website, unlimited reading unlocks, a 10 minute window, reading history, and weekly stats. Pro adds more protected apps, schedules, flexible timing, and full Readgate Originals.</p></details>
+          <details><summary>Where do the reads come from?</summary><p>Readgate combines bundled Insight Cards and Readgate Originals with curated open knowledge from sources such as Wikipedia and Wikivoyage. Source links are shown where applicable, and bundled content remains available offline.</p></details>
+          <details><summary>What happens after I finish reading?</summary><p>Readgate lifts its gate for a limited unlock window. You can use the protected app during that break. When the window ends, the reading gate returns.</p></details>
+          <details><summary>Which devices are supported?</summary><p>Readgate is made for iPhone and requires iOS 18 or later.</p></details>
+        </div><p class="faq-more"><a class="text-link" href="faq/">See all questions <span class="chevron" aria-hidden="true"></span></a></p>
       </div>
     </section>
-
-    <section class="final-cta" id="download">
-      <div class="shell">
-        <div class="cta-panel reveal">
-          <div>
-            <p class="section-kicker">One pause. One read.</p>
-            <h2>Make the next scroll earn its place.</h2>
-            <p>Download Readgate free and turn one autopilot habit into a moment that gives something back.</p>
-          </div>
-          <div class="cta-actions">
-            <img class="cta-qr" src="/qr-app-store.png" alt="QR code to download Readgate on the App Store" width="94" height="94" loading="lazy" />
-            <a class="button button-primary final-store-link" href="https://apps.apple.com/app/id6761989769">Get Readgate free</a>
-          </div>
+    <section class="download" id="download">
+      <div class="reveal">
+        <img class="download-icon" src="icon-180.png" alt="Readgate app icon" width="68" height="68" loading="lazy" />
+        <h2>Make your next tap<br />a little smarter.</h2>
+        <p>One useful idea before the scroll.</p>
+        <div class="download-actions">
+          <figure class="download-qr-block">
+            <a class="download-qr" href="https://apps.apple.com/app/id6761989769" aria-label="Download Readgate on the App Store">
+              <img src="qr-app-store.png" alt="QR code to download Readgate on the App Store" width="240" height="240" loading="lazy" decoding="async" />
+            </a>
+            <figcaption class="download-scan">Scan with your iPhone</figcaption>
+          </figure>
+          <a class="button" href="https://apps.apple.com/app/id6761989769">Get Readgate free</a>
         </div>
+        <p class="download-note">For iPhone · No account needed</p>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <span>&copy; 2026 Readgate</span>
-      <div class="footer-links">
-        <a href="/support">Support</a>
-        <a href="/faq">FAQ</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="mailto:hello@readgateapp.com">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <a class="mobile-cta" href="https://apps.apple.com/app/id6761989769" aria-label="Get Readgate free on the App Store" aria-hidden="true" tabindex="-1">Get Readgate free</a>
-
+  <footer><div class="shell footer-inner"><span>&copy; 2026 Readgate</span><div class="footer-links"><a href="support/">Support</a><a href="faq/">FAQ</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a><a href="mailto:hello@readgateapp.com">Contact</a></div></div></footer>
   <script>
     (() => {
-      const nav = document.querySelector('.site-nav');
-      const reveals = document.querySelectorAll('.reveal');
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
       const root = document.documentElement;
-      const heroVisual = document.querySelector('.hero-visual');
-      const phone = document.querySelector('.phone');
-      const productStory = document.querySelector('[data-product-story]');
-      const productStage = productStory?.querySelector('.product-stage');
-      const storyDevice = productStory?.querySelector('[data-story-device]');
-      const storyCopy = productStory?.querySelector('.story-copy');
-      const storySteps = [...document.querySelectorAll('[data-story-step]')];
-      const storyScreens = [...document.querySelectorAll('.product-screen')];
-      let activeStoryIndex = 0;
-      let visibleStoryIndex = 0;
-      let scrollFrame = 0;
-      let storyScrollFrame = 0;
-
-      const showStoryScreen = (index) => {
-        const nextScreen = storyScreens[index];
-        if (!nextScreen) return;
-        const revealScreen = () => {
-          if (activeStoryIndex !== index) return;
-          visibleStoryIndex = index;
-          storyScreens.forEach((screen, screenIndex) => {
-            const active = screenIndex === visibleStoryIndex;
-            screen.classList.toggle('is-active', active);
-            screen.setAttribute('aria-hidden', String(!active));
-          });
-        };
-        if (nextScreen.complete && nextScreen.naturalWidth) revealScreen();
-        else nextScreen.addEventListener('load', revealScreen, { once: true });
+      const stage = document.querySelector('.hero-stage');
+      const reveals = [...document.querySelectorAll('.reveal')];
+      let frame = 0;
+      const updateHero = () => {
+        frame = 0;
+        if (motion.matches || !stage) return;
+        const bounds = stage.getBoundingClientRect();
+        const progress = Math.max(0, Math.min(1, -bounds.top / Math.max(1, bounds.height)));
+        stage.style.setProperty('--spread', String(progress));
       };
-
-      const activateStory = (index) => {
-        if (!storySteps.length || index === activeStoryIndex && storyScreens[index]?.classList.contains('is-active')) return;
-        activeStoryIndex = Math.max(0, Math.min(index, storySteps.length - 1));
-        storySteps.forEach((step, stepIndex) => {
-          const active = stepIndex === activeStoryIndex;
-          step.classList.toggle('is-active', active);
-          step.setAttribute('aria-pressed', String(active));
-        });
-        showStoryScreen(activeStoryIndex);
-        if (productStory) {
-          const progress = storySteps.length > 1 ? (activeStoryIndex / (storySteps.length - 1)) * 100 : 100;
-          productStory.style.setProperty('--story-progress', `${progress}%`);
-          productStory.dataset.active = String(activeStoryIndex);
-        }
+      const requestHero = () => {
+        if (!motion.matches && !frame) frame = requestAnimationFrame(updateHero);
       };
-
-      const updateDesktopStory = () => {
-        if (!productStory || window.innerWidth <= 900) return;
-        const storyBounds = productStory.getBoundingClientRect();
-        if (storyBounds.bottom < 0 || storyBounds.top > window.innerHeight) return;
-        const focusLine = window.innerHeight * 0.52;
-        let closestIndex = activeStoryIndex;
-        let closestDistance = Number.POSITIVE_INFINITY;
-        storySteps.forEach((step, index) => {
-          const bounds = step.getBoundingClientRect();
-          const distance = Math.abs(bounds.top + bounds.height * 0.5 - focusLine);
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIndex = index;
-          }
-        });
-        activateStory(closestIndex);
-      };
-
-      const updatePageMotion = () => {
-        scrollFrame = 0;
-        nav.classList.toggle('scrolled', window.scrollY > 10);
-        const scrollable = Math.max(1, root.scrollHeight - window.innerHeight);
-        root.style.setProperty('--scroll-progress', `${Math.min(100, (window.scrollY / scrollable) * 100)}%`);
-        if (!reduceMotion && phone) {
-          phone.style.setProperty('--parallax-y', `${Math.max(-30, window.scrollY * -0.035)}px`);
-        }
-        updateDesktopStory();
-      };
-      const requestPageMotion = () => {
-        if (scrollFrame) return;
-        scrollFrame = window.requestAnimationFrame(updatePageMotion);
-      };
-      updatePageMotion();
-      window.addEventListener('scroll', requestPageMotion, { passive: true });
-      window.addEventListener('resize', requestPageMotion);
-
-      storySteps.forEach((step, index) => {
-        step.addEventListener('click', () => {
-          activateStory(index);
-          if (window.innerWidth > 900) {
-            step.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-          }
-        });
-      });
-
-      if (storyCopy) {
-        storyCopy.addEventListener('scroll', () => {
-          if (window.innerWidth > 900 || storyScrollFrame) return;
-          storyScrollFrame = window.requestAnimationFrame(() => {
-            storyScrollFrame = 0;
-            const focusLine = storyCopy.scrollLeft + storyCopy.clientWidth * 0.5;
-            let closestIndex = activeStoryIndex;
-            let closestDistance = Number.POSITIVE_INFINITY;
-            storySteps.forEach((step, index) => {
-              const distance = Math.abs(step.offsetLeft + step.offsetWidth * 0.5 - focusLine);
-              if (distance < closestDistance) {
-                closestDistance = distance;
-                closestIndex = index;
-              }
-            });
-            activateStory(closestIndex);
-          });
-        }, { passive: true });
-      }
-
-      if (!reduceMotion && heroVisual && phone && window.matchMedia('(pointer: fine)').matches) {
-        heroVisual.addEventListener('pointermove', (event) => {
-          const bounds = heroVisual.getBoundingClientRect();
-          const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-          const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-          phone.style.setProperty('--tilt-x', `${y * -7}deg`);
-          phone.style.setProperty('--tilt-y', `${x * 9}deg`);
-        });
-        heroVisual.addEventListener('pointerleave', () => {
-          phone.style.setProperty('--tilt-x', '0deg');
-          phone.style.setProperty('--tilt-y', '0deg');
-        });
-      }
-
-      if (!reduceMotion && productStage && storyDevice && window.matchMedia('(pointer: fine)').matches) {
-        productStage.addEventListener('pointermove', (event) => {
-          const bounds = productStage.getBoundingClientRect();
-          const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-          const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-          storyDevice.style.setProperty('--story-tilt-x', `${1.5 + y * -6}deg`);
-          storyDevice.style.setProperty('--story-tilt-y', `${-2 + x * 10}deg`);
-        });
-        productStage.addEventListener('pointerleave', () => {
-          storyDevice.style.setProperty('--story-tilt-x', '1.5deg');
-          storyDevice.style.setProperty('--story-tilt-y', '-4deg');
-        });
-      }
-
-      if (!reduceMotion && 'IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
+      if (!motion.matches && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('in');
             observer.unobserve(entry.target);
           });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
-        reveals.forEach((item) => revealObserver.observe(item));
-      } else {
-        reveals.forEach((item) => item.classList.add('in'));
+        }, { threshold: .08 });
+        reveals.forEach(element => observer.observe(element));
+        root.classList.add('motion-ready');
       }
-
-      const stickyCta = document.querySelector('.mobile-cta');
-      const heroCta = document.querySelector('.hero-store-link');
-      const finalCta = document.querySelector('.final-store-link');
-      let heroVisible = true;
-      let finalVisible = false;
-      const updateSticky = () => {
-        const shouldShow = !heroVisible && !finalVisible;
-        stickyCta.classList.toggle('visible', shouldShow);
-        stickyCta.setAttribute('aria-hidden', String(!shouldShow));
-        if (shouldShow) stickyCta.removeAttribute('tabindex');
-        else stickyCta.setAttribute('tabindex', '-1');
+      const onMotionChange = () => {
+        if (!motion.matches) return;
+        root.classList.remove('motion-ready');
+        stage?.style.setProperty('--spread', '0');
+        if (frame) cancelAnimationFrame(frame);
+        frame = 0;
       };
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(([entry]) => {
-          heroVisible = entry.isIntersecting;
-          updateSticky();
-        }, { threshold: 0.2 }).observe(heroCta);
-        new IntersectionObserver(([entry]) => {
-          finalVisible = entry.isIntersecting;
-          updateSticky();
-        }, { threshold: 0.1 }).observe(finalCta);
+      motion.addEventListener?.('change', onMotionChange);
+      window.addEventListener('scroll', requestHero, {passive:true});
+      window.addEventListener('resize', requestHero);
+      const tabs = [...document.querySelectorAll('.tour-tabs [role="tab"]')];
+      const activateTab = (index, focus = false) => {
+        tabs.forEach((tab, tabIndex) => {
+          const active = index === tabIndex;
+          tab.setAttribute('aria-selected', String(active));
+          tab.tabIndex = active ? 0 : -1;
+          const panel = document.getElementById(tab.getAttribute('aria-controls'));
+          if (panel) panel.hidden = !active;
+        });
+        if (focus) tabs[index].focus();
+      };
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateTab(index));
+        tab.addEventListener('keydown', event => {
+          let next;
+          if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+          if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+          if (event.key === 'Home') next = 0;
+          if (event.key === 'End') next = tabs.length - 1;
+          if (next === undefined) return;
+          event.preventDefault();
+          activateTab(next, true);
+        });
+      });
+      const demo = document.getElementById('reading-demo');
+      if (demo) {
+        const views = {
+          idle: document.getElementById('demo-idle'),
+          reading: document.getElementById('demo-reading'),
+          unlocked: document.getElementById('demo-unlocked')
+        };
+        const steps = [...demo.querySelectorAll('.demo-step')];
+        const start = document.getElementById('demo-start');
+        const article = document.getElementById('demo-article');
+        const unlock = document.getElementById('demo-unlock');
+        const replay = document.getElementById('demo-replay');
+        const back = document.getElementById('demo-back');
+        const progress = document.getElementById('demo-progress');
+        const progressText = document.getElementById('demo-progress-text');
+        const status = document.getElementById('demo-status');
+        const statuses = {
+          idle: 'Tap the social app in the preview to begin.',
+          reading: 'Scroll through the card inside the preview. Your unlock is waiting at the end.',
+          unlocked: 'One useful idea before the scroll. That is a reading gate.'
+        };
+        let complete = false;
+        let readingFrame = 0;
+        const showDemo = (state, focusTarget) => {
+          demo.dataset.state = state;
+          Object.entries(views).forEach(([name, view]) => { view.hidden = name !== state; });
+          const current = Object.keys(views).indexOf(state);
+          steps.forEach((step, index) => {
+            if (index === current) step.setAttribute('aria-current', 'step');
+            else step.removeAttribute('aria-current');
+            step.dataset.complete = String(index < current);
+          });
+          status.textContent = statuses[state];
+          focusTarget?.focus({preventScroll: true});
+        };
+        const resetReading = () => {
+          complete = false;
+          article.scrollTop = 0;
+          progress.value = 0;
+          progress.textContent = '0%';
+          progressText.textContent = 'Read to the end';
+          unlock.disabled = true;
+          unlock.textContent = 'Read to the end to unlock';
+          demo.style.setProperty('--reading-progress', '0');
+        };
+        const updateReading = () => {
+          readingFrame = 0;
+          if (demo.dataset.state !== 'reading' || article.clientHeight <= 0) return;
+          const distance = Math.max(0, article.scrollHeight - article.clientHeight);
+          const fraction = distance <= 2 ? 1 : Math.max(0, Math.min(1, article.scrollTop / distance));
+          const wasComplete = complete;
+          complete = complete || distance - article.scrollTop <= 2;
+          const percent = complete ? 100 : Math.round(fraction * 100);
+          progress.value = percent;
+          progress.textContent = `${percent}%`;
+          progressText.textContent = complete ? 'Ready to unlock' : `Reading · ${percent}%`;
+          demo.style.setProperty('--reading-progress', String(complete ? 1 : fraction));
+          unlock.disabled = !complete;
+          unlock.textContent = complete ? 'Unlock social app' : 'Read to the end to unlock';
+          if (complete && !wasComplete) status.textContent = 'You reached the end. Tap Unlock social app to continue.';
+        };
+        const requestReading = () => {
+          if (demo.dataset.state === 'reading' && !readingFrame) readingFrame = requestAnimationFrame(updateReading);
+        };
+        const restartDemo = () => {
+          if (readingFrame) cancelAnimationFrame(readingFrame);
+          readingFrame = 0;
+          showDemo('idle', start);
+          resetReading();
+        };
+        start.addEventListener('click', () => {
+          resetReading();
+          showDemo('reading', article);
+          updateReading();
+        });
+        article.addEventListener('scroll', requestReading, {passive: true});
+        window.addEventListener('resize', requestReading);
+        unlock.addEventListener('click', () => {
+          if (!complete || demo.dataset.state !== 'reading') return;
+          showDemo('unlocked', replay);
+        });
+        back.addEventListener('click', restartDemo);
+        replay.addEventListener('click', restartDemo);
+        start.disabled = false;
       }
     })();
   </script>
