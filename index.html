@@ -108,8 +108,6 @@
     .gate-symbol::before, .gate-symbol::after { content: ""; position: absolute; top: 4px; bottom: 4px; width: 12px; border: 2px solid currentColor; border-radius: 3px; transition: transform 450ms var(--ease); }
     .gate-symbol::before { left: 4px; transform: translateX(calc(var(--gate-open) * -6px)) rotate(calc(var(--gate-open) * -10deg)); }
     .gate-symbol::after { right: 4px; transform: translateX(calc(var(--gate-open) * 6px)) rotate(calc(var(--gate-open) * 10deg)); }
-    .hero-label .gate-symbol { width: 27px; height: 27px; }
-    .hero-label .gate-symbol::before, .hero-label .gate-symbol::after { width: 9px; }
 
     .demo { --reading-progress: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 72px; margin-top: 56px; padding: 64px 56px; border-radius: 40px; background: var(--soft); }
     .demo-phone { --w: 300px; justify-self: center; box-shadow: 0 1px 1px rgba(0,0,0,.3), 0 26px 50px -18px rgba(26,26,43,.4), 0 60px 100px -40px rgba(26,26,43,.35); }
@@ -381,7 +379,7 @@
   <main id="main">
     <header class="hero">
       <div class="shell hero-content">
-        <p class="hero-label"><span class="gate-symbol" aria-hidden="true"></span>Readgate for iPhone</p>
+        <p class="hero-label">Readgate for iPhone</p>
         <h1>The more you reach,<br />the more you&nbsp;<span>read.</span></h1>
         <p class="hero-copy">One short read before the apps you reach for. Then they open.</p>
         <div class="hero-actions">
